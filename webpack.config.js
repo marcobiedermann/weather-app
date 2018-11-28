@@ -10,4 +10,17 @@ module.exports = {
     filename: 'assets/js/[name].js',
     path: path.resolve(__dirname, 'server/public'),
   },
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+          },
+        ],
+      },
+    ],
+  },
 };
