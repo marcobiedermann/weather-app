@@ -6,7 +6,10 @@
   "private": true,
   "scripts": {
     "build": "webpack --config webpack.production.config.js",
-    "develop": "webpack-dev-server --config webpack.development.config.js"
+    "develop": "webpack-dev-server --config webpack.development.config.js",
+    "lint:js": "eslint '**/*.{js,jsx}'",
+    "lint": "npm run lint:js",
+    "test": "npm run lint"
   },
   "repository": {
     "type": "git",
@@ -20,6 +23,11 @@
   },
   "homepage": "https://github.com/marcobiedermann/weather-app#readme",
   "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
     "webpack": "^4.26.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10",
