@@ -4,6 +4,7 @@ const webpackMerge = require('webpack-merge');
 const baseConfig = require('./webpack.config');
 
 module.exports = webpackMerge(baseConfig, {
+  devtool: 'cheap-module-source-map',
   mode: 'development',
   plugins: [
     new HtmlWebpackPlugin({
