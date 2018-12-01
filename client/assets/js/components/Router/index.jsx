@@ -8,6 +8,6 @@ const Router = () => (
       <Route path="/" component={IndexPage} />
     </Switch>
   </BrowserRouter>
-)
+);
 
 export default Router;
