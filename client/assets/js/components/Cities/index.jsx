@@ -8,7 +8,7 @@ const Cities = (props) => {
   return (
     <ul>
       {cities.map(city => (
-        <li>
+        <li key={city.id}>
           <City {...city} />
         </li>
       ))}
