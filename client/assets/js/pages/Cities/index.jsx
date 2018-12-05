@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
 import CityPage from './City';
 import Cities from '../../components/Cities';
 
 const CitiesPage = (props) => {
-  const { match } = props;
+  const { cities, match } = props;
 
   return (
     <Switch>
@@ -15,7 +16,7 @@ const CitiesPage = (props) => {
         render={() => (
           <div>
             Cities Page
-            <Cities />
+            <Cities cities={cities} />
           </div>
         )}
       />
@@ -24,13 +25,19 @@ const CitiesPage = (props) => {
 };
 
 CitiesPage.propTypes = {
+  cities: PropTypes.arrayOf(PropTypes.shape()),
   match: PropTypes.shape({
     path: PropTypes.string,
   }),
 };
 
 CitiesPage.defaultProps = {
+  cities: [],
   match: null,
 };
 
-export default CitiesPage;
+const mapStateToProps = ({ cities }) => ({
+  cities,
+});
+
+export default connect(mapStateToProps)(CitiesPage);
