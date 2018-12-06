@@ -3,6 +3,8 @@ import React from 'react';
 import Footer from '../Footer';
 import Header from '../Header';
 import Main from '../Main';
+import Navigation from '../Navigation';
+import * as routes from '../../constants/routes';
 
 const Layout = (props) => {
   const { children } = props;
@@ -10,14 +12,16 @@ const Layout = (props) => {
   return (
     <div>
       <Header>
-        HEADER
+        <Navigation
+          routes={[
+            routes.INDEX,
+            routes.CITIES,
+            routes.SETTINGS,
+          ]}
+        />
       </Header>
-      <Main>
-        {children}
-      </Main>
-      <Footer>
-        FOOTER
-      </Footer>
+      <Main>{children}</Main>
+      <Footer>FOOTER</Footer>
     </div>
   );
 };
