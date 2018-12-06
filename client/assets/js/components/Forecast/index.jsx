@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import Weather from '../Weather';
 
@@ -17,6 +18,14 @@ const Forecast = (props) => {
       )}
     </div>
   );
+};
+
+Forecast.propTypes = {
+  list: PropTypes.arrayOf(PropTypes.shape()),
+};
+
+Forecast.defaultProps = {
+  list: [],
 };
 
 export default Forecast;
