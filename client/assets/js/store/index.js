@@ -4,7 +4,22 @@ import storage from 'redux-persist/lib/storage';
 import enhancer from '../middlewares';
 import reducers from '../reducers';
 
-const initialState = {};
+const initialState = {
+  cities: [
+    {
+      id: 2950159,
+      name: ' Berlin',
+    },
+    {
+      id: 2825297,
+      name: 'Stuttgart',
+    },
+  ],
+  settings: {
+    language: 'de',
+    unit: 'metric',
+  },
+};
 
 const persistConfig = {
   key: 'root',

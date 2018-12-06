@@ -130,5 +130,12 @@ export const languages = [
 ];
 
 export const units = [
-
+  {
+    id: 'imperial',
+    name: 'imperial',
+  },
+  {
+    id: 'metric',
+    name: 'metric',
+  },
 ];
