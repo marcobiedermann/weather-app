@@ -1,6 +1,7 @@
 import { Field, Form, withFormik } from 'formik';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { connect } from 'react-redux';
 import { languages } from '../../constants/languages';
 
 const Settings = (props) => {
@@ -32,11 +33,17 @@ Settings.defaultProps = {
   isSubmitting: false,
 };
 
-export default withFormik({
+const EnhancedForm = withFormik({
   handleSubmit: (values) => {
     console.log(values);
   },
-  mapPropsToValues: () => ({
-    language: 'en',
+  mapPropsToValues: props => ({
+    language: props.language,
   }),
 })(Settings);
+
+const mapStateToProps = state => ({
+  language: state.settings.language,
+});
+
+export default connect(mapStateToProps)(EnhancedForm);
