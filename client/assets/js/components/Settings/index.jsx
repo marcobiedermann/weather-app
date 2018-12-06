@@ -2,6 +2,7 @@ import { Field, Form, withFormik } from 'formik';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
+import Label from '../Label';
 import { languages, units } from '../../constants/languages';
 
 const Settings = (props) => {
@@ -9,20 +10,26 @@ const Settings = (props) => {
 
   return (
     <Form>
-      <Field component="select" name="language">
-        {languages.map(language => (
-          <option value={language.id} key={language.id}>
-            {language.name}
-          </option>
-        ))}
-      </Field>
-      <Field component="select" name="unit">
-        {units.map(unit => (
-          <option value={unit.id} key={unit.id}>
-            {unit.name}
-          </option>
-        ))}
-      </Field>
+      <div>
+        <Label htmlFor="language">Language</Label>
+        <Field component="select" name="language">
+          {languages.map(language => (
+            <option value={language.id} key={language.id}>
+              {language.name}
+            </option>
+          ))}
+        </Field>
+      </div>
+      <div>
+        <Label htmlFor="unit">Unit</Label>
+        <Field component="select" name="unit">
+          {units.map(unit => (
+            <option value={unit.id} key={unit.id}>
+              {unit.name}
+            </option>
+          ))}
+        </Field>
+      </div>
       <div>
         <button type="submit" disabled={isSubmitting}>
           Save
