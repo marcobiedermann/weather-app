@@ -16,6 +16,7 @@ const Layout = (props) => {
           routes={[
             routes.INDEX,
             routes.CITIES,
+            routes.SEARCH,
             routes.SETTINGS,
           ]}
         />

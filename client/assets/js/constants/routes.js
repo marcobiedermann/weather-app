@@ -8,6 +8,11 @@ export const CITIES = {
   path: '/cities',
 };
 
+export const SEARCH = {
+  name: 'Search',
+  path: '/search',
+};
+
 export const SETTINGS = {
   name: 'Settings',
   path: '/settings',
