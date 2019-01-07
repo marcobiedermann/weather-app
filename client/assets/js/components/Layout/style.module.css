@@ -1,0 +1,19 @@
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  border: 0;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
