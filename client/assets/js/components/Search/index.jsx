@@ -8,7 +8,7 @@ const Search = (props) => {
   return (
     <Form>
       <div>
-        <Field name="search" />
+        <Field name="query" />
       </div>
       <div>
         <button type="submit" disabled={isSubmitting}>
@@ -28,7 +28,11 @@ Search.defaultProps = {
 };
 
 export default withFormik({
-  handleSubmit: (values) => {
-    console.log(values);
+  handleSubmit: (values, { props, setSubmitting }) => {
+    props.fetchSearch(values.query);
+    setSubmitting(false);
   },
+  mapPropsToValues: () => ({
+    query: '',
+  }),
 })(Search);
