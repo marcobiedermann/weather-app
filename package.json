@@ -7,7 +7,6 @@
   "scripts": {
     "build": "webpack --config webpack.production.config.js",
     "develop": "webpack-dev-server --config webpack.development.config.js",
-    "format": "prettier --write '**/*.js'",
     "lint:js": "eslint '**/*.{js,jsx}'",
     "lint": "npm run lint:js",
     "test": "npm run lint"
@@ -32,13 +31,10 @@
     "dotenv": "^6.2.0",
     "eslint": "^5.3.0",
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^4.0.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.3",
     "html-webpack-plugin": "^4.0.0-beta.4",
-    "prettier": "^1.16.4",
     "style-loader": "^0.23.1",
     "webpack": "^4.28.3",
     "webpack-cli": "^3.1.2",

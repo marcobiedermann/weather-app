@@ -4,14 +4,13 @@ const dotenv = require('dotenv');
 
 const env = dotenv.config().parsed;
 
-const envKeys = obj =>
-  Object.keys(obj).reduce(
-    (accumulator, key) => ({
-      ...accumulator,
-      [`process.env.${key}`]: JSON.stringify(obj[key]),
-    }),
-    {},
-  );
+const envKeys = obj => Object.keys(obj).reduce(
+  (accumulator, key) => ({
+    ...accumulator,
+    [`process.env.${key}`]: JSON.stringify(obj[key]),
+  }),
+  {},
+);
 
 module.exports = {
   entry: {
