@@ -17,7 +17,6 @@ const CitiesPage = (props) => {
         path={match.path}
         render={() => (
           <div>
-            Cities Page
             <Cities cities={cities} />
             <Link to={`${match.path}/edit`}>Edit</Link>
           </div>

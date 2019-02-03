@@ -1,0 +1,26 @@
+.cities {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
+  grid-gap: 1.5em;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cities > li {
+  position: relative;
+}
+
+.cities > li button {
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.125);
+  height: 1.5em;
+  line-height: 1em;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  transform: translate(50%, -50%);
+  width: 1.5em;
+}
