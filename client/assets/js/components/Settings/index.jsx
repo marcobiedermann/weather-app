@@ -1,7 +1,6 @@
 import { Field, Form, withFormik } from 'formik';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { connect } from 'react-redux';
 import Label from '../Label';
 import { languages, units } from '../../constants/languages';
 
@@ -21,8 +20,8 @@ const Settings = (props) => {
         </Field>
       </div>
       <div>
-        <Label htmlFor="unit">Unit</Label>
-        <Field component="select" name="unit">
+        <Label htmlFor="units">Unit</Label>
+        <Field component="select" name="units">
           {units.map(unit => (
             <option value={unit.id} key={unit.id}>
               {unit.name}
@@ -47,19 +46,13 @@ Settings.defaultProps = {
   isSubmitting: false,
 };
 
-const EnhancedForm = withFormik({
-  handleSubmit: (values) => {
-    console.log(values);
+export default withFormik({
+  handleSubmit: (values, { props, setSubmitting }) => {
+    props.updateSettings(values);
+    setSubmitting(false);
   },
   mapPropsToValues: props => ({
     language: props.language,
     unit: props.unit,
   }),
 })(Settings);
-
-const mapStateToProps = state => ({
-  language: state.settings.language,
-  unit: state.settings.unit,
-});
-
-export default connect(mapStateToProps)(EnhancedForm);
