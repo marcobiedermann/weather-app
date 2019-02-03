@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CityPage from './City';
+import EditPage from './Edit';
 import Cities from '../../components/Cities';
 
 const CitiesPage = (props) => {
@@ -10,6 +11,7 @@ const CitiesPage = (props) => {
 
   return (
     <Switch>
+      <Route path={`${match.path}/edit`} component={EditPage} />
       <Route path={`${match.path}/:cityId`} component={CityPage} />
       <Route
         path={match.path}
@@ -17,6 +19,7 @@ const CitiesPage = (props) => {
           <div>
             Cities Page
             <Cities cities={cities} />
+            <Link to={`${match.path}/edit`}>Edit</Link>
           </div>
         )}
       />
