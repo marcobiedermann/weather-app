@@ -5,18 +5,9 @@ import enhancer from '../middlewares';
 import reducers from '../reducers';
 
 const initialState = {
-  cities: [
-    {
-      id: 2950159,
-      name: ' Berlin',
-    },
-    {
-      id: 2825297,
-      name: 'Stuttgart',
-    },
-  ],
+  cities: [],
   settings: {
-    language: 'de',
+    language: 'en',
     unit: 'metric',
   },
 };
