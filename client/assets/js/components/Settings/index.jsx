@@ -20,8 +20,8 @@ const Settings = (props) => {
         </Field>
       </div>
       <div>
-        <Label htmlFor="units">Unit</Label>
-        <Field component="select" name="units">
+        <Label htmlFor="unit">Unit</Label>
+        <Field component="select" name="unit">
           {units.map(unit => (
             <option value={unit.id} key={unit.id}>
               {unit.name}
