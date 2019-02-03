@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import City from '../City';
+import styles from './style.module.css';
 
 const Cities = (props) => {
   const { cities } = props;
 
   return (
-    <ul>
+    <ul className={styles.cities}>
       {cities.map(city => (
         <li key={city.id}>
           <City {...city} />
