@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { removeCity } from '../../../actions/cities';
+import City from '../../../components/City';
 
 const EditPage = (props) => {
   const { cities, removeCity } = props;
@@ -12,9 +13,7 @@ const EditPage = (props) => {
       <ul>
         {cities.map(city => (
           <li key={city.id}>
-            <h2>
-              {city.name}
-            </h2>
+            <City {...city} />
             <button type="button" onClick={() => removeCity(city.id)}>Remove</button>
           </li>
         ))}
