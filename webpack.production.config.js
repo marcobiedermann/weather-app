@@ -6,6 +6,26 @@ const baseConfig = require('./webpack.config');
 module.exports = webpackMerge(baseConfig, {
   devtool: 'source-map',
   mode: 'production',
+  module: {
+    rules: [
+      {
+        test: /\.css?$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              sourceMap: true,
+            },
+          },
+        ],
+      },
+    ],
+  },
   plugins: [
     new HtmlWebpackPlugin({
       minify: {
