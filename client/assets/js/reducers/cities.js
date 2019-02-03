@@ -1,7 +1,4 @@
-import {
-  CITY_ADD,
-  CITY_REMOVE,
-} from '../constants/action-types';
+import { CITY_ADD, CITY_REMOVE } from '../constants/action-types';
 
 const initialState = [];
 

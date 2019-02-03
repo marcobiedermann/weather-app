@@ -1,12 +1,11 @@
 import { WEATHER_FETCH } from '../constants/action-types';
-import {
-  API_BASE,
-  API_KEY,
-} from '../constants/open-weather-map';
+import { API_BASE, API_KEY } from '../constants/open-weather-map';
 import handleError from '../utilities/errors';
 
 function param(obj) {
-  return Object.entries(obj).map(([key, val]) => `${key}=${encodeURIComponent(val)}`).join('&');
+  return Object.entries(obj)
+    .map(([key, val]) => `${key}=${encodeURIComponent(val)}`)
+    .join('&');
 }
 
 export const fetchWeatherByIdFulfilled = weather => ({

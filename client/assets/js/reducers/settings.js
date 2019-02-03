@@ -1,6 +1,4 @@
-import {
-  SETTINGS_UPDATE,
-} from '../constants/action-types';
+import { SETTINGS_UPDATE } from '../constants/action-types';
 
 const initialState = {};
 

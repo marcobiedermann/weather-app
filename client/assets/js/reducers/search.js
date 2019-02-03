@@ -1,6 +1,4 @@
-import {
-  SEARCH_FETCH,
-} from '../constants/action-types';
+import { SEARCH_FETCH } from '../constants/action-types';
 
 const initialState = {};
 

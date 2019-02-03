@@ -1,6 +1,4 @@
-import {
-  WEATHER_FETCH,
-} from '../constants/action-types';
+import { WEATHER_FETCH } from '../constants/action-types';
 
 const initialState = {};
 
