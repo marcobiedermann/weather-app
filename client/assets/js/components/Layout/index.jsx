@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Footer from '../Footer';
+import Grid from '../Grid';
 import Header from '../Header';
 import Main from '../Main';
 import Navigation from '../Navigation';
@@ -13,17 +14,27 @@ const Layout = (props) => {
   return (
     <div>
       <Header>
-        <Navigation
-          routes={[
-            routes.INDEX,
-            routes.CITIES,
-            routes.SEARCH,
-            routes.SETTINGS,
-          ]}
-        />
+        <Grid>
+          <Navigation
+            routes={[
+              routes.INDEX,
+              routes.CITIES,
+              routes.SEARCH,
+              routes.SETTINGS,
+            ]}
+          />
+        </Grid>
       </Header>
-      <Main>{children}</Main>
-      <Footer>FOOTER</Footer>
+      <Main>
+        <Grid>
+          {children}
+        </Grid>
+      </Main>
+      <Footer>
+        <Grid>
+          FOOTER
+        </Grid>
+      </Footer>
     </div>
   );
 };
