@@ -1,5 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpackMerge = require('webpack-merge');
@@ -29,6 +30,7 @@ module.exports = webpackMerge(baseConfig, {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin('server/public'),
     new HtmlWebpackPlugin({
       minify: {
         caseSensitive: false,
