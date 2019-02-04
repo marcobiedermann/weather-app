@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const Header = (props) => {
-  const { children } = props;
+  const { children, ...otherProps } = props;
 
   return (
-    <header>
+    <header {...otherProps}>
       {children}
     </header>
   );

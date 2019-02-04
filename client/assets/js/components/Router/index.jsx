@@ -7,17 +7,21 @@ import IndexPage from '../../pages/Index';
 import SearchPage from '../../pages/Search';
 import SettingsPage from '../../pages/Settings';
 
-const Router = () => (
-  <BrowserRouter>
-    <Layout>
-      <Switch>
-        <Route path={routes.CITIES.path} component={CitiesPage} />
-        <Route path={routes.SEARCH.path} component={SearchPage} />
-        <Route path={routes.SETTINGS.path} component={SettingsPage} />
-        <Route path={routes.INDEX.path} component={IndexPage} />
-      </Switch>
-    </Layout>
-  </BrowserRouter>
-);
+const Router = (props) => {
+  const { ...otherProps } = props;
+
+  return (
+    <BrowserRouter {...otherProps}>
+      <Layout>
+        <Switch>
+          <Route path={routes.CITIES.path} component={CitiesPage} />
+          <Route path={routes.SEARCH.path} component={SearchPage} />
+          <Route path={routes.SETTINGS.path} component={SettingsPage} />
+          <Route path={routes.INDEX.path} component={IndexPage} />
+        </Switch>
+      </Layout>
+    </BrowserRouter>
+  );
+};
 
 export default Router;

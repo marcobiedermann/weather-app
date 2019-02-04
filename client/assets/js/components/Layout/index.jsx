@@ -9,10 +9,10 @@ import * as routes from '../../constants/routes';
 import './style.module.css';
 
 const Layout = (props) => {
-  const { children } = props;
+  const { children, ...otherProps } = props;
 
   return (
-    <div>
+    <div {...otherProps}>
       <Header>
         <Grid>
           <Navigation

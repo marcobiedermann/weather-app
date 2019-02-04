@@ -3,10 +3,10 @@ import React from 'react';
 import Weather from '../Weather';
 
 const Forecast = (props) => {
-  const { list } = props;
+  const { list, ...otherProps } = props;
 
   return (
-    <div>
+    <div {...otherProps}>
       {list && (
         <ul>
           {list.map(weather => (

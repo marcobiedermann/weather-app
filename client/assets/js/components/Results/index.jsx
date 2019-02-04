@@ -3,10 +3,10 @@ import React from 'react';
 import Result from '../../containers/Result';
 
 const Results = (props) => {
-  const { results } = props;
+  const { results, ...otherProps } = props;
 
   return (
-    <ul>
+    <ul {...otherProps}>
       {results.map(result => (
         <li key={result.id}>
           <Result {...result} />

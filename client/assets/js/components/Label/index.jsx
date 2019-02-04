@@ -2,10 +2,13 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const Label = (props) => {
-  const { children, htmlFor } = props;
+  const { children, htmlFor, ...otherProps } = props;
 
   return (
-    <label htmlFor={htmlFor}>
+    <label
+      htmlFor={htmlFor}
+      {...otherProps}
+    >
       {children}
     </label>
   );
@@ -13,12 +16,11 @@ const Label = (props) => {
 
 Label.propTypes = {
   children: PropTypes.node,
-  htmlFor: PropTypes.string,
+  htmlFor: PropTypes.string.isRequired,
 };
 
 Label.defaultProps = {
   children: null,
-  htmlFor: '',
 };
 
 export default Label;

@@ -6,7 +6,7 @@ import styles from './style.module.css';
 
 const City = (props) => {
   const {
-    className, id, main, name,
+    className, id, main, name, ...otherProps
   } = props;
 
   return (
@@ -15,6 +15,7 @@ const City = (props) => {
         [styles['city--cold']]: (main.temp <= 0),
         [styles['city--warm']]: (main.temp >= 15),
       })}
+      {...otherProps}
     >
       <Link to={`/cities/${id}`}>
         {main.temp}

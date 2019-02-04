@@ -3,10 +3,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Navigation = (props) => {
-  const { routes } = props;
+  const { routes, ...otherProps } = props;
 
   return (
-    <nav>
+    <nav {...otherProps}>
       <ul>
         {routes.map(route => (
           <li key={route.path}>

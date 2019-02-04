@@ -4,11 +4,11 @@ import React from 'react';
 
 const Weather = (props) => {
   const {
-    dt, main, weather,
+    dt, main, weather, ...otherProps
   } = props;
 
   return (
-    <div>
+    <div {...otherProps}>
       {format(dt * 1000, 'YYYY-MM-DD hh:mm')}
       <div>
         Temp:

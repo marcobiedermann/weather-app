@@ -1,13 +1,17 @@
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import City from '../City';
 import styles from './style.module.css';
 
 const Cities = (props) => {
-  const { cities } = props;
+  const { cities, className, ...otherProps } = props;
 
   return (
-    <ul className={styles.cities}>
+    <ul
+      className={classNames(className, styles.cities)}
+      {...otherProps}
+    >
       {cities.map(city => (
         <li key={city.id}>
           <City {...city} />
@@ -19,10 +23,12 @@ const Cities = (props) => {
 
 Cities.propTypes = {
   cities: PropTypes.arrayOf(PropTypes.shape()),
+  className: PropTypes.string,
 };
 
 Cities.defaultProps = {
   cities: [],
+  className: '',
 };
 
 export default Cities;

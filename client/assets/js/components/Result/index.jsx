@@ -3,11 +3,11 @@ import React from 'react';
 
 const Result = (props) => {
   const {
-    addCity, main, name, sys,
+    addCity, main, name, sys, ...otherProps
   } = props;
 
   return (
-    <div>
+    <div {...otherProps}>
       <h3>
         {name}
         ,

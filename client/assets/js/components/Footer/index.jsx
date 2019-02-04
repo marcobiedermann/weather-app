@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 const Footer = (props) => {
-  const { children } = props;
+  const { children, ...otherProps } = props;
 
   return (
-    <div>
+    <div {...otherProps}>
       {children}
     </div>
   );
