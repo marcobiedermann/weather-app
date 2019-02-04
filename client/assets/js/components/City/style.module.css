@@ -1,12 +1,12 @@
 .city {
   background-color: #9072ee;
-  color: #fff;
   border-radius: 1em;
+  color: #fff;
   padding: 1em;
 }
 
 .city--cold {
-  background-color: #5f6Af4;
+  background-color: #5f6af4;
 }
 
 .city--warm {
