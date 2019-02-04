@@ -1,4 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
+
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpackMerge = require('webpack-merge');
 const baseConfig = require('./webpack.config');
@@ -13,7 +15,7 @@ module.exports = webpackMerge(baseConfig, {
         exclude: /node_modules/,
         use: [
           {
-            loader: 'style-loader',
+            loader: MiniCssExtractPlugin.loader,
           },
           {
             loader: 'css-loader',
@@ -61,6 +63,9 @@ module.exports = webpackMerge(baseConfig, {
         useShortDoctype: true,
       },
       template: 'client/index.html',
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'assets/css/[name].css',
     }),
   ],
 });
