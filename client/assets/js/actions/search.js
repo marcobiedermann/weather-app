@@ -1,12 +1,7 @@
 import { SEARCH_FETCH } from '../constants/action-types';
 import { API_BASE, API_KEY } from '../constants/open-weather-map';
-import handleError from '../utilities/errors';
-
-function param(obj) {
-  return Object.entries(obj)
-    .map(([key, val]) => `${key}=${encodeURIComponent(val)}`)
-    .join('&');
-}
+import { handleError } from '../utilities/errors';
+import { param } from '../utilities/uri';
 
 export const fetchSearchFulfilled = result => ({
   type: `${SEARCH_FETCH}_FULFILLED`,
