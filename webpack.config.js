@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const dotenv = require('dotenv');
 
-const env = dotenv.config().parsed;
+const env = dotenv.config().parsed || process.env;
 
 const envKeys = obj => Object.keys(obj).reduce(
   (accumulator, key) => ({
