@@ -7,10 +7,6 @@
   padding: 0;
 }
 
-.cities > li {
-  position: relative;
-}
-
 .cities > li button {
   background-color: #fff;
   border-radius: 50%;

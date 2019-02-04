@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { removeCity } from '../../../actions/cities';
+import Card from '../../../components/Card';
 import City from '../../../components/City';
 import * as routes from '../../../constants/routes';
 import styles from './style.module.css';
@@ -16,12 +17,16 @@ const EditPage = (props) => {
       <ul className={styles.cities}>
         {cities.map(city => (
           <li key={city.id}>
-            <City {...city} />
-            <button type="button" onClick={() => removeCity(city.id)}>x</button>
+            <Card>
+              <City {...city} />
+              <button type="button" onClick={() => removeCity(city.id)}>x</button>
+            </Card>
           </li>
         ))}
         <li>
-          <Link to={routes.SEARCH.path}>Add</Link>
+          <Card>
+            <Link to={routes.SEARCH.path}>Add</Link>
+          </Card>
         </li>
       </ul>
     </div>
