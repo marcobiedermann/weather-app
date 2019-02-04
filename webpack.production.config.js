@@ -25,6 +25,12 @@ module.exports = webpackMerge(baseConfig, {
               sourceMap: true,
             },
           },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
         ],
       },
     ],
