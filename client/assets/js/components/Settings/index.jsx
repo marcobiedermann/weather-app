@@ -2,7 +2,7 @@ import { Field, Form, withFormik } from 'formik';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Label from '../Label';
-import { languages, units } from '../../constants/languages';
+import { languages, units } from '../../constants/localization';
 
 const Settings = (props) => {
   const { isSubmitting } = props;
