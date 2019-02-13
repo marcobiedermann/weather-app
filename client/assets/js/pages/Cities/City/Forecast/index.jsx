@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { fetchForecastById } from '../../../../actions/forecast';
@@ -16,6 +17,9 @@ class ForecastPage extends Component {
 
     return (
       <div>
+        <Helmet>
+          <title>Forecast</title>
+        </Helmet>
         <ul>
           {forecast.list.map(item => (
             <li key={item.dt}>

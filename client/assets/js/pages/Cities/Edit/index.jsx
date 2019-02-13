@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
@@ -14,6 +15,9 @@ const EditPage = (props) => {
 
   return (
     <div>
+      <Helmet>
+        <title>Edit</title>
+      </Helmet>
       <ul className={styles.cities}>
         {cities.map(city => (
           <li key={city.id}>

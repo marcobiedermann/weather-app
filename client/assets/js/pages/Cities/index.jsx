@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Link, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CityPage from './City';
@@ -17,6 +18,9 @@ const CitiesPage = (props) => {
         path={match.path}
         render={() => (
           <div>
+            <Helmet>
+              <title>Cities</title>
+            </Helmet>
             <Cities cities={cities} />
             <Link to={`${match.path}/edit`}>Edit</Link>
           </div>

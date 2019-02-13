@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import Results from '../../components/Results';
 import Search from '../../containers/Search';
@@ -9,6 +10,9 @@ const SearchPage = (props) => {
 
   return (
     <div>
+      <Helmet>
+        <title>Search</title>
+      </Helmet>
       <Search />
       <Results results={search.list} />
     </div>
