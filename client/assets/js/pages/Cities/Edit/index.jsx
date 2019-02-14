@@ -10,7 +10,7 @@ import City from '../../../components/City';
 import * as routes from '../../../constants/routes';
 import styles from './style.module.css';
 
-const EditPage = (props) => {
+const EditPage = props => {
   const { cities, removeCity } = props;
 
   return (
@@ -23,7 +23,9 @@ const EditPage = (props) => {
           <li key={city.id}>
             <Card>
               <City {...city} />
-              <button type="button" onClick={() => removeCity(city.id)}>x</button>
+              <button type="button" onClick={() => removeCity(city.id)}>
+                x
+              </button>
             </Card>
           </li>
         ))}
@@ -51,12 +53,13 @@ const mapStateToProps = ({ cities }) => ({
   cities,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators(
-  {
-    removeCity,
-  },
-  dispatch,
-);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      removeCity,
+    },
+    dispatch,
+  );
 
 export default connect(
   mapStateToProps,

@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import Results from '../../components/Results';
 import Search from '../../containers/Search';
 
-const SearchPage = (props) => {
+const SearchPage = props => {
   const { search } = props;
 
   return (
@@ -31,6 +31,4 @@ const mapStateToProps = ({ search }) => ({
   search,
 });
 
-export default connect(
-  mapStateToProps,
-)(SearchPage);
+export default connect(mapStateToProps)(SearchPage);

@@ -22,9 +22,7 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new Dotenv(),
-  ],
+  plugins: [new Dotenv()],
   resolve: {
     extensions: ['.js', '.jsx'],
   },

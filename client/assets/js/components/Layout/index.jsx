@@ -8,32 +8,21 @@ import Navigation from '../Navigation';
 import * as routes from '../../constants/routes';
 import './style.module.css';
 
-const Layout = (props) => {
+const Layout = props => {
   const { children, ...otherProps } = props;
 
   return (
     <div {...otherProps}>
       <Header>
         <Grid>
-          <Navigation
-            routes={[
-              routes.INDEX,
-              routes.CITIES,
-              routes.SEARCH,
-              routes.SETTINGS,
-            ]}
-          />
+          <Navigation routes={[routes.INDEX, routes.CITIES, routes.SEARCH, routes.SETTINGS]} />
         </Grid>
       </Header>
       <Main>
-        <Grid>
-          {children}
-        </Grid>
+        <Grid>{children}</Grid>
       </Main>
       <Footer>
-        <Grid>
-          FOOTER
-        </Grid>
+        <Grid>FOOTER</Grid>
       </Footer>
     </div>
   );

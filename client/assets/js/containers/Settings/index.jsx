@@ -8,12 +8,13 @@ const mapStateToProps = state => ({
   unit: state.settings.unit,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators(
-  {
-    updateSettings,
-  },
-  dispatch,
-);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      updateSettings,
+    },
+    dispatch,
+  );
 
 export default connect(
   mapStateToProps,

@@ -1,14 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const Label = (props) => {
+const Label = props => {
   const { children, htmlFor, ...otherProps } = props;
 
   return (
-    <label
-      htmlFor={htmlFor}
-      {...otherProps}
-    >
+    <label htmlFor={htmlFor} {...otherProps}>
       {children}
     </label>
   );

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Navigation = (props) => {
+const Navigation = props => {
   const { routes, ...otherProps } = props;
 
   return (

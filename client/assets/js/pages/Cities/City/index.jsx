@@ -55,12 +55,13 @@ const mapStateToProps = state => ({
   weather: state.weather,
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators(
-  {
-    fetchWeatherById,
-  },
-  dispatch,
-);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      fetchWeatherById,
+    },
+    dispatch,
+  );
 
 export default connect(
   mapStateToProps,

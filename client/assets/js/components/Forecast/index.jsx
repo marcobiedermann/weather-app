@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Weather from '../Weather';
 
-const Forecast = (props) => {
+const Forecast = props => {
   const { list, ...otherProps } = props;
 
   return (

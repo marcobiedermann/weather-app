@@ -6,13 +6,14 @@ import search from './search';
 import settings from './settings';
 import weather from './weather';
 
-const reducers = history => combineReducers({
-  cities,
-  forecast,
-  router: connectRouter(history),
-  search,
-  settings,
-  weather,
-});
+const reducers = history =>
+  combineReducers({
+    cities,
+    forecast,
+    router: connectRouter(history),
+    search,
+    settings,
+    weather,
+  });
 
 export default reducers;

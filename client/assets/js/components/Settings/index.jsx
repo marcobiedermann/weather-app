@@ -4,7 +4,7 @@ import React from 'react';
 import Label from '../Label';
 import { languages, units } from '../../constants/localization';
 
-const Settings = (props) => {
+const Settings = props => {
   const { isSubmitting } = props;
 
   return (

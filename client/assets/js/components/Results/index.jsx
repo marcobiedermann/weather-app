@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Result from '../../containers/Result';
 
-const Results = (props) => {
+const Results = props => {
   const { results, ...otherProps } = props;
 
   return (

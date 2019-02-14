@@ -14,9 +14,7 @@ const initialState = {
 };
 
 const persistConfig = {
-  blacklist: [
-    'router',
-  ],
+  blacklist: ['router'],
   key: 'root',
   storage,
 };
@@ -29,7 +27,4 @@ const store = createStore(persistedReducer, initialState, enhancer);
 const persistor = persistStore(store);
 
 export default store;
-export {
-  history,
-  persistor,
-};
+export { history, persistor };

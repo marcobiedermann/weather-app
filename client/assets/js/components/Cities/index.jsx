@@ -4,14 +4,11 @@ import React from 'react';
 import City from '../City';
 import styles from './style.module.css';
 
-const Cities = (props) => {
+const Cities = props => {
   const { cities, className, ...otherProps } = props;
 
   return (
-    <ul
-      className={classNames(className, styles.cities)}
-      {...otherProps}
-    >
+    <ul className={classNames(className, styles.cities)} {...otherProps}>
       {cities.map(city => (
         <li key={city.id}>
           <City {...city} />

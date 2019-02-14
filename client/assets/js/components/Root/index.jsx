@@ -5,7 +5,7 @@ import Loader from '../Loader';
 import Router from '../Router';
 import store, { persistor } from '../../store';
 
-const Root = (props) => {
+const Root = props => {
   const { ...otherProps } = props;
 
   return (

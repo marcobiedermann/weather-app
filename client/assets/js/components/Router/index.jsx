@@ -9,8 +9,7 @@ import SearchPage from '../../pages/Search';
 import SettingsPage from '../../pages/Settings';
 import { history } from '../../store';
 
-
-const Router = (props) => {
+const Router = props => {
   const { ...otherProps } = props;
 
   return (
