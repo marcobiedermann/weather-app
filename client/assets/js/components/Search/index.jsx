@@ -1,9 +1,11 @@
 import { Field, Form, withFormik } from 'formik';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Search = (props) => {
   const { isSubmitting } = props;
+  const { t } = useTranslation();
 
   return (
     <Form>
@@ -12,7 +14,7 @@ const Search = (props) => {
       </div>
       <div>
         <button type="submit" disabled={isSubmitting}>
-          Search
+          {t('translation:search')}
         </button>
       </div>
     </Form>

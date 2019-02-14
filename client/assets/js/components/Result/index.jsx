@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Result = (props) => {
   const {
     addCity, main, name, sys, ...otherProps
   } = props;
+  const { t } = useTranslation();
 
   return (
     <div {...otherProps}>
@@ -16,7 +18,7 @@ const Result = (props) => {
       </h3>
       {main.temp}
 
-      <button type="button" onClick={() => addCity(props)}>Add</button>
+      <button type="button" onClick={() => addCity(props)}>{t('translation:add')}</button>
     </div>
   );
 };
