@@ -4,9 +4,9 @@ import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
-import ForecastPage from './Forecast';
 import { fetchWeatherById } from '../../../actions/weather';
 import Weather from '../../../components/Weather';
+import ForecastPage from './Forecast';
 
 class CityPage extends Component {
   componentDidMount() {
@@ -40,6 +40,9 @@ class CityPage extends Component {
 CityPage.propTypes = {
   fetchWeatherById: PropTypes.func,
   match: PropTypes.shape({
+    params: PropTypes.shape({
+      cityId: PropTypes.string,
+    }),
     path: PropTypes.string,
   }),
   weather: PropTypes.shape(),

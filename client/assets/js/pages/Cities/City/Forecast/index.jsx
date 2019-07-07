@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { fetchForecastById } from '../../../../actions/forecast';
 
 class ForecastPage extends Component {
@@ -60,6 +60,9 @@ ForecastPage.propTypes = {
   }),
   fetchForecastById: PropTypes.func,
   match: PropTypes.shape({
+    params: PropTypes.shape({
+      cityId: PropTypes.string,
+    }),
     path: PropTypes.string,
   }),
 };
