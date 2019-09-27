@@ -23,8 +23,9 @@ module.exports = webpackMerge(baseConfig, {
           {
             loader: 'css-loader',
             options: {
-              localIdentName: '[local]',
-              modules: true,
+              modules: {
+                localIdentName: '[local]',
+              },
               sourceMap: true,
             },
           },
