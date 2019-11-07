@@ -62,7 +62,7 @@
     "@sentry/browser": "5.7.1",
     "classnames": "2.2.6",
     "connected-react-router": "6.5.2",
-    "date-fns": "2.6.0",
+    "date-fns": "2.7.0",
     "formik": "2.0.3",
     "history": "4.10.1",
     "i18next": "19.0.0",
