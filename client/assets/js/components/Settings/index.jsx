@@ -4,7 +4,7 @@ import React from 'react';
 import Label from '../Label';
 import { languages, units } from '../../constants/localization';
 
-const Settings = props => {
+const Settings = (props) => {
   const { isSubmitting } = props;
 
   return (
@@ -12,7 +12,7 @@ const Settings = props => {
       <div>
         <Label htmlFor="language">Language</Label>
         <Field component="select" name="language">
-          {languages.map(language => (
+          {languages.map((language) => (
             <option value={language.id} key={language.id}>
               {language.name}
             </option>
@@ -22,7 +22,7 @@ const Settings = props => {
       <div>
         <Label htmlFor="unit">Unit</Label>
         <Field component="select" name="unit">
-          {units.map(unit => (
+          {units.map((unit) => (
             <option value={unit.id} key={unit.id}>
               {unit.name}
             </option>
@@ -51,7 +51,7 @@ export default withFormik({
     props.updateSettings(values);
     setSubmitting(false);
   },
-  mapPropsToValues: props => ({
+  mapPropsToValues: (props) => ({
     language: props.language,
     unit: props.unit,
   }),

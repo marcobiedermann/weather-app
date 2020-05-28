@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const Main = props => {
+const Main = (props) => {
   const { children, ...otherProps } = props;
 
   return <main {...otherProps}>{children}</main>;

@@ -2,12 +2,12 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Result from '../../containers/Result';
 
-const Results = props => {
+const Results = (props) => {
   const { results, ...otherProps } = props;
 
   return (
     <ul {...otherProps}>
-      {results.map(result => (
+      {results.map((result) => (
         <li key={result.id}>
           <Result {...result} />
         </li>

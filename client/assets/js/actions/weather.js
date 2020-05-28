@@ -3,7 +3,7 @@ import { API_BASE, API_KEY } from '../constants/open-weather-map';
 import { handleError } from '../utilities/errors';
 import { param } from '../utilities/uri';
 
-export const fetchWeatherByIdFulfilled = weather => ({
+export const fetchWeatherByIdFulfilled = (weather) => ({
   type: `${WEATHER_FETCH}_FULFILLED`,
   payload: weather,
 });
@@ -12,13 +12,13 @@ export const fetchWeatherByIdPending = () => ({
   type: `${WEATHER_FETCH}_PENDING`,
 });
 
-export const fetchWeatherByIdRejected = error => ({
+export const fetchWeatherByIdRejected = (error) => ({
   type: `${WEATHER_FETCH}_REJECTED`,
   payload: error,
   error: true,
 });
 
-export const fetchWeatherById = id => async (dispatch, getState) => {
+export const fetchWeatherById = (id) => async (dispatch, getState) => {
   const { settings } = getState();
   const defaultParams = {
     ...settings,

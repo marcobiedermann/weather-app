@@ -6,7 +6,7 @@ import search from './search';
 import settings from './settings';
 import weather from './weather';
 
-const reducers = history =>
+const reducers = (history) =>
   combineReducers({
     cities,
     forecast,

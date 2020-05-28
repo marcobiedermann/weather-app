@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { fetchSearch } from '../../actions/search';
 import Search from '../../components/Search';
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       fetchSearch,
@@ -11,7 +11,4 @@ const mapDispatchToProps = dispatch =>
     dispatch,
   );
 
-export default connect(
-  null,
-  mapDispatchToProps,
-)(Search);
+export default connect(null, mapDispatchToProps)(Search);

@@ -8,7 +8,7 @@ import Navigation from '../Navigation';
 import * as routes from '../../constants/routes';
 import './style.module.css';
 
-const Layout = props => {
+const Layout = (props) => {
   const { children, ...otherProps } = props;
 
   return (

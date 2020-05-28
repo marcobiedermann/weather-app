@@ -2,7 +2,7 @@ import format from 'date-fns/format';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const Weather = props => {
+const Weather = (props) => {
   const { dt, main, name, weather, ...otherProps } = props;
 
   return (
@@ -12,7 +12,7 @@ const Weather = props => {
       <div>Temp: {main.temp}</div>
       {weather && (
         <ul>
-          {weather.map(weather => (
+          {weather.map((weather) => (
             <li key={weather.id}>
               {weather.description}
               <img

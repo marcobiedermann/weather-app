@@ -10,7 +10,7 @@ import City from '../../../components/City';
 import * as routes from '../../../constants/routes';
 import styles from './style.module.css';
 
-const EditPage = props => {
+const EditPage = (props) => {
   const { cities, removeCity } = props;
 
   return (
@@ -19,7 +19,7 @@ const EditPage = props => {
         <title>Edit</title>
       </Helmet>
       <ul className={styles.cities}>
-        {cities.map(city => (
+        {cities.map((city) => (
           <li key={city.id}>
             <Card>
               <City {...city} />
@@ -53,7 +53,7 @@ const mapStateToProps = ({ cities }) => ({
   cities,
 });
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       removeCity,
@@ -61,7 +61,4 @@ const mapDispatchToProps = dispatch =>
     dispatch,
   );
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(EditPage);
+export default connect(mapStateToProps, mapDispatchToProps)(EditPage);

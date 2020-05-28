@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const Label = props => {
+const Label = (props) => {
   const { children, htmlFor, ...otherProps } = props;
 
   return (

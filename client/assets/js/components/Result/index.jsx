@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-const Result = props => {
+const Result = (props) => {
   const { addCity, main, name, sys, ...otherProps } = props;
   const { t } = useTranslation();
 

@@ -3,7 +3,7 @@ import { API_BASE, API_KEY } from '../constants/open-weather-map';
 import { handleError } from '../utilities/errors';
 import { param } from '../utilities/uri';
 
-export const fetchSearchFulfilled = result => ({
+export const fetchSearchFulfilled = (result) => ({
   type: `${SEARCH_FETCH}_FULFILLED`,
   payload: result,
 });
@@ -12,13 +12,13 @@ export const fetchSearchPending = () => ({
   type: `${SEARCH_FETCH}_PENDING`,
 });
 
-export const fetchSearchRejected = error => ({
+export const fetchSearchRejected = (error) => ({
   type: `${SEARCH_FETCH}_REJECTED`,
   payload: error,
   error: true,
 });
 
-export const fetchSearch = query => async (dispatch, getState) => {
+export const fetchSearch = (query) => async (dispatch, getState) => {
   const { settings } = getState();
   const defaultParams = {
     ...settings,

@@ -8,7 +8,7 @@ import CityPage from './City';
 import EditPage from './Edit';
 import Cities from '../../components/Cities';
 
-const CitiesPage = props => {
+const CitiesPage = (props) => {
   const { cities, match } = props;
   const { t } = useTranslation();
 

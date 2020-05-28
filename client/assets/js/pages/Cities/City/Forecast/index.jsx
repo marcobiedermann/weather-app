@@ -21,7 +21,7 @@ class ForecastPage extends Component {
           <title>Forecast</title>
         </Helmet>
         <ul>
-          {forecast.list.map(item => (
+          {forecast.list.map((item) => (
             <li key={item.dt}>
               <div>Min: {item.temp.min}</div>
               <div>Max: {item.temp.max}</div>
@@ -73,11 +73,11 @@ ForecastPage.defaultProps = {
   match: null,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   forecast: state.forecast,
 });
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       fetchForecastById,
@@ -85,7 +85,4 @@ const mapDispatchToProps = dispatch =>
     dispatch,
   );
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(ForecastPage);
+export default connect(mapStateToProps, mapDispatchToProps)(ForecastPage);

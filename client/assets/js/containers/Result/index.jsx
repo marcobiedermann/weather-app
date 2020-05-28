@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { addCity } from '../../actions/cities';
 import Result from '../../components/Result';
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       addCity,
@@ -11,7 +11,4 @@ const mapDispatchToProps = dispatch =>
     dispatch,
   );
 
-export default connect(
-  null,
-  mapDispatchToProps,
-)(Result);
+export default connect(null, mapDispatchToProps)(Result);

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styles from './style.module.css';
 
-const Card = props => {
+const Card = (props) => {
   const { children, className, ...otherProps } = props;
 
   return (

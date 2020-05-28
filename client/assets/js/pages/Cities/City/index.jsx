@@ -54,11 +54,11 @@ CityPage.defaultProps = {
   weather: null,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   weather: state.weather,
 });
 
-const mapDispatchToProps = dispatch =>
+const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       fetchWeatherById,
@@ -66,7 +66,4 @@ const mapDispatchToProps = dispatch =>
     dispatch,
   );
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(CityPage);
+export default connect(mapStateToProps, mapDispatchToProps)(CityPage);

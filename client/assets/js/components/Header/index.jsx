@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const Header = props => {
+const Header = (props) => {
   const { children, ...otherProps } = props;
 
   return <header {...otherProps}>{children}</header>;
