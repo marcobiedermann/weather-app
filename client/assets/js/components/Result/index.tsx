@@ -1,13 +1,23 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const Result = (props) => {
-  const { addCity, main, name, sys, ...otherProps } = props;
+export interface ResultProps {
+  addCity: () => void;
+  main: {
+    temp: number;
+  };
+  name: string;
+  sys: {
+    country: string;
+  };
+}
+
+const Result: FC<ResultProps> = (props) => {
+  const { addCity, main, name, sys } = props;
   const { t } = useTranslation();
 
   return (
-    <div {...otherProps}>
+    <div>
       <h3>
         {name}, {sys.country}
       </h3>
@@ -18,20 +28,6 @@ const Result = (props) => {
       </button>
     </div>
   );
-};
-
-Result.propTypes = {
-  addCity: PropTypes.func,
-  main: PropTypes.shape(),
-  name: PropTypes.string,
-  sys: PropTypes.shape(),
-};
-
-Result.defaultProps = {
-  addCity: () => {},
-  main: null,
-  name: '',
-  sys: null,
 };
 
 export default Result;

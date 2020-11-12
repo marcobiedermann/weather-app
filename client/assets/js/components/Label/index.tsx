@@ -1,23 +1,11 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { FC } from 'react';
 
-const Label = (props) => {
-  const { children, htmlFor, ...otherProps } = props;
+export interface LabelProps {
+  htmlFor: string;
+}
 
-  return (
-    <label htmlFor={htmlFor} {...otherProps}>
-      {children}
-    </label>
-  );
-};
-
-Label.propTypes = {
-  children: PropTypes.node,
-  htmlFor: PropTypes.string.isRequired,
-};
-
-Label.defaultProps = {
-  children: null,
+const Label: FC<LabelProps> = (props) => {
+  return <label {...props} />;
 };
 
 export default Label;

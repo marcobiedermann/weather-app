@@ -1,69 +1,35 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
-import { connect } from 'react-redux';
-import { Route, Switch } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
-import { fetchWeatherById } from '../../../actions/weather';
+import { Route, Switch, useParams, useRouteMatch } from 'react-router-dom';
 import Weather from '../../../components/Weather';
 import ForecastPage from './Forecast';
 
-class CityPage extends Component {
-  componentDidMount() {
-    const { fetchWeatherById, match } = this.props;
-
-    fetchWeatherById(match.params.cityId);
-  }
-
-  render() {
-    const { match, weather } = this.props;
-
-    return (
-      <Switch>
-        <Route path={`${match.path}/forecast`} component={ForecastPage} />
-        <Route
-          path={match.path}
-          render={() => (
-            <div>
-              <Helmet>
-                <title>{weather.name}</title>
-              </Helmet>
-              <Weather {...weather} />
-            </div>
-          )}
-        />
-      </Switch>
-    );
-  }
+interface Params {
+  cityId: string;
 }
 
-CityPage.propTypes = {
-  fetchWeatherById: PropTypes.func,
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      cityId: PropTypes.string,
-    }),
-    path: PropTypes.string,
-  }),
-  weather: PropTypes.shape(),
-};
+const CityPage: FC = () => {
+  const { cityId } = useParams<Params>();
+  const { path } = useRouteMatch();
 
-CityPage.defaultProps = {
-  fetchWeatherById: () => {},
-  match: null,
-  weather: null,
-};
+  // const { data } = fetchWeatherById(cityId);
 
-const mapStateToProps = (state) => ({
-  weather: state.weather,
-});
-
-const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(
-    {
-      fetchWeatherById,
-    },
-    dispatch,
+  return (
+    <Switch>
+      <Route path={`${path}/forecast`} component={ForecastPage} />
+      <Route
+        path={path}
+        render={() => (
+          <div>
+            <Helmet>
+              <title>{weather.name}</title>
+            </Helmet>
+            <Weather {...weather} />
+          </div>
+        )}
+      />
+    </Switch>
   );
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(CityPage);
+export default CityPage;

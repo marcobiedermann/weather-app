@@ -1,14 +1,13 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { FC } from 'react';
+import * as routes from '../../constants/routes';
 import Footer from '../Footer';
 import Grid from '../Grid';
 import Header from '../Header';
 import Main from '../Main';
 import Navigation from '../Navigation';
-import * as routes from '../../constants/routes';
 import './style.module.css';
 
-const Layout = (props) => {
+const Layout: FC = (props) => {
   const { children, ...otherProps } = props;
 
   return (
@@ -26,14 +25,6 @@ const Layout = (props) => {
       </Footer>
     </div>
   );
-};
-
-Layout.propTypes = {
-  children: PropTypes.node,
-};
-
-Layout.defaultProps = {
-  children: null,
 };
 
 export default Layout;

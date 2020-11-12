@@ -1,8 +1,22 @@
 import format from 'date-fns/format';
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { FC } from 'react';
 
-const Weather = (props) => {
+interface Weather {
+  description: string;
+  icon: string;
+  id: number;
+}
+
+export interface WeatherProps {
+  dt: number;
+  main: {
+    temp: number;
+  };
+  name: string;
+  weather: Weather[];
+}
+
+const Weather: FC<WeatherProps> = (props) => {
   const { dt, main, name, weather, ...otherProps } = props;
 
   return (
@@ -25,28 +39,6 @@ const Weather = (props) => {
       )}
     </div>
   );
-};
-
-Weather.propTypes = {
-  dt: PropTypes.number,
-  main: PropTypes.shape({
-    temp: PropTypes.number,
-  }),
-  name: PropTypes.string,
-  weather: PropTypes.arrayOf(
-    PropTypes.shape({
-      icon: PropTypes.string,
-    }),
-  ),
-};
-
-Weather.defaultProps = {
-  dt: 0,
-  main: {
-    temp: 0,
-  },
-  name: '',
-  weather: [],
 };
 
 export default Weather;

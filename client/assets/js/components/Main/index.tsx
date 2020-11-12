@@ -1,18 +1,7 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { FC } from 'react';
 
-const Main = (props) => {
-  const { children, ...otherProps } = props;
-
-  return <main {...otherProps}>{children}</main>;
-};
-
-Main.propTypes = {
-  children: PropTypes.node,
-};
-
-Main.defaultProps = {
-  children: null,
+const Main: FC = (props) => {
+  return <main {...props} />;
 };
 
 export default Main;

@@ -1,18 +1,7 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { FC } from 'react';
 
-const Footer = (props) => {
-  const { children, ...otherProps } = props;
-
-  return <div {...otherProps}>{children}</div>;
-};
-
-Footer.propTypes = {
-  children: PropTypes.node,
-};
-
-Footer.defaultProps = {
-  children: null,
+const Footer: FC = (props) => {
+  return <div {...props} />;
 };
 
 export default Footer;

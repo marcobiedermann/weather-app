@@ -1,30 +1,30 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import { Link, Route, Switch } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { Link, Route, Switch, useRouteMatch } from 'react-router-dom';
+import Cities from '../../components/Cities';
 import CityPage from './City';
 import EditPage from './Edit';
-import Cities from '../../components/Cities';
 
-const CitiesPage = (props) => {
-  const { cities, match } = props;
+const CitiesPage: FC = () => {
+  const { path } = useRouteMatch();
   const { t } = useTranslation();
+
+  // const { data } = fetchCities()
 
   return (
     <Switch>
-      <Route path={`${match.path}/edit`} component={EditPage} />
-      <Route path={`${match.path}/:cityId`} component={CityPage} />
+      <Route path={`${path}/edit`} component={EditPage} />
+      <Route path={`${path}/:cityId`} component={CityPage} />
       <Route
-        path={match.path}
+        path={path}
         render={() => (
           <div>
             <Helmet>
               <title>Cities</title>
             </Helmet>
             <Cities cities={cities} />
-            <Link to={`${match.path}/edit`}>{t('translation:edit')}</Link>
+            <Link to={`${path}/edit`}>{t('translation:edit')}</Link>
           </div>
         )}
       />
@@ -32,20 +32,4 @@ const CitiesPage = (props) => {
   );
 };
 
-CitiesPage.propTypes = {
-  cities: PropTypes.arrayOf(PropTypes.shape()),
-  match: PropTypes.shape({
-    path: PropTypes.string,
-  }),
-};
-
-CitiesPage.defaultProps = {
-  cities: [],
-  match: null,
-};
-
-const mapStateToProps = ({ cities }) => ({
-  cities,
-});
-
-export default connect(mapStateToProps)(CitiesPage);
+export default CitiesPage;

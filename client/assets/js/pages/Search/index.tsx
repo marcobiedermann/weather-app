@@ -1,13 +1,9 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
-import { connect } from 'react-redux';
 import Results from '../../components/Results';
 import Search from '../../containers/Search';
 
-const SearchPage = (props) => {
-  const { search } = props;
-
+const SearchPage: FC = () => {
   return (
     <div>
       <Helmet>
@@ -19,16 +15,4 @@ const SearchPage = (props) => {
   );
 };
 
-SearchPage.propTypes = {
-  search: PropTypes.shape(),
-};
-
-SearchPage.defaultProps = {
-  search: null,
-};
-
-const mapStateToProps = ({ search }) => ({
-  search,
-});
-
-export default connect(mapStateToProps)(SearchPage);
+export default SearchPage;

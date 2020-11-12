@@ -1,19 +1,17 @@
 import { ConnectedRouter } from 'connected-react-router';
-import React from 'react';
+import React, { FC } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Layout from '../Layout';
 import * as routes from '../../constants/routes';
 import CitiesPage from '../../pages/Cities';
 import IndexPage from '../../pages/Index';
 import SearchPage from '../../pages/Search';
 import SettingsPage from '../../pages/Settings';
 import { history } from '../../store';
+import Layout from '../Layout';
 
-const Router = (props) => {
-  const { ...otherProps } = props;
-
+const Router: FC = () => {
   return (
-    <ConnectedRouter history={history} {...otherProps}>
+    <ConnectedRouter history={history}>
       <Layout>
         <Switch>
           <Route path={routes.CITIES.path} component={CitiesPage} />

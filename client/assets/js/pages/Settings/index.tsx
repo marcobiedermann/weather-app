@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
 import Settings from '../../containers/Settings';
 
-const SettingsPage = () => (
+const SettingsPage: FC = () => (
   <div>
     <Helmet>
       <title>Settings</title>

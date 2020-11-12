@@ -1,18 +1,13 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { bindActionCreators } from 'redux';
 import { removeCity } from '../../../actions/cities';
 import Card from '../../../components/Card';
 import City from '../../../components/City';
 import * as routes from '../../../constants/routes';
 import styles from './style.module.css';
 
-const EditPage = (props) => {
-  const { cities, removeCity } = props;
-
+const EditPage: FC = () => {
   return (
     <div>
       <Helmet>
@@ -39,26 +34,4 @@ const EditPage = (props) => {
   );
 };
 
-EditPage.propTypes = {
-  cities: PropTypes.arrayOf(PropTypes.shape()),
-  removeCity: PropTypes.func,
-};
-
-EditPage.defaultProps = {
-  cities: [],
-  removeCity: () => {},
-};
-
-const mapStateToProps = ({ cities }) => ({
-  cities,
-});
-
-const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(
-    {
-      removeCity,
-    },
-    dispatch,
-  );
-
-export default connect(mapStateToProps, mapDispatchToProps)(EditPage);
+export default EditPage;

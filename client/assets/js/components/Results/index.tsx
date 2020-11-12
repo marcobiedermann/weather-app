@@ -1,12 +1,15 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import Result from '../../containers/Result';
+import React, { FC } from 'react';
+import Result, { ResultProps } from '../../containers/Result';
 
-const Results = (props) => {
-  const { results, ...otherProps } = props;
+export interface ResultsProps {
+  results: ResultProps[];
+}
+
+const Results: FC<ResultsProps> = (props) => {
+  const { results } = props;
 
   return (
-    <ul {...otherProps}>
+    <ul>
       {results.map((result) => (
         <li key={result.id}>
           <Result {...result} />
@@ -14,14 +17,6 @@ const Results = (props) => {
       ))}
     </ul>
   );
-};
-
-Results.propTypes = {
-  results: PropTypes.arrayOf(PropTypes.shape()),
-};
-
-Results.defaultProps = {
-  results: [],
 };
 
 export default Results;

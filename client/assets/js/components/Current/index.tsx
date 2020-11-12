@@ -1,8 +1,11 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { FC } from 'react';
 import Weather from '../Weather';
 
-const Current = (props) => {
+export interface Current {
+  name: string;
+}
+
+const Current: FC<Current> = (props) => {
   const { name, ...otherProps } = props;
 
   return (
@@ -11,14 +14,6 @@ const Current = (props) => {
       <Weather {...otherProps} />
     </div>
   );
-};
-
-Current.propTypes = {
-  name: PropTypes.string,
-};
-
-Current.defaultProps = {
-  name: '',
 };
 
 export default Current;

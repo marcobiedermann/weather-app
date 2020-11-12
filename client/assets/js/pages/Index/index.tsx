@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
 
-const IndexPage = () => (
+const IndexPage: FC = () => (
   <div>
     <Helmet>
       <title>Weather App</title>

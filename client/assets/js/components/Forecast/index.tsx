@@ -1,8 +1,11 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import Weather from '../Weather';
+import React, { FC } from 'react';
+import Weather, { WeatherProps } from '../Weather';
 
-const Forecast = (props) => {
+export interface ForecaseProps {
+  list: WeatherProps[];
+}
+
+const Forecast: FC<ForecaseProps> = (props) => {
   const { list, ...otherProps } = props;
 
   return (
@@ -18,14 +21,6 @@ const Forecast = (props) => {
       )}
     </div>
   );
-};
-
-Forecast.propTypes = {
-  list: PropTypes.arrayOf(PropTypes.shape()),
-};
-
-Forecast.defaultProps = {
-  list: [],
 };
 
 export default Forecast;
