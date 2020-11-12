@@ -7,7 +7,7 @@
   "scripts": {
     "build": "webpack --config webpack.production.config.js",
     "develop": "webpack serve --config webpack.development.config.js",
-    "format": "prettier --write '**/*.{css,html,js,jsx,json}'",
+    "format": "prettier --write .",
     "lint:css": "stylelint '**/*.css'",
     "lint:js": "eslint '**/*.{js,jsx}'",
     "lint": "npm run lint:css && npm run lint:js",
