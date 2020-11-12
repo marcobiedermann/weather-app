@@ -3,10 +3,10 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpackMerge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const baseConfig = require('./webpack.config');
 
-module.exports = webpackMerge(baseConfig, {
+module.exports = merge(baseConfig, {
   devtool: 'source-map',
   mode: 'production',
   module: {
