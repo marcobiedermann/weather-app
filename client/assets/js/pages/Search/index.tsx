@@ -66,7 +66,7 @@ interface Values {
 }
 
 const SearchPage: FC = () => {
-  const [query, setQuery] = useState('London');
+  const [query, setQuery] = useState('London, GB');
   const { data, error } = useSWR<SearchPageQuery>(`/find?q=${query}`);
 
   if (error) {

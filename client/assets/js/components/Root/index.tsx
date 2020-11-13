@@ -13,6 +13,8 @@ async function fetcher(url: string) {
   const parsedUrl = parse(params);
   const defaultParams = {
     appid: API_KEY,
+    lang: 'en',
+    units: 'metric',
   };
   const query = stringify({
     ...defaultParams,
