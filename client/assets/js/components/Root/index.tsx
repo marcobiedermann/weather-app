@@ -1,3 +1,4 @@
+import { parse, stringify } from 'qs';
 import React, { FC, Suspense } from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -8,7 +9,16 @@ import Loader from '../Loader';
 import Router from '../Router';
 
 async function fetcher(url: string) {
-  const response = await fetch(`${API_BASE}${url}&appid=${API_KEY}`);
+  const [path, params] = url.split('?');
+  const parsedUrl = parse(params);
+  const defaultParams = {
+    appid: API_KEY,
+  };
+  const query = stringify({
+    ...defaultParams,
+    ...parsedUrl,
+  });
+  const response = await fetch(`${API_BASE}${path}?${query}`);
 
   if (!response.ok) {
     throw new Error(response.statusText);
