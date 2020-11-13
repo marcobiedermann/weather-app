@@ -701,6 +701,11 @@
         "signature": "7d466583ed85f4e1ce4f9c7c20619320e65e8d81bbca82f21f9ef796b1669994",
         "affectsGlobalScope": false
       },
+      "./client/assets/js/types/modules.d.ts": {
+        "version": "a28581027cdd65920470c32b94e0d76d575b1785a4079b1a8834a05e25f2199b",
+        "signature": "a28581027cdd65920470c32b94e0d76d575b1785a4079b1a8834a05e25f2199b",
+        "affectsGlobalScope": false
+      },
       "./node_modules/@types/anymatch/index.d.ts": {
         "version": "48b52264fa193879a074197839dbb4796fa07e86350ff888e5361e06aa46df76",
         "signature": "48b52264fa193879a074197839dbb4796fa07e86350ff888e5361e06aa46df76",
@@ -1117,15 +1122,18 @@
     },
     "referencedMap": {
       "./client/assets/js/components/card/index.tsx": [
+        "./client/assets/js/types/modules.d.ts",
         "./node_modules/@types/react/index.d.ts",
         "./node_modules/date-fns/typings.d.ts"
       ],
       "./client/assets/js/components/cities/index.tsx": [
         "./client/assets/js/components/city/index.tsx",
+        "./client/assets/js/types/modules.d.ts",
         "./node_modules/@types/react/index.d.ts",
         "./node_modules/date-fns/typings.d.ts"
       ],
       "./client/assets/js/components/city/index.tsx": [
+        "./client/assets/js/types/modules.d.ts",
         "./node_modules/@types/classnames/index.d.ts",
         "./node_modules/@types/react-router-dom/index.d.ts",
         "./node_modules/@types/react/index.d.ts",
@@ -1146,6 +1154,7 @@
         "./node_modules/date-fns/typings.d.ts"
       ],
       "./client/assets/js/components/grid/index.tsx": [
+        "./client/assets/js/types/modules.d.ts",
         "./node_modules/@types/react/index.d.ts",
         "./node_modules/date-fns/typings.d.ts"
       ],
@@ -1164,6 +1173,7 @@
         "./client/assets/js/components/main/index.tsx",
         "./client/assets/js/components/navigation/index.tsx",
         "./client/assets/js/constants/routes.ts",
+        "./client/assets/js/types/modules.d.ts",
         "./node_modules/@types/react/index.d.ts",
         "./node_modules/date-fns/typings.d.ts"
       ],
@@ -1277,6 +1287,7 @@
         "./client/assets/js/components/card/index.tsx",
         "./client/assets/js/components/city/index.tsx",
         "./client/assets/js/constants/routes.ts",
+        "./client/assets/js/types/modules.d.ts",
         "./node_modules/@types/react-helmet/index.d.ts",
         "./node_modules/@types/react-router-dom/index.d.ts",
         "./node_modules/@types/react/index.d.ts",
@@ -1329,6 +1340,9 @@
         "./client/assets/js/reducers/cities.ts",
         "./client/assets/js/reducers/settings.ts",
         "./node_modules/@reduxjs/toolkit/dist/typings.d.ts",
+        "./node_modules/date-fns/typings.d.ts"
+      ],
+      "./client/assets/js/types/modules.d.ts": [
         "./node_modules/date-fns/typings.d.ts"
       ],
       "./node_modules/@reduxjs/toolkit/dist/typings.d.ts": [
@@ -2212,6 +2226,9 @@
         "./node_modules/redux-thunk/index.d.ts",
         "./node_modules/redux/index.d.ts"
       ],
+      "./client/assets/js/types/modules.d.ts": [
+        "./node_modules/date-fns/typings.d.ts"
+      ],
       "./node_modules/@reduxjs/toolkit/dist/typings.d.ts": [
         "./node_modules/date-fns/typings.d.ts",
         "./node_modules/immer/dist/immer.d.ts",
@@ -2985,45 +3002,9 @@
       ]
     },
     "semanticDiagnosticsPerFile": [
-      [
-        "./client/assets/js/components/card/index.tsx",
-        [
-          {
-            "file": "./client/assets/js/components/card/index.tsx",
-            "start": 54,
-            "length": 20,
-            "messageText": "Cannot find module './style.module.css' or its corresponding type declarations.",
-            "category": 1,
-            "code": 2307
-          }
-        ]
-      ],
-      [
-        "./client/assets/js/components/cities/index.tsx",
-        [
-          {
-            "file": "./client/assets/js/components/cities/index.tsx",
-            "start": 97,
-            "length": 20,
-            "messageText": "Cannot find module './style.module.css' or its corresponding type declarations.",
-            "category": 1,
-            "code": 2307
-          }
-        ]
-      ],
-      [
-        "./client/assets/js/components/city/index.tsx",
-        [
-          {
-            "file": "./client/assets/js/components/city/index.tsx",
-            "start": 132,
-            "length": 20,
-            "messageText": "Cannot find module './style.module.css' or its corresponding type declarations.",
-            "category": 1,
-            "code": 2307
-          }
-        ]
-      ],
+      "./client/assets/js/components/card/index.tsx",
+      "./client/assets/js/components/cities/index.tsx",
+      "./client/assets/js/components/city/index.tsx",
       [
         "./client/assets/js/components/current/index.tsx",
         [
@@ -3039,19 +3020,7 @@
       ],
       "./client/assets/js/components/footer/index.tsx",
       "./client/assets/js/components/forecast/index.tsx",
-      [
-        "./client/assets/js/components/grid/index.tsx",
-        [
-          {
-            "file": "./client/assets/js/components/grid/index.tsx",
-            "start": 54,
-            "length": 20,
-            "messageText": "Cannot find module './style.module.css' or its corresponding type declarations.",
-            "category": 1,
-            "code": 2307
-          }
-        ]
-      ],
+      "./client/assets/js/components/grid/index.tsx",
       "./client/assets/js/components/header/index.tsx",
       "./client/assets/js/components/label/index.tsx",
       "./client/assets/js/components/layout/index.tsx",
@@ -3112,14 +3081,6 @@
       [
         "./client/assets/js/pages/cities/edit/index.tsx",
         [
-          {
-            "file": "./client/assets/js/pages/cities/edit/index.tsx",
-            "start": 277,
-            "length": 20,
-            "messageText": "Cannot find module './style.module.css' or its corresponding type declarations.",
-            "category": 1,
-            "code": 2307
-          },
           {
             "file": "./client/assets/js/pages/cities/edit/index.tsx",
             "start": 455,
@@ -3186,6 +3147,7 @@
       "./client/assets/js/reducers/cities.ts",
       "./client/assets/js/reducers/settings.ts",
       "./client/assets/js/store/index.ts",
+      "./client/assets/js/types/modules.d.ts",
       "./node_modules/@reduxjs/toolkit/dist/typings.d.ts",
       "./node_modules/@types/anymatch/index.d.ts",
       "./node_modules/@types/classnames/index.d.ts",
@@ -3511,6 +3473,10 @@
       ],
       [
         "./client/assets/js/store/index.ts",
+        1
+      ],
+      [
+        "./client/assets/js/types/modules.d.ts",
         1
       ],
       [
