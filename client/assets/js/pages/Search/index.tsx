@@ -3,23 +3,28 @@ import React, { FC, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import useSWR from 'swr';
 import Loader from '../../components/Loader';
-import Result from '../../components/Result';
+import Results from '../../components/Results';
 import Search from '../../components/Search';
 
 interface SearchPageQuery {
-  base: string;
-  clouds: Clouds;
-  cod: number;
-  coord: Coord;
-  dt: number;
+  message: string;
+  cod: string;
+  count: number;
+  list: List[];
+}
+
+interface List {
   id: number;
-  main: Main;
   name: string;
-  sys: Sys;
-  timezone: number;
-  visibility: number;
-  weather: Weather[];
+  coord: Coord;
+  main: Main;
+  dt: number;
   wind: Wind;
+  sys: Sys;
+  rain: null;
+  snow: null;
+  clouds: Clouds;
+  weather: Weather[];
 }
 
 interface Clouds {
@@ -32,32 +37,28 @@ interface Coord {
 }
 
 interface Main {
-  feels_like: number;
-  humidity: number;
-  pressure: number;
-  temp_max: number;
-  temp_min: number;
   temp: number;
+  feels_like: number;
+  temp_min: number;
+  temp_max: number;
+  pressure: number;
+  humidity: number;
 }
 
 interface Sys {
   country: string;
-  id: number;
-  sunrise: number;
-  sunset: number;
-  type: number;
 }
 
 interface Weather {
-  description: string;
-  icon: string;
   id: number;
   main: string;
+  description: string;
+  icon: string;
 }
 
 interface Wind {
-  deg: number;
   speed: number;
+  deg: number;
 }
 
 interface Values {
@@ -66,11 +67,15 @@ interface Values {
 
 const SearchPage: FC = () => {
   const [query, setQuery] = useState('London');
-  const { data, error } = useSWR<SearchPageQuery>(`/weather?q=${query}`);
+  const { data, error } = useSWR<SearchPageQuery>(`/find?q=${query}`);
 
   if (error) {
     return <div>Error: {error}</div>;
   }
+
+  const initialValues: Values = {
+    query,
+  };
 
   function onSubmit(values: Values, formikHelpers: FormikHelpers<Values>): void | Promise<any> {
     const { setSubmitting } = formikHelpers;
@@ -85,8 +90,8 @@ const SearchPage: FC = () => {
       <Helmet>
         <title>Search</title>
       </Helmet>
-      <Search onSubmit={onSubmit} />
-      {data ? <Result {...data} /> : <Loader />}
+      <Search initialValues={initialValues} onSubmit={onSubmit} />
+      {data ? <Results results={data.list} /> : <Loader />}
     </div>
   );
 };

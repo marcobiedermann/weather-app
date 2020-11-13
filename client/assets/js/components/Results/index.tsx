@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import Result, { ResultProps } from '../../containers/Result';
+import Result, { ResultProps } from '../Result';
 
 export interface ResultsProps {
   results: ResultProps[];

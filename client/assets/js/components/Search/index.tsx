@@ -7,20 +7,15 @@ interface Values {
 }
 
 export interface SearchProps {
+  initialValues: Values;
   onSubmit: (values: Values, formikHelpers: FormikHelpers<Values>) => void | Promise<any>;
 }
 
 const Search: FC<SearchProps> = (props) => {
-  const { onSubmit } = props;
   const { t } = useTranslation();
 
   return (
-    <Formik
-      initialValues={{
-        query: '',
-      }}
-      onSubmit={onSubmit}
-    >
+    <Formik {...props}>
       {({ isSubmitting }) => (
         <Form>
           <div>
