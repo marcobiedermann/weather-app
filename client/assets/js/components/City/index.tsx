@@ -1,31 +1,42 @@
-import classNames from 'classnames';
+import format from 'date-fns/format';
 import React, { FC } from 'react';
-import { Link } from 'react-router-dom';
-import styles from './style.module.css';
+
+interface Weather {
+  description: string;
+  icon: string;
+  id: number;
+}
 
 export interface CityProps {
-  id: number;
+  dt: number;
   main: {
     temp: number;
   };
   name: string;
+  weather: Weather[];
 }
 
 const City: FC<CityProps> = (props) => {
-  const { id, main, name, ...otherProps } = props;
+  const { dt, main, name, weather, ...otherProps } = props;
 
   return (
-    <div
-      className={classNames(styles.city, {
-        [styles['city--cold']]: main.temp <= 0,
-        [styles['city--warm']]: main.temp >= 15,
-      })}
-      {...otherProps}
-    >
-      <Link to={`/cities/${id}`}>
-        {main.temp} °C
-        <h2>{name}</h2>
-      </Link>
+    <div {...otherProps}>
+      <h1>{name}</h1>
+      {format(dt * 1000, 'yyyy-MM-dd hh:mm')}
+      <div>Temp: {main.temp}</div>
+      {weather && (
+        <ul>
+          {weather.map((weather) => (
+            <li key={weather.id}>
+              {weather.description}
+              <img
+                src={`https://openweathermap.org/img/w/${weather.icon}.png`}
+                alt={weather.description}
+              />
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

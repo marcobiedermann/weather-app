@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
 import { Route, Switch, useParams, useRouteMatch } from 'react-router-dom';
 import useSWR from 'swr';
+import City from '../../../components/City';
 import Loader from '../../../components/Loader';
-import Weather from '../../../components/Weather';
 import ForecastPage from './Forecast';
 
 interface Params {
@@ -87,7 +87,7 @@ const CityPage: FC = () => {
             <Helmet>
               <title>{data.name}</title>
             </Helmet>
-            <Weather {...data} />
+            <City {...data} />
           </div>
         )}
       />

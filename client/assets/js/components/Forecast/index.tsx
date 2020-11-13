@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import Weather, { WeatherProps } from '../Weather';
+import City, { CityProps } from '../City';
 
 export interface ForecaseProps {
-  list: WeatherProps[];
+  list: CityProps[];
 }
 
 const Forecast: FC<ForecaseProps> = (props) => {
@@ -12,9 +12,9 @@ const Forecast: FC<ForecaseProps> = (props) => {
     <div {...otherProps}>
       {list && (
         <ul>
-          {list.map((weather) => (
-            <li key={weather.dt}>
-              <Weather {...weather} />
+          {list.map((city) => (
+            <li key={city.dt}>
+              <City {...city} />
             </li>
           ))}
         </ul>

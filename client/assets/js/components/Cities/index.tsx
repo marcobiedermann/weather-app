@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
-import City, { CityProps } from '../City';
+import CityPreview, { CityPreviewProps } from '../CityPreview';
 import styles from './style.module.css';
 
 export interface CitiesProps {
-  cities: CityProps[];
+  cities: CityPreviewProps[];
 }
 
 const Cities: FC<CitiesProps> = (props) => {
@@ -13,7 +13,7 @@ const Cities: FC<CitiesProps> = (props) => {
     <ul className={styles.cities} {...otherProps}>
       {cities.map((city) => (
         <li key={city.id}>
-          <City {...city} />
+          <CityPreview {...city} />
         </li>
       ))}
     </ul>

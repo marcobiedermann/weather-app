@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import useSWR from 'swr';
 import Card from '../../../components/Card';
-import City from '../../../components/City';
+import City from '../../../components/CityPreview';
 import Loader from '../../../components/Loader';
 import * as routes from '../../../constants/routes';
 import { removeCity, selectCities } from '../../../reducers/cities';
