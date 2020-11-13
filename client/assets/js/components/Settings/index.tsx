@@ -1,23 +1,21 @@
-import { Field, Form, Formik } from 'formik';
+import { Field, Form, Formik, FormikHelpers } from 'formik';
 import React, { FC } from 'react';
 import { languages, units } from '../../constants/localization';
 import Label from '../Label';
 
-const Settings: FC = () => {
+interface Values {
+  language: string;
+  unit: string;
+}
+
+export interface SettingsProps {
+  initialValues: Values;
+  onSubmit: (values: Values, formikHelpers: FormikHelpers<Values>) => void | Promise<any>;
+}
+
+const Settings: FC<SettingsProps> = (props) => {
   return (
-    <Formik
-      initialValues={{
-        language: 'en',
-        unit: 'metric',
-      }}
-      onSubmit={(values, actions) => {
-        const { setSubmitting } = actions;
-
-        console.log({ values });
-
-        setSubmitting(false);
-      }}
-    >
+    <Formik {...props}>
       {({ isSubmitting }) => (
         <Form>
           <div>

@@ -1,8 +1,10 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
+import { addCity } from '../../reducers/cities';
 
 export interface ResultProps {
-  addCity: () => void;
+  id: number;
   main: {
     temp: number;
   };
@@ -13,7 +15,8 @@ export interface ResultProps {
 }
 
 const Result: FC<ResultProps> = (props) => {
-  const { addCity, main, name, sys } = props;
+  const { id, main, name, sys } = props;
+  const dispatch = useDispatch();
   const { t } = useTranslation();
 
   return (
@@ -23,7 +26,7 @@ const Result: FC<ResultProps> = (props) => {
       </h3>
       {main.temp}
 
-      <button type="button" onClick={() => addCity(props)}>
+      <button type="button" onClick={() => dispatch(addCity(id))}>
         {t('translation:add')}
       </button>
     </div>

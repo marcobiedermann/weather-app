@@ -1,10 +1,12 @@
 import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { Link, Route, Switch, useRouteMatch } from 'react-router-dom';
 import useSWR from 'swr';
 import Cities from '../../components/Cities';
 import Loader from '../../components/Loader';
+import { selectCities } from '../../reducers/cities';
 import CityPage from './City';
 import EditPage from './Edit';
 
@@ -64,9 +66,10 @@ interface Wind {
 }
 
 const CitiesPage: FC = () => {
+  const cities = useSelector(selectCities);
   const { path } = useRouteMatch();
   const { t } = useTranslation();
-  const { data, error } = useSWR<CitiesPageQuery>('/group?id=524901,703448,2643743');
+  const { data, error } = useSWR<CitiesPageQuery>(`/group?id=${cities.join(',')}`);
 
   if (error) {
     return <div>Error: {error}</div>;

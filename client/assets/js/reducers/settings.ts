@@ -2,22 +2,22 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
 
 interface SettingsState {
-  lang: string;
-  units: string;
+  language: string;
+  unit: string;
 }
 
 const initialState: SettingsState = {
-  lang: 'en',
-  units: 'metric',
+  language: 'en',
+  unit: 'metric',
 };
 
 export const settingsSlice = createSlice({
   name: 'settings',
   initialState,
   reducers: {
-    updateSettings: (state, action: PayloadAction<{ lang: string; units: string }>) => {
-      state.lang = action.payload.lang;
-      state.units = action.payload.units;
+    updateSettings: (state, action: PayloadAction<{ language: string; unit: string }>) => {
+      state.language = action.payload.language;
+      state.unit = action.payload.unit;
     },
   },
 });
