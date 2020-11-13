@@ -1,3 +1,5 @@
+/* eslint-disable import/no-cycle */
+
 import { configureStore } from '@reduxjs/toolkit';
 import cities from '../reducers/cities';
 import settings from '../reducers/settings';

@@ -12,6 +12,7 @@ interface Values {
 
 export interface SettingsProps {
   initialValues: Values;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onSubmit: (values: Values, formikHelpers: FormikHelpers<Values>) => void | Promise<any>;
 }
 

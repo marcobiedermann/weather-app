@@ -1,3 +1,6 @@
+/* eslint-disable import/no-cycle */
+/* eslint-disable no-param-reassign */
+
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
 
@@ -24,6 +27,6 @@ export const citiesSlice = createSlice({
 
 export const { addCity, removeCity } = citiesSlice.actions;
 
-export const selectCities = (state: RootState) => state.cities.cities;
+export const selectCities = (state: RootState): number[] => state.cities.cities;
 
 export default citiesSlice.reducer;

@@ -1,3 +1,6 @@
+/* eslint-disable import/no-cycle */
+/* eslint-disable no-param-reassign */
+
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
 
@@ -26,6 +29,6 @@ export const settingsSlice = createSlice({
 
 export const { updateSettings } = settingsSlice.actions;
 
-export const selectSettings = (state: RootState) => state.settings;
+export const selectSettings = (state: RootState): SettingsState => state.settings;
 
 export default settingsSlice.reducer;

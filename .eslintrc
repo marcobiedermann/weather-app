@@ -1,24 +1,65 @@
 {
-  "extends": ["airbnb", "prettier", "prettier/react"],
   "env": {
-    "browser": true
+    "browser": true,
+    "es2021": true,
+    "node": true
   },
-  "parser": "babel-eslint",
-  "plugins": ["prettier"],
+  "extends": [
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/typescript",
+    "plugin:react/recommended",
+    "prettier",
+    "prettier/react"
+  ],
+  "overrides": [
+    {
+      "files": ["**/*.tsx"],
+      "rules": {
+        "react/prop-types": "off"
+      }
+    }
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint"],
   "rules": {
-    "no-shadow": "off",
-    "jsx-a11y/label-has-for": [
-      2,
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "camelcase": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
       {
-        "components": ["Label"],
-        "required": {
-          "some": ["nesting", "id"]
-        },
-        "allowChildren": false
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
       }
     ],
-    "prettier/prettier": ["error"],
-    "quotes": "off",
-    "react/jsx-props-no-spreading": 0
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": ["**/*.test.tsx", "**/*config.js"]
+      }
+    ],
+    "no-use-before-define": "off",
+    "react/jsx-filename-extension": [
+      2,
+      {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    ],
+    "react/jsx-props-no-spreading": "off"
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    }
   }
 }

@@ -77,11 +77,11 @@ const SearchPage: FC = () => {
     query,
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   function onSubmit(values: Values, formikHelpers: FormikHelpers<Values>): void | Promise<any> {
     const { setSubmitting } = formikHelpers;
-    const { query } = values;
 
-    setQuery(query);
+    setQuery(values.query);
     setSubmitting(false);
   }
 

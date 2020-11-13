@@ -26,12 +26,12 @@ const City: FC<CityProps> = (props) => {
       <div>Temp: {main.temp}</div>
       {weather && (
         <ul>
-          {weather.map((weather) => (
-            <li key={weather.id}>
-              {weather.description}
+          {weather.map((entry) => (
+            <li key={entry.id}>
+              {entry.description}
               <img
-                src={`https://openweathermap.org/img/w/${weather.icon}.png`}
-                alt={weather.description}
+                src={`https://openweathermap.org/img/w/${entry.icon}.png`}
+                alt={entry.description}
               />
             </li>
           ))}

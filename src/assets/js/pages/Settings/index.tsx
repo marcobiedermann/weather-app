@@ -21,18 +21,11 @@ const SettingsPage: FC = () => {
     unit,
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   function onSubmit(values: Values, formikHelpers: FormikHelpers<Values>): void | Promise<any> {
     const { setSubmitting } = formikHelpers;
-    const { language, unit } = values;
 
-    console.log({ language, unit });
-    dispatch(
-      updateSettings({
-        language,
-        unit,
-      }),
-    );
-
+    dispatch(updateSettings(values));
     setSubmitting(false);
   }
 
