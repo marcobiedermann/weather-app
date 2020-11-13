@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
-import Settings from '../../containers/Settings';
+import Settings from '../../components/Settings';
 
 const SettingsPage: FC = () => (
   <div>

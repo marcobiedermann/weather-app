@@ -1,18 +1,29 @@
-import { SETTINGS_UPDATE } from '../constants/action-types';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { RootState } from '../store';
 
-const initialState = {};
-
-function settingsReducer(state = initialState, action) {
-  switch (action.type) {
-    case SETTINGS_UPDATE:
-      return {
-        ...state,
-        ...action.payload,
-      };
-
-    default:
-      return state;
-  }
+interface SettingsState {
+  lang: string;
+  units: string;
 }
 
-export default settingsReducer;
+const initialState: SettingsState = {
+  lang: 'en',
+  units: 'metric',
+};
+
+export const settingsSlice = createSlice({
+  name: 'settings',
+  initialState,
+  reducers: {
+    updateSettings: (state, action: PayloadAction<{ lang: string; units: string }>) => {
+      state.lang = action.payload.lang;
+      state.units = action.payload.units;
+    },
+  },
+});
+
+export const { updateSettings } = settingsSlice.actions;
+
+export const selectSettings = (state: RootState) => state.settings;
+
+export default settingsSlice.reducer;

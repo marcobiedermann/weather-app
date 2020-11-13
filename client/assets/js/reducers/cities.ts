@@ -1,18 +1,29 @@
-import { CITY_ADD, CITY_REMOVE } from '../constants/action-types';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { RootState } from '../store';
 
-const initialState = [];
-
-function citiesReducer(state = initialState, action) {
-  switch (action.type) {
-    case CITY_ADD:
-      return state.filter((city) => city.id !== action.payload.id).concat([action.payload]);
-
-    case CITY_REMOVE:
-      return state.filter((city) => city.id !== action.payload);
-
-    default:
-      return state;
-  }
+interface CitiesState {
+  cities: number[];
 }
 
-export default citiesReducer;
+const initialState: CitiesState = {
+  cities: [],
+};
+
+export const citiesSlice = createSlice({
+  name: 'cities',
+  initialState,
+  reducers: {
+    addCity: (state, action: PayloadAction<number>) => {
+      state.cities.push(action.payload);
+    },
+    removeCity: (state, action: PayloadAction<number>) => {
+      state.cities = state.cities.filter((city) => city !== action.payload);
+    },
+  },
+});
+
+export const { addCity, removeCity } = citiesSlice.actions;
+
+export const selectCities = (state: RootState) => state.cities;
+
+export default citiesSlice.reducer;

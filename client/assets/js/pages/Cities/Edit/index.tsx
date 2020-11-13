@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
-import { removeCity } from '../../../actions/cities';
 import Card from '../../../components/Card';
 import City from '../../../components/City';
 import * as routes from '../../../constants/routes';
@@ -18,9 +17,7 @@ const EditPage: FC = () => {
           <li key={city.id}>
             <Card>
               <City {...city} />
-              <button type="button" onClick={() => removeCity(city.id)}>
-                x
-              </button>
+              <button type="button">x</button>
             </Card>
           </li>
         ))}
