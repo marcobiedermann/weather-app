@@ -22,7 +22,7 @@ const Weather: FC<WeatherProps> = (props) => {
   return (
     <div {...otherProps}>
       <h1>{name}</h1>
-      {format(dt * 1000, 'YYYY-MM-DD hh:mm')}
+      {format(dt * 1000, 'yyyy-MM-dd hh:mm')}
       <div>Temp: {main.temp}</div>
       {weather && (
         <ul>

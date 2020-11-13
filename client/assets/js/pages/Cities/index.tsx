@@ -76,8 +76,6 @@ const CitiesPage: FC = () => {
     return <Loader />;
   }
 
-  console.log({ data });
-
   return (
     <Switch>
       <Route path={`${path}/edit`} component={EditPage} />
