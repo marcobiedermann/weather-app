@@ -5,9 +5,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import Settings from '../../components/Settings';
 import { selectSettings, updateSettings } from '../../reducers/settings';
 
+type Unit = 'metric' | 'imperial';
+
 interface Values {
   language: string;
-  unit: string;
+  unit: Unit;
 }
 
 const SettingsPage: FC = () => {

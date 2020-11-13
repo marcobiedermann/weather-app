@@ -3,9 +3,11 @@ import React, { FC } from 'react';
 import { languages, units } from '../../constants/localization';
 import Label from '../Label';
 
+type Unit = 'metric' | 'imperial';
+
 interface Values {
   language: string;
-  unit: string;
+  unit: Unit;
 }
 
 export interface SettingsProps {

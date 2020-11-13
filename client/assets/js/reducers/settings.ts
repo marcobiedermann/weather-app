@@ -1,9 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../store';
 
+type Unit = 'metric' | 'imperial';
+
 interface SettingsState {
   language: string;
-  unit: string;
+  unit: Unit;
 }
 
 const initialState: SettingsState = {
@@ -15,7 +17,7 @@ export const settingsSlice = createSlice({
   name: 'settings',
   initialState,
   reducers: {
-    updateSettings: (state, action: PayloadAction<{ language: string; unit: string }>) => {
+    updateSettings: (state, action: PayloadAction<{ language: string; unit: Unit }>) => {
       state.language = action.payload.language;
       state.unit = action.payload.unit;
     },
