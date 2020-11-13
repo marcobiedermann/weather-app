@@ -5,7 +5,7 @@ const baseConfig = require('./webpack.config');
 
 module.exports = merge(baseConfig, {
   devServer: {
-    contentBase: 'client',
+    contentBase: 'src',
     historyApiFallback: true,
     open: true,
   },
