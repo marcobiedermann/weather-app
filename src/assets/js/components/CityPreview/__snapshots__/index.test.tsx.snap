@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/CityPreview renders correctly 1`] = `
+<div
+  className="city city--cold"
+  dt={0}
+  weather={
+    Array [
+      Object {
+        "description": "",
+        "icon": "",
+        "id": 1,
+      },
+    ]
+  }
+>
+  <a
+    href="/cities/1"
+    onClick={[Function]}
+  >
+    0
+     °C
+    <h2>
+      
+    </h2>
+  </a>
+</div>
+`;

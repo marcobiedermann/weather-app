@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Search renders correctly 1`] = `
+<form
+  action="#"
+  onReset={[Function]}
+  onSubmit={[Function]}
+>
+  <div>
+    <input
+      name="query"
+      onBlur={[Function]}
+      onChange={[Function]}
+      value=""
+    />
+  </div>
+  <div>
+    <button
+      disabled={false}
+      type="submit"
+    >
+      translation:search
+    </button>
+  </div>
+</form>
+`;

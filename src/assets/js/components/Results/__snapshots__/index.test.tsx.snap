@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Results renders correctly 1`] = `
+<ul>
+  <li>
+    <div>
+      <h3>
+        
+        , 
+        
+      </h3>
+      0
+      <button
+        onClick={[Function]}
+        type="button"
+      >
+        translation:add
+      </button>
+    </div>
+  </li>
+</ul>
+`;

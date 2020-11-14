@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Layout renders correctly 1`] = `
+<div>
+  <header>
+    <div
+      className="grid"
+    >
+      <nav>
+        <ul>
+          <li>
+            <a
+              href="/"
+              onClick={[Function]}
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              href="/cities"
+              onClick={[Function]}
+            >
+              Cities
+            </a>
+          </li>
+          <li>
+            <a
+              href="/search"
+              onClick={[Function]}
+            >
+              Search
+            </a>
+          </li>
+          <li>
+            <a
+              href="/settings"
+              onClick={[Function]}
+            >
+              Settings
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div
+      className="grid"
+    >
+      Content
+    </div>
+  </main>
+  <div>
+    <div
+      className="grid"
+    >
+      FOOTER
+    </div>
+  </div>
+</div>
+`;
