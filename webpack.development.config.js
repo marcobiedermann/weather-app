@@ -6,7 +6,7 @@ const baseConfig = require('./webpack.config');
 
 module.exports = merge(baseConfig, {
   devServer: {
-    contentBase: 'src',
+    contentBase: 'public',
     historyApiFallback: true,
     open: true,
   },
@@ -42,7 +42,7 @@ module.exports = merge(baseConfig, {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'client/index.html',
+      template: 'src/index.html',
     }),
   ],
 });
