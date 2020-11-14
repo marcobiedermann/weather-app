@@ -5,11 +5,11 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    main: [path.resolve(__dirname, 'src/assets/js/index')],
+    main: [path.resolve(__dirname, './src/assets/js/index')],
   },
   output: {
     filename: 'assets/js/[name].js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, './dist'),
   },
   module: {
     rules: [
