@@ -86,13 +86,13 @@ const SearchPage: FC = () => {
   }
 
   return (
-    <div>
+    <>
       <Helmet>
         <title>Search</title>
       </Helmet>
       <Search initialValues={initialValues} onSubmit={onSubmit} />
       {data ? <Results results={data.list} /> : <Loader />}
-    </div>
+    </>
   );
 };
 

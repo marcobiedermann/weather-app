@@ -2,13 +2,11 @@ import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { Link, Route, Switch, useRouteMatch } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 import useSWR from 'swr';
 import Cities from '../../components/Cities';
 import Loader from '../../components/Loader';
 import { selectCities } from '../../reducers/cities';
-import CityPage from './City';
-import EditPage from './Edit';
 
 interface CitiesPageQuery {
   cnt: number;
@@ -80,22 +78,13 @@ const CitiesPage: FC = () => {
   }
 
   return (
-    <Switch>
-      <Route path={`${path}/edit`} component={EditPage} />
-      <Route path={`${path}/:cityId`} component={CityPage} />
-      <Route
-        path={path}
-        render={() => (
-          <div>
-            <Helmet>
-              <title>Cities</title>
-            </Helmet>
-            <Cities cities={data.list} />
-            <Link to={`${path}/edit`}>{t('translation:edit')}</Link>
-          </div>
-        )}
-      />
-    </Switch>
+    <>
+      <Helmet>
+        <title>Cities</title>
+      </Helmet>
+      <Cities cities={data.list} />
+      <Link to={`${path}/edit`}>{t('translation:edit')}</Link>
+    </>
   );
 };
 

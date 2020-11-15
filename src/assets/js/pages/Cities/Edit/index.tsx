@@ -1,3 +1,5 @@
+/* eslint-disable import/no-cycle */
+
 import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,7 +8,7 @@ import useSWR from 'swr';
 import Card from '../../../components/Card';
 import City from '../../../components/CityPreview';
 import Loader from '../../../components/Loader';
-import * as routes from '../../../constants/routes';
+import { SEARCH } from '../../../constants/routes';
 import { removeCity, selectCities } from '../../../reducers/cities';
 import styles from './style.module.css';
 
@@ -79,7 +81,7 @@ const EditPage: FC = () => {
   }
 
   return (
-    <div>
+    <>
       <Helmet>
         <title>Edit</title>
       </Helmet>
@@ -96,11 +98,11 @@ const EditPage: FC = () => {
         ))}
         <li>
           <Card>
-            <Link to={routes.SEARCH.path}>Add</Link>
+            <Link to={SEARCH.path}>Add</Link>
           </Card>
         </li>
       </ul>
-    </div>
+    </>
   );
 };
 

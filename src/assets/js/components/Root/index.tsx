@@ -3,6 +3,7 @@ import React, { FC, Suspense } from 'react';
 import { Provider } from 'react-redux';
 import { SWRConfig } from 'swr';
 import { API_BASE, API_KEY } from '../../constants/open-weather-map';
+import routes from '../../constants/routes';
 import store from '../../store';
 import Loader from '../Loader';
 import Router from '../Router';
@@ -37,7 +38,7 @@ const Root: FC = () => {
             fetcher,
           }}
         >
-          <Router />
+          <Router routes={routes} />
         </SWRConfig>
       </Suspense>
     </Provider>

@@ -81,7 +81,7 @@ const ForecastPage: FC = () => {
   }
 
   return (
-    <div>
+    <>
       <Helmet>
         <title>Forecast</title>
       </Helmet>
@@ -100,7 +100,7 @@ const ForecastPage: FC = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 };
 

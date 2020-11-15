@@ -1,10 +1,9 @@
 import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
-import { Route, Switch, useParams, useRouteMatch } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import useSWR from 'swr';
 import City from '../../../components/City';
 import Loader from '../../../components/Loader';
-import ForecastPage from './Forecast';
 
 interface Params {
   cityId: string;
@@ -66,7 +65,6 @@ interface Wind {
 
 const CityPage: FC = () => {
   const { cityId } = useParams<Params>();
-  const { path } = useRouteMatch();
   const { data, error } = useSWR<CityPageQuery>(`/weather?id=${cityId}`);
 
   if (error) {
@@ -78,20 +76,12 @@ const CityPage: FC = () => {
   }
 
   return (
-    <Switch>
-      <Route path={`${path}/forecast`} component={ForecastPage} />
-      <Route
-        path={path}
-        render={() => (
-          <div>
-            <Helmet>
-              <title>{data.name}</title>
-            </Helmet>
-            <City {...data} />
-          </div>
-        )}
-      />
-    </Switch>
+    <>
+      <Helmet>
+        <title>{data.name}</title>
+      </Helmet>
+      <City {...data} />
+    </>
   );
 };
 

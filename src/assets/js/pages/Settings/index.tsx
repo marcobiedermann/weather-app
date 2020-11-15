@@ -30,12 +30,12 @@ const SettingsPage: FC = () => {
   }
 
   return (
-    <div>
+    <>
       <Helmet>
         <title>Settings</title>
       </Helmet>
       <Settings initialValues={initialValues} onSubmit={onSubmit} />
-    </div>
+    </>
   );
 };
 
