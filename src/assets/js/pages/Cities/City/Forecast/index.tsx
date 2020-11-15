@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
 import useSWR from 'swr';
+import Error from '../../../../components/Error';
 import Loader from '../../../../components/Loader';
 
 interface Params {
@@ -73,7 +74,7 @@ const ForecastPage: FC = () => {
   const { data, error } = useSWR<ForecastPageQuery>(`/forecast/daily?id=${cityId}`);
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <Error message={error.message} />;
   }
 
   if (!data) {

@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { Link, useRouteMatch } from 'react-router-dom';
 import useSWR from 'swr';
 import Cities from '../../components/Cities';
+import Error from '../../components/Error';
 import Loader from '../../components/Loader';
 import { selectCities } from '../../reducers/cities';
 
@@ -70,7 +71,7 @@ const CitiesPage: FC = () => {
   const { data, error } = useSWR<CitiesPageQuery>(`/group?id=${cities.join(',')}`);
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <Error message={error.message} />;
   }
 
   if (!data) {

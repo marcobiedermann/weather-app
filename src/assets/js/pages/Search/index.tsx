@@ -2,6 +2,7 @@ import { FormikHelpers } from 'formik';
 import React, { FC, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import useSWR from 'swr';
+import Error from '../../components/Error';
 import Loader from '../../components/Loader';
 import Results from '../../components/Results';
 import Search from '../../components/Search';
@@ -70,7 +71,7 @@ const SearchPage: FC = () => {
   const { data, error } = useSWR<SearchPageQuery>(`/find?q=${query}`);
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <Error message={error.message} />;
   }
 
   const initialValues: Values = {

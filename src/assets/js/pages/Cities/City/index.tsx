@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
 import useSWR from 'swr';
 import City from '../../../components/City';
+import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
 
 interface Params {
@@ -68,7 +69,7 @@ const CityPage: FC = () => {
   const { data, error } = useSWR<CityPageQuery>(`/weather?id=${cityId}`);
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <Error message={error.message} />;
   }
 
   if (!data) {
