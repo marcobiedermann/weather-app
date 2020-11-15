@@ -1,0 +1,461 @@
+{
+  "daily": {
+    "city": {
+      "coord": {
+        "lat": 52.5244,
+        "lon": 13.4105
+      },
+      "country": "DE",
+      "id": 2950159,
+      "name": "Berlin",
+      "population": 0,
+      "timezone": 3600
+    },
+    "cod": "200",
+    "message": 0.0577146,
+    "cnt": 7,
+    "list": [
+      {
+        "dt": 1605434400,
+        "sunrise": 1605421730,
+        "sunset": 1605453205,
+        "temp": {
+          "day": 13.17,
+          "eve": 12.68,
+          "max": 13.46,
+          "min": 9.71,
+          "morn": 10.76,
+          "night": 9.71
+        },
+        "clouds": 0,
+        "deg": 192,
+        "feels_like": {
+          "day": 9.61,
+          "eve": 8.73,
+          "morn": 6.86,
+          "night": 4.92
+        },
+        "humidity": 76,
+        "pop": 0,
+        "pressure": 1014,
+        "speed": 4.79,
+        "weather": [
+          {
+            "description": "sky is clear",
+            "icon": "01d",
+            "id": 800,
+            "main": "Clear"
+          }
+        ]
+      },
+      {
+        "clouds": 100,
+        "deg": 235,
+        "dt": 1605520800,
+        "feels_like": {
+          "day": 5.27,
+          "eve": 7.46,
+          "morn": 5.83,
+          "night": 6.29
+        },
+        "humidity": 66,
+        "pop": 1,
+        "pressure": 1011,
+        "rain": 3.91,
+        "speed": 5.84,
+        "sunrise": 1605508237,
+        "sunset": 1605539521,
+        "temp": {
+          "day": 10.58,
+          "eve": 11.57,
+          "max": 12.1,
+          "min": 9.62,
+          "morn": 9.84,
+          "night": 10.6
+        },
+        "weather": [
+          {
+            "description": "moderate rain",
+            "icon": "10d",
+            "id": 501,
+            "main": "Rain"
+          }
+        ]
+      },
+      {
+        "clouds": 89,
+        "deg": 244,
+        "dt": 1605607200,
+        "feels_like": {
+          "day": 4.81,
+          "eve": 6.51,
+          "morn": 6.04,
+          "night": 6.53
+        },
+        "humidity": 73,
+        "pop": 0.36,
+        "pressure": 1025,
+        "rain": 0.68,
+        "speed": 4.01,
+        "sunrise": 1605594743,
+        "sunset": 1605625840,
+        "temp": {
+          "day": 8.88,
+          "eve": 10.11,
+          "max": 10.52,
+          "min": 8.45,
+          "morn": 9.43,
+          "night": 9.79
+        },
+        "weather": [
+          {
+            "description": "light rain",
+            "icon": "10d",
+            "id": 500,
+            "main": "Rain"
+          }
+        ]
+      },
+      {
+        "clouds": 0,
+        "deg": 205,
+        "dt": 1605693600,
+        "feels_like": {
+          "day": 5.01,
+          "eve": 6.51,
+          "morn": 4.41,
+          "night": 3.47
+        },
+        "humidity": 77,
+        "pop": 0,
+        "pressure": 1027,
+        "speed": 3.18,
+        "sunrise": 1605681249,
+        "sunset": 1605712161,
+        "temp": {
+          "day": 8.43,
+          "eve": 9.91,
+          "max": 10.97,
+          "min": 6.64,
+          "morn": 7.26,
+          "night": 7.79
+        },
+        "weather": [
+          {
+            "description": "sky is clear",
+            "icon": "01d",
+            "id": 800,
+            "main": "Clear"
+          }
+        ]
+      },
+      {
+        "clouds": 63,
+        "deg": 216,
+        "dt": 1605780000,
+        "feels_like": {
+          "day": 3.74,
+          "eve": 6.13,
+          "morn": 2.34,
+          "night": 1.97
+        },
+        "humidity": 69,
+        "pop": 0.27,
+        "pressure": 1015,
+        "rain": 0.13,
+        "speed": 4.61,
+        "sunrise": 1605767753,
+        "sunset": 1605798484,
+        "temp": {
+          "day": 8.45,
+          "eve": 9.62,
+          "max": 9.62,
+          "min": 7.13,
+          "morn": 7.3,
+          "night": 8.46
+        },
+        "weather": [
+          {
+            "description": "light rain",
+            "icon": "10d",
+            "id": 500,
+            "main": "Rain"
+          }
+        ]
+      },
+      {
+        "clouds": 50,
+        "deg": 302,
+        "dt": 1605866400,
+        "feels_like": {
+          "day": 0.58,
+          "eve": 0.35,
+          "morn": 1.72,
+          "night": -1.81
+        },
+        "humidity": 65,
+        "pop": 0.36,
+        "pressure": 1020,
+        "rain": 1.21,
+        "speed": 4.24,
+        "sunrise": 1605854257,
+        "sunset": 1605884810,
+        "temp": {
+          "day": 5.6,
+          "eve": 5.07,
+          "max": 7.55,
+          "min": 2.86,
+          "morn": 7.33,
+          "night": 2.86
+        },
+        "weather": [
+          {
+            "description": "light rain",
+            "icon": "10d",
+            "id": 500,
+            "main": "Rain"
+          }
+        ]
+      },
+      {
+        "clouds": 0,
+        "deg": 230,
+        "dt": 1605952800,
+        "feels_like": {
+          "day": -1.4,
+          "eve": -1.32,
+          "morn": -3.19,
+          "night": -2.04
+        },
+        "humidity": 81,
+        "pop": 0.32,
+        "pressure": 1025,
+        "rain": 0.15,
+        "speed": 2.73,
+        "sunrise": 1605940760,
+        "sunset": 1605971138,
+        "temp": {
+          "day": 2.55,
+          "eve": 4.06,
+          "max": 4.92,
+          "min": 0.59,
+          "morn": 1,
+          "night": 4.92
+        },
+        "weather": [
+          {
+            "description": "light rain",
+            "icon": "10d",
+            "id": 500,
+            "main": "Rain"
+          }
+        ]
+      }
+    ]
+  },
+  "find": {
+    "cod": "200",
+    "count": 3,
+    "message": "accurate",
+    "list": [
+      {
+        "clouds": {
+          "all": 0
+        },
+        "coord": {
+          "lat": 52.5244,
+          "lon": 13.4105
+        },
+        "dt": 1605434959,
+        "id": 2950159,
+        "name": "Berlin",
+        "main": {
+          "feels_like": 9.39,
+          "humidity": 76,
+          "pressure": 1014,
+          "temp_max": 13.89,
+          "temp_min": 11,
+          "temp": 12.61
+        },
+        "rain": null,
+        "snow": null,
+        "sys": {
+          "country": "DE"
+        },
+        "weather": [
+          {
+            "description": "clear sky",
+            "icon": "01d",
+            "id": 800,
+            "main": "Clear"
+          }
+        ],
+        "wind": {
+          "deg": 170,
+          "speed": 4.1
+        }
+      },
+      {
+        "clouds": {
+          "all": 0
+        },
+        "coord": {
+          "lat": 52.5,
+          "lon": 13.4167
+        },
+        "dt": 1605434820,
+        "id": 2950157,
+        "main": {
+          "feels_like": 9.38,
+          "humidity": 76,
+          "pressure": 1014,
+          "temp_max": 13.89,
+          "temp_min": 11,
+          "temp": 12.6
+        },
+        "name": "Land Berlin",
+        "rain": null,
+        "snow": null,
+        "sys": {
+          "country": "DE"
+        },
+        "weather": [
+          {
+            "description": "clear sky",
+            "icon": "01d",
+            "id": 800,
+            "main": "Clear"
+          }
+        ],
+        "wind": {
+          "deg": 170,
+          "speed": 4.1
+        }
+      },
+      {
+        "clouds": {
+          "all": 0
+        },
+        "coord": {
+          "lat": 54.0333,
+          "lon": 10.45
+        },
+        "dt": 1605434820,
+        "id": 2950158,
+        "main": {
+          "feels_like": 10.26,
+          "humidity": 81,
+          "pressure": 1009,
+          "temp_max": 14.44,
+          "temp_min": 12,
+          "temp": 13.11
+        },
+        "name": "Berlin",
+        "rain": null,
+        "snow": null,
+        "sys": {
+          "country": "DE"
+        },
+        "weather": [
+          {
+            "description": "clear sky",
+            "icon": "01d",
+            "id": 800,
+            "main": "Clear"
+          }
+        ],
+        "wind": {
+          "deg": 130,
+          "speed": 4.1
+        }
+      }
+    ]
+  },
+  "group": {
+    "cnt": 1,
+    "list": [
+      {
+        "coord": {
+          "lat": 52.52,
+          "lon": 13.41
+        },
+        "clouds": {
+          "all": 0
+        },
+        "dt": 1605434959,
+        "id": 2950159,
+        "main": {
+          "feels_like": 9.39,
+          "humidity": 76,
+          "pressure": 1014,
+          "temp_max": 13.89,
+          "temp_min": 11,
+          "temp": 12.61
+        },
+        "name": "Berlin",
+        "sys": {
+          "country": "DE",
+          "sunrise": 1605421729,
+          "sunset": 1605453206,
+          "timezone": 3600
+        },
+        "visibility": 10000,
+        "weather": [
+          {
+            "description": "clear sky",
+            "icon": "01d",
+            "id": 800,
+            "main": "Clear"
+          }
+        ],
+        "wind": {
+          "speed": 4.1,
+          "deg": 170
+        }
+      }
+    ]
+  },
+  "weather": {
+    "base": "stations",
+    "coord": {
+      "lat": 52.52,
+      "lon": 13.41
+    },
+    "weather": [
+      {
+        "description": "clear sky",
+        "icon": "01d",
+        "id": 800,
+        "main": "Clear"
+      }
+    ],
+    "main": {
+      "feels_like": 10.24,
+      "humidity": 76,
+      "pressure": 1014,
+      "temp_max": 13.89,
+      "temp_min": 12,
+      "temp": 13.01
+    },
+    "clouds": {
+      "all": 0
+    },
+    "cod": 200,
+    "dt": 1605436424,
+    "id": 2950159,
+    "name": "Berlin",
+    "sys": {
+      "country": "DE",
+      "id": 1262,
+      "sunrise": 1605421729,
+      "sunset": 1605453206,
+      "type": 1
+    },
+    "timezone": 3600,
+    "visibility": 10000,
+    "wind": {
+      "deg": 180,
+      "speed": 3.6
+    }
+  }
+}
