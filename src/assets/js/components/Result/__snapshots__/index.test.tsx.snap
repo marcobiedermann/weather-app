@@ -3,11 +3,11 @@
 exports[`components/Result renders correctly 1`] = `
 <div>
   <h3>
-    
+    Berlin
     , 
-    
+    DE
   </h3>
-  0
+  12.61
   <button
     onClick={[Function]}
     type="button"

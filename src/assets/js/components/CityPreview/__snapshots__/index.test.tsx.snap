@@ -2,26 +2,53 @@
 
 exports[`components/CityPreview renders correctly 1`] = `
 <div
-  className="city city--cold"
-  dt={0}
+  className="city"
+  clouds={
+    Object {
+      "all": 0,
+    }
+  }
+  coord={
+    Object {
+      "lat": 52.52,
+      "lon": 13.41,
+    }
+  }
+  dt={1605434959}
+  sys={
+    Object {
+      "country": "DE",
+      "sunrise": 1605421729,
+      "sunset": 1605453206,
+      "timezone": 3600,
+    }
+  }
+  visibility={10000}
   weather={
     Array [
       Object {
-        "description": "",
-        "icon": "",
-        "id": 1,
+        "description": "clear sky",
+        "icon": "01d",
+        "id": 800,
+        "main": "Clear",
       },
     ]
   }
+  wind={
+    Object {
+      "deg": 170,
+      "speed": 4.1,
+    }
+  }
 >
   <a
-    href="/cities/1"
+    href="/cities/2950159"
     onClick={[Function]}
   >
-    0
+    12.61
      °C
     <h2>
-      
+      Berlin
     </h2>
   </a>
 </div>
