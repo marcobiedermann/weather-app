@@ -1,11 +1,5 @@
+import { lazy } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
-import CitiesPage from '../pages/Cities';
-import CityPage from '../pages/Cities/City';
-import ForecastPage from '../pages/Cities/City/Forecast';
-import EditPage from '../pages/Cities/Edit';
-import HomePage from '../pages/Index';
-import SearchPage from '../pages/Search';
-import SettingsPage from '../pages/Settings';
 
 interface Route {
   component?: React.ComponentType<RouteComponentProps<any>> | React.ComponentType<any>;
@@ -16,46 +10,46 @@ interface Route {
 }
 
 export const INDEX = {
-  component: HomePage,
+  component: lazy(() => import('../pages/Index')),
   exact: true,
   name: 'Home',
   path: '/',
 };
 
 export const FORECAST = {
-  component: ForecastPage,
+  component: lazy(() => import('../pages/Cities/City/Forecast')),
   name: 'Forecast',
   path: '/forecast',
 };
 
 export const CITY = {
-  component: CityPage,
+  component: lazy(() => import('../pages/Cities/City')),
   name: 'City',
   path: '/:cityId',
   routes: [FORECAST],
 };
 
 export const EDIT = {
-  component: EditPage,
+  component: lazy(() => import('../pages/Cities/Edit')),
   name: 'Edit',
   path: '/edit',
 };
 
 export const CITIES = {
-  component: CitiesPage,
+  component: lazy(() => import('../pages/Cities')),
   name: 'Cities',
   path: '/cities',
   routes: [CITY, EDIT],
 };
 
 export const SEARCH = {
-  component: SearchPage,
+  component: lazy(() => import('../pages/Search')),
   name: 'Search',
   path: '/search',
 };
 
 export const SETTINGS = {
-  component: SettingsPage,
+  component: lazy(() => import('../pages/Settings')),
   name: 'Settings',
   path: '/settings',
 };

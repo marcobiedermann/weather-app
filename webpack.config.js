@@ -7,6 +7,11 @@ module.exports = {
   entry: {
     main: [path.resolve(__dirname, './src/assets/js/index')],
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
   output: {
     filename: 'assets/js/[name].js',
     path: path.resolve(__dirname, './dist'),

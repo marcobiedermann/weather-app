@@ -1,5 +1,3 @@
-/* eslint-disable import/no-cycle */
-
 import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
 import { useDispatch, useSelector } from 'react-redux';
