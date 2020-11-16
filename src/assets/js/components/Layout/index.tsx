@@ -5,13 +5,13 @@ import Grid from '../Grid';
 import Header from '../Header';
 import Main from '../Main';
 import Navigation from '../Navigation';
-import './style.module.css';
+import styles from './style.module.css';
 
 const Layout: FC = (props) => {
-  const { children, ...otherProps } = props;
+  const { children } = props;
 
   return (
-    <div {...otherProps}>
+    <div className={styles.layout}>
       <Header>
         <Grid>
           <Navigation routes={[routes.INDEX, routes.CITIES, routes.SEARCH, routes.SETTINGS]} />

@@ -9,10 +9,13 @@ export interface CityPreviewProps {
     temp: number;
   };
   name: string;
+  sys: {
+    country: string;
+  };
 }
 
 const CityPreview: FC<CityPreviewProps> = (props) => {
-  const { id, main, name, ...otherProps } = props;
+  const { id, main, name, sys, ...otherProps } = props;
 
   return (
     <div
@@ -22,9 +25,10 @@ const CityPreview: FC<CityPreviewProps> = (props) => {
       })}
       {...otherProps}
     >
-      <Link to={`/cities/${id}`}>
-        {main.temp} °C
-        <h2>{name}</h2>
+      <Link to={`/cities/${id}`} className={styles.city__link}>
+        <div className={styles.city__temp}>{main.temp} °</div>
+        <h2 className={styles.city__name}>{name}</h2>
+        <h3 className={styles.city__country}>{sys.country}</h3>
       </Link>
     </div>
   );

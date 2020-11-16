@@ -1,9 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`components/Results renders correctly 1`] = `
-<ul>
+<ul
+  className="results"
+>
   <li>
-    <div>
+    <div
+      className="result"
+    >
       <h3>
         Berlin
         , 

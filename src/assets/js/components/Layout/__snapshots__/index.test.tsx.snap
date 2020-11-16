@@ -1,39 +1,57 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`components/Layout renders correctly 1`] = `
-<div>
+<div
+  className="layout"
+>
   <header>
     <div
       className="grid"
     >
-      <nav>
-        <ul>
-          <li>
+      <nav
+        className="navigation"
+      >
+        <ul
+          className="navigation__list"
+        >
+          <li
+            className="navigation__item"
+          >
             <a
+              className="navigation__link"
               href="/"
               onClick={[Function]}
             >
               Home
             </a>
           </li>
-          <li>
+          <li
+            className="navigation__item"
+          >
             <a
+              className="navigation__link"
               href="/cities"
               onClick={[Function]}
             >
               Cities
             </a>
           </li>
-          <li>
+          <li
+            className="navigation__item"
+          >
             <a
+              className="navigation__link"
               href="/search"
               onClick={[Function]}
             >
               Search
             </a>
           </li>
-          <li>
+          <li
+            className="navigation__item"
+          >
             <a
+              className="navigation__link"
               href="/settings"
               onClick={[Function]}
             >
@@ -44,7 +62,9 @@ exports[`components/Layout renders correctly 1`] = `
       </nav>
     </div>
   </header>
-  <main>
+  <main
+    className="main"
+  >
     <div
       className="grid"
     >

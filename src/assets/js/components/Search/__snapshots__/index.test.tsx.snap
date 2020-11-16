@@ -6,16 +6,22 @@ exports[`components/Search renders correctly 1`] = `
   onReset={[Function]}
   onSubmit={[Function]}
 >
-  <div>
+  <div
+    className="form__field"
+  >
     <input
+      className="form__input"
       name="query"
       onBlur={[Function]}
       onChange={[Function]}
       value=""
     />
   </div>
-  <div>
+  <div
+    className="form__field"
+  >
     <button
+      className="form__input form__input--submit"
       disabled={false}
       type="submit"
     >

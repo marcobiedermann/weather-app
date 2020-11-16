@@ -1,6 +1,8 @@
+import classNames from 'classnames';
 import { Field, Form, Formik, FormikHelpers } from 'formik';
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import styles from '../Settings/style.module.css';
 
 interface Values {
   query: string;
@@ -19,12 +21,16 @@ const Search: FC<SearchProps> = (props) => {
     <Formik {...props}>
       {({ isSubmitting }) => (
         <Form>
-          <div>
-            <Field name="query" />
+          <div className={styles.form__field}>
+            <Field name="query" className={styles.form__input} />
           </div>
 
-          <div>
-            <button type="submit" disabled={isSubmitting}>
+          <div className={styles.form__field}>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className={classNames(styles.form__input, styles['form__input--submit'])}
+            >
               {t('translation:search')}
             </button>
           </div>

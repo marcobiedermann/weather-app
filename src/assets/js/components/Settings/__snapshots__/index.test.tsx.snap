@@ -6,13 +6,16 @@ exports[`components/Settings renders correctly 1`] = `
   onReset={[Function]}
   onSubmit={[Function]}
 >
-  <div>
+  <div
+    className="form__field"
+  >
     <label
       htmlFor="language"
     >
       Language
     </label>
     <select
+      className="form__input"
       name="language"
       onBlur={[Function]}
       onChange={[Function]}
@@ -180,13 +183,16 @@ exports[`components/Settings renders correctly 1`] = `
       </option>
     </select>
   </div>
-  <div>
+  <div
+    className="form__field"
+  >
     <label
       htmlFor="unit"
     >
       Unit
     </label>
     <select
+      className="form__input"
       name="unit"
       onBlur={[Function]}
       onChange={[Function]}
@@ -204,8 +210,11 @@ exports[`components/Settings renders correctly 1`] = `
       </option>
     </select>
   </div>
-  <div>
+  <div
+    className="form__field"
+  >
     <button
+      className="form__input form__input--submit"
       disabled={false}
       type="submit"
     >

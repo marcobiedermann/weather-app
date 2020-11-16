@@ -1,4 +1,4 @@
 declare const styles: {
-  readonly layout: string;
+  readonly result: string;
 };
 export = styles;

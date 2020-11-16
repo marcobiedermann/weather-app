@@ -1,0 +1,12 @@
+.form__field {
+  margin-bottom: 1.5em;
+}
+
+.form__input {
+  padding: 0.5em 1em;
+  width: 100%;
+}
+
+.form__input--submit {
+  width: auto;
+}

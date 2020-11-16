@@ -19,14 +19,6 @@ exports[`components/Cities renders correctly 1`] = `
         }
       }
       dt={1605434959}
-      sys={
-        Object {
-          "country": "DE",
-          "sunrise": 1605421729,
-          "sunset": 1605453206,
-          "timezone": 3600,
-        }
-      }
       visibility={10000}
       weather={
         Array [
@@ -46,14 +38,26 @@ exports[`components/Cities renders correctly 1`] = `
       }
     >
       <a
+        className="city__link"
         href="/cities/2950159"
         onClick={[Function]}
       >
-        12.61
-         °C
-        <h2>
+        <div
+          className="city__temp"
+        >
+          12.61
+           °
+        </div>
+        <h2
+          className="city__name"
+        >
           Berlin
         </h2>
+        <h3
+          className="city__country"
+        >
+          DE
+        </h3>
       </a>
     </div>
   </li>

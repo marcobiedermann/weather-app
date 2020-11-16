@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { addCity } from '../../reducers/cities';
+import styles from './style.module.css';
 
 export interface ResultProps {
   id: number;
@@ -20,7 +21,7 @@ const Result: FC<ResultProps> = (props) => {
   const { t } = useTranslation();
 
   return (
-    <div>
+    <div className={styles.result}>
       <h3>
         {name}, {sys.country}
       </h3>

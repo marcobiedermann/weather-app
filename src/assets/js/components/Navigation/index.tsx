@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
+import styles from './style.module.css';
 
 interface Route {
   name: string;
@@ -14,11 +15,13 @@ const Navigation: FC<NavigationProps> = (props) => {
   const { routes, ...otherProps } = props;
 
   return (
-    <nav {...otherProps}>
-      <ul>
+    <nav className={styles.navigation} {...otherProps}>
+      <ul className={styles.navigation__list}>
         {routes.map((route) => (
-          <li key={route.path}>
-            <Link to={route.path}>{route.name}</Link>
+          <li key={route.path} className={styles.navigation__item}>
+            <Link to={route.path} className={styles.navigation__link}>
+              {route.name}
+            </Link>
           </li>
         ))}
       </ul>
