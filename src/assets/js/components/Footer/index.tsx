@@ -1,7 +1,5 @@
 import React, { FC } from 'react';
 
-const Footer: FC = (props) => {
-  return <div {...props} />;
-};
+const Footer: FC = (props) => <div {...props} />;
 
 export default Footer;

@@ -6,8 +6,6 @@ export interface LabelProps {
   htmlFor: string;
 }
 
-const Label: FC<LabelProps> = (props) => {
-  return <label {...props} />;
-};
+const Label: FC<LabelProps> = (props) => <label {...props} />;
 
 export default Label;

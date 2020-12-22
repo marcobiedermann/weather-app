@@ -1,7 +1,5 @@
 import React, { FC } from 'react';
 
-const Header: FC = (props) => {
-  return <header {...props} />;
-};
+const Header: FC = (props) => <header {...props} />;
 
 export default Header;

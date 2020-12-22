@@ -29,20 +29,18 @@ async function fetcher(url: string) {
   return response.json();
 }
 
-const Root: FC = () => {
-  return (
-    <Provider store={store}>
-      <Suspense fallback={<Loader />}>
-        <SWRConfig
-          value={{
-            fetcher,
-          }}
-        >
-          <Router routes={routes} />
-        </SWRConfig>
-      </Suspense>
-    </Provider>
-  );
-};
+const Root: FC = () => (
+  <Provider store={store}>
+    <Suspense fallback={<Loader />}>
+      <SWRConfig
+        value={{
+          fetcher,
+        }}
+      >
+        <Router routes={routes} />
+      </SWRConfig>
+    </Suspense>
+  </Provider>
+);
 
 export default Root;
