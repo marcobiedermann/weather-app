@@ -1,10 +1,9 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { Configuration } from 'webpack';
+import { merge } from 'webpack-merge';
+import baseConfig from './webpack.config';
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { merge } = require('webpack-merge');
-const baseConfig = require('./webpack.config');
-
-module.exports = merge(baseConfig, {
+const config: Configuration = {
   devServer: {
     contentBase: 'public',
     historyApiFallback: true,
@@ -45,4 +44,6 @@ module.exports = merge(baseConfig, {
       template: 'src/index.html',
     }),
   ],
-});
+};
+
+export default merge(baseConfig, config);
