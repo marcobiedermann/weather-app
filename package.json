@@ -15,7 +15,6 @@
     "lint:js": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint": "npm run lint:css && npm run lint:js",
     "server": "json-server db.json",
-    "report-coverage": "codecov",
     "test": "jest"
   },
   "repository": {
@@ -48,7 +47,6 @@
     "@typescript-eslint/eslint-plugin": "^4.11.1",
     "@typescript-eslint/parser": "^4.11.1",
     "clean-webpack-plugin": "3.0.0",
-    "codecov": "^3.8.1",
     "copy-webpack-plugin": "^7.0.0",
     "css-loader": "5.0.1",
     "dotenv": "8.2.0",
