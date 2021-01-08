@@ -1,4 +1,9 @@
-export const languages = [
+export interface Language {
+  id: string;
+  name: string;
+}
+
+export const languages: Language[] = [
   {
     id: 'ar',
     name: 'Arabic',
@@ -128,6 +133,13 @@ export const languages = [
     name: 'Vietnamese',
   },
 ];
+
+export const supportedLanguages = ['de', 'en'];
+
+export interface Unit {
+  id: string;
+  name: string;
+}
 
 export const units = [
   {

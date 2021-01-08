@@ -1,9 +1,13 @@
 import classNames from 'classnames';
 import { Field, Form, Formik, FormikHelpers } from 'formik';
 import React, { FC } from 'react';
-import { languages, units } from '../../constants/localization';
+import { Language, languages, supportedLanguages, units } from '../../constants/localization';
 import Label from '../Label';
 import styles from './style.module.css';
+
+function isSupportedLanguage(language: Language): boolean {
+  return supportedLanguages.includes(language.id);
+}
 
 type Unit = 'metric' | 'imperial';
 
@@ -25,7 +29,7 @@ const Settings: FC<SettingsProps> = (props) => (
         <div className={styles.form__field}>
           <Label htmlFor="language">Language</Label>
           <Field component="select" name="language" className={styles.form__input}>
-            {languages.map((language) => (
+            {languages.filter(isSupportedLanguage).map((language) => (
               <option value={language.id} key={language.id}>
                 {language.name}
               </option>
