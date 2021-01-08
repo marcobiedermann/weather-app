@@ -1,11 +1,10 @@
 import { parse, stringify } from 'qs';
 import React, { FC, Suspense } from 'react';
-import { Provider } from 'react-redux';
 import { SWRConfig } from 'swr';
 import { API_BASE, API_KEY } from '../../constants/open-weather-map';
 import routes from '../../constants/routes';
-import store from '../../store';
 import Loader from '../Loader';
+import Providers from '../Providers';
 import Router from '../Router';
 
 async function fetcher(url: string) {
@@ -30,7 +29,7 @@ async function fetcher(url: string) {
 }
 
 const Root: FC = () => (
-  <Provider store={store}>
+  <Providers>
     <Suspense fallback={<Loader />}>
       <SWRConfig
         value={{
@@ -40,7 +39,7 @@ const Root: FC = () => (
         <Router routes={routes} />
       </SWRConfig>
     </Suspense>
-  </Provider>
+  </Providers>
 );
 
 export default Root;
