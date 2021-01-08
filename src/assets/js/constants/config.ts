@@ -1,5 +1,7 @@
 import { name, version } from '../../../../package.json';
 
+const { NODE_ENV } = process.env;
+
 interface Config {
   environment: string;
   name: string;
@@ -7,7 +9,7 @@ interface Config {
 }
 
 const config: Config = {
-  environment: process.env.NODE_ENV || 'development',
+  environment: NODE_ENV || 'development',
   name,
   version,
 };
