@@ -1,20 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`components/Result renders correctly 1`] = `
-<div
-  className="result"
->
-  <h3>
-    Berlin
-    , 
-    DE
-  </h3>
-  12.61
-  <button
-    onClick={[Function]}
-    type="button"
+<DocumentFragment>
+  <div
+    class="result"
   >
-    translation:add
-  </button>
-</div>
+    <h3>
+      Berlin, DE
+    </h3>
+    12.61
+    <button
+      type="button"
+    >
+      translation:add
+    </button>
+  </div>
+</DocumentFragment>
 `;

@@ -1,5 +1,5 @@
+import { render } from '@testing-library/react';
 import React from 'react';
-import renderer from 'react-test-renderer';
 import Results from '.';
 import resultsFixtures from './__fixtures__';
 
@@ -14,8 +14,8 @@ describe('components/Results', () => {
   it('renders correctly', () => {
     expect.assertions(1);
 
-    const tree = renderer.create(<Results results={resultsFixtures} />).toJSON();
+    const { asFragment } = render(<Results results={resultsFixtures} />);
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

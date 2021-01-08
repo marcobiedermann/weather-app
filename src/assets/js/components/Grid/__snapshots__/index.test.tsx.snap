@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`components/Grid renders correctly 1`] = `
-<div
-  className="grid"
->
-  Content
-</div>
+<DocumentFragment>
+  <div
+    class="grid"
+  >
+    Content
+  </div>
+</DocumentFragment>
 `;

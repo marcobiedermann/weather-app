@@ -1,13 +1,13 @@
+import { render } from '@testing-library/react';
 import React from 'react';
-import renderer from 'react-test-renderer';
 import Forecast from '.';
 
 describe('components/Forecast', () => {
   it('renders correctly', () => {
     expect.assertions(1);
 
-    const tree = renderer.create(<Forecast list={[]} />).toJSON();
+    const { asFragment } = render(<Forecast list={[]} />);
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

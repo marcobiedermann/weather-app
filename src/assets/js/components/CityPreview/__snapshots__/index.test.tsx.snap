@@ -1,59 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`components/CityPreview renders correctly 1`] = `
-<div
-  className="city"
-  clouds={
-    Object {
-      "all": 0,
-    }
-  }
-  coord={
-    Object {
-      "lat": 52.52,
-      "lon": 13.41,
-    }
-  }
-  dt={1605434959}
-  visibility={10000}
-  weather={
-    Array [
-      Object {
-        "description": "clear sky",
-        "icon": "01d",
-        "id": 800,
-        "main": "Clear",
-      },
-    ]
-  }
-  wind={
-    Object {
-      "deg": 170,
-      "speed": 4.1,
-    }
-  }
->
-  <a
-    className="city__link"
-    href="/cities/2950159"
-    onClick={[Function]}
+<DocumentFragment>
+  <div
+    class="city"
+    clouds="[object Object]"
+    coord="[object Object]"
+    dt="1605434959"
+    visibility="10000"
+    weather="[object Object]"
+    wind="[object Object]"
   >
-    <div
-      className="city__temp"
+    <a
+      class="city__link"
+      href="/cities/2950159"
     >
-      12.61
-       °
-    </div>
-    <h2
-      className="city__name"
-    >
-      Berlin
-    </h2>
-    <h3
-      className="city__country"
-    >
-      DE
-    </h3>
-  </a>
-</div>
+      <div
+        class="city__temp"
+      >
+        12.61 °
+      </div>
+      <h2
+        class="city__name"
+      >
+        Berlin
+      </h2>
+      <h3
+        class="city__country"
+      >
+        DE
+      </h3>
+    </a>
+  </div>
+</DocumentFragment>
 `;

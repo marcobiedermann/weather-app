@@ -1,51 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`components/City renders correctly 1`] = `
-<div
-  clouds={
-    Object {
-      "all": 0,
-    }
-  }
-  coord={
-    Object {
-      "lat": 52.52,
-      "lon": 13.41,
-    }
-  }
-  id={2950159}
-  sys={
-    Object {
-      "country": "DE",
-      "sunrise": 1605421729,
-      "sunset": 1605453206,
-      "timezone": 3600,
-    }
-  }
-  visibility={10000}
-  wind={
-    Object {
-      "deg": 170,
-      "speed": 4.1,
-    }
-  }
->
-  <h1>
-    Berlin
-  </h1>
-  2020-11-15 10:09
-  <div>
-    Temp: 
-    12.61
+<DocumentFragment>
+  <div
+    clouds="[object Object]"
+    coord="[object Object]"
+    id="2950159"
+    sys="[object Object]"
+    visibility="10000"
+    wind="[object Object]"
+  >
+    <h1>
+      Berlin
+    </h1>
+    2020-11-15 11:09
+    <div>
+      Temp: 12.61
+    </div>
+    <ul>
+      <li>
+        clear sky
+        <img
+          alt="clear sky"
+          src="https://openweathermap.org/img/w/01d.png"
+        />
+      </li>
+    </ul>
   </div>
-  <ul>
-    <li>
-      clear sky
-      <img
-        alt="clear sky"
-        src="https://openweathermap.org/img/w/01d.png"
-      />
-    </li>
-  </ul>
-</div>
+</DocumentFragment>
 `;

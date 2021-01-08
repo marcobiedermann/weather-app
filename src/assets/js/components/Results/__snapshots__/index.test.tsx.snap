@@ -1,26 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`components/Results renders correctly 1`] = `
-<ul
-  className="results"
->
-  <li>
-    <div
-      className="result"
-    >
-      <h3>
-        Berlin
-        , 
-        DE
-      </h3>
-      12.61
-      <button
-        onClick={[Function]}
-        type="button"
+<DocumentFragment>
+  <ul
+    class="results"
+  >
+    <li>
+      <div
+        class="result"
       >
-        translation:add
-      </button>
-    </div>
-  </li>
-</ul>
+        <h3>
+          Berlin, DE
+        </h3>
+        12.61
+        <button
+          type="button"
+        >
+          translation:add
+        </button>
+      </div>
+    </li>
+  </ul>
+</DocumentFragment>
 `;

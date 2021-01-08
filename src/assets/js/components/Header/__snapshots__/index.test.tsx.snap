@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`components/Header renders correctly 1`] = `
-<header>
-  Content
-</header>
+<DocumentFragment>
+  <header>
+    Content
+  </header>
+</DocumentFragment>
 `;

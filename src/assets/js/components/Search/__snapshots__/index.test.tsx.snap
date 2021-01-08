@@ -1,32 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`components/Search renders correctly 1`] = `
-<form
-  action="#"
-  onReset={[Function]}
-  onSubmit={[Function]}
->
-  <div
-    className="form__field"
+<DocumentFragment>
+  <form
+    action="#"
   >
-    <input
-      className="form__input"
-      name="query"
-      onBlur={[Function]}
-      onChange={[Function]}
-      value=""
-    />
-  </div>
-  <div
-    className="form__field"
-  >
-    <button
-      className="form__input form__input--submit"
-      disabled={false}
-      type="submit"
+    <div
+      class="form__field"
     >
-      translation:search
-    </button>
-  </div>
-</form>
+      <input
+        class="form__input"
+        name="query"
+        value=""
+      />
+    </div>
+    <div
+      class="form__field"
+    >
+      <button
+        class="form__input form__input--submit"
+        type="submit"
+      >
+        translation:search
+      </button>
+    </div>
+  </form>
+</DocumentFragment>
 `;

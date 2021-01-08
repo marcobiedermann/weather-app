@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`components/Label renders correctly 1`] = `
-<label
-  htmlFor="foo"
->
-  Content
-</label>
+<DocumentFragment>
+  <label
+    for="foo"
+  >
+    Content
+  </label>
+</DocumentFragment>
 `;

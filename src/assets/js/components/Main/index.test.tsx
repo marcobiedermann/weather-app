@@ -1,13 +1,13 @@
+import { render } from '@testing-library/react';
 import React from 'react';
-import renderer from 'react-test-renderer';
 import Main from '.';
 
 describe('components/Main', () => {
   it('renders correctly', () => {
     expect.assertions(1);
 
-    const tree = renderer.create(<Main>Content</Main>).toJSON();
+    const { asFragment } = render(<Main>Content</Main>);
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

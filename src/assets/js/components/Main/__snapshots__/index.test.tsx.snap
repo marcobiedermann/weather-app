@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`components/Main renders correctly 1`] = `
-<main
-  className="main"
->
-  Content
-</main>
+<DocumentFragment>
+  <main
+    class="main"
+  >
+    Content
+  </main>
+</DocumentFragment>
 `;

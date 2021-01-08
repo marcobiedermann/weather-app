@@ -1,6 +1,6 @@
+import { render } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import renderer from 'react-test-renderer';
 import Cities from '.';
 import citiesFixtures from './__fixtures__';
 
@@ -8,14 +8,12 @@ describe('components/Cities', () => {
   it('renders correctly', () => {
     expect.assertions(1);
 
-    const tree = renderer
-      .create(
-        <MemoryRouter>
-          <Cities cities={citiesFixtures} />
-        </MemoryRouter>,
-      )
-      .toJSON();
+    const { asFragment } = render(
+      <MemoryRouter>
+        <Cities cities={citiesFixtures} />
+      </MemoryRouter>,
+    );
 
-    expect(tree).toMatchSnapshot();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
