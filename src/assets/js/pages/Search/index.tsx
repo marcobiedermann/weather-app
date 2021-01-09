@@ -1,6 +1,7 @@
 import { FormikHelpers } from 'formik';
 import React, { FC, useState } from 'react';
 import { Helmet } from 'react-helmet';
+import { RouteComponentProps } from 'react-router-dom';
 import useSWR from 'swr';
 import Error from '../../components/Error';
 import Loader from '../../components/Loader';
@@ -66,7 +67,7 @@ interface Values {
   query: string;
 }
 
-const SearchPage: FC = () => {
+const SearchPage: FC<RouteComponentProps> = () => {
   const [query, setQuery] = useState('London, GB');
   const { data, error } = useSWR<SearchPageQuery>(`/find?q=${query}`);
 

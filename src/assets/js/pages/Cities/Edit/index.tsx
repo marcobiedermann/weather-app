@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, RouteComponentProps } from 'react-router-dom';
 import useSWR from 'swr';
 import Card from '../../../components/Card';
 import City from '../../../components/CityPreview';
@@ -66,7 +66,7 @@ interface Wind {
   deg: number;
 }
 
-const EditPage: FC = () => {
+const EditPage: FC<RouteComponentProps> = () => {
   const dispatch = useDispatch();
   const cities = useSelector(selectCities);
   const { data, error } = useSWR<EditPageQuery>(`/group?id=${cities.join(',')}`);

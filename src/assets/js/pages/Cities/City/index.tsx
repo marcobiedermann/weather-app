@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
-import { useParams } from 'react-router-dom';
+import { RouteComponentProps } from 'react-router-dom';
 import useSWR from 'swr';
 import City from '../../../components/City';
 import Error from '../../../components/Error';
@@ -64,8 +64,12 @@ interface Wind {
   deg: number;
 }
 
-const CityPage: FC = () => {
-  const { cityId } = useParams<Params>();
+const CityPage: FC<RouteComponentProps<Params>> = (props) => {
+  const {
+    match: {
+      params: { cityId },
+    },
+  } = props;
   const { data, error } = useSWR<CityPageQuery>(`/weather?id=${cityId}`);
 
   if (error) {
