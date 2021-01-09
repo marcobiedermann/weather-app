@@ -21,7 +21,13 @@ const Layout: FC = (props) => {
         <Grid>{children}</Grid>
       </Main>
       <Footer>
-        <Grid>FOOTER</Grid>
+        <Grid>
+          <p>
+            <a href="https://openweathermap.org/" rel="noopener noreferrer" target="_blank">
+              OpenWeather
+            </a>
+          </p>
+        </Grid>
       </Footer>
     </div>
   );

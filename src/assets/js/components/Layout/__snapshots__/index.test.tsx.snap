@@ -62,7 +62,15 @@ exports[`components/Layout renders correctly 1`] = `
       <div
         class="grid"
       >
-        FOOTER
+        <p>
+          <a
+            href="https://openweathermap.org/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            OpenWeather
+          </a>
+        </p>
       </div>
     </div>
   </div>
