@@ -1,16 +1,16 @@
 import { render } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import CityPreview from '.';
-import cityFixtures from '../City/__fixtures__';
+import Cities from '..';
+import citiesFixtures from '../__fixtures__';
 
-describe('components/CityPreview', () => {
+describe('components/Cities', () => {
   it('renders correctly', () => {
     expect.assertions(1);
 
     const { asFragment } = render(
       <MemoryRouter>
-        <CityPreview {...cityFixtures} />
+        <Cities cities={citiesFixtures} />
       </MemoryRouter>,
     );
 

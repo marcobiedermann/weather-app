@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import Results from '.';
-import resultsFixtures from './__fixtures__';
+import Results from '..';
+import resultsFixtures from '../__fixtures__';
 
 const mockDispatch = jest.fn();
 

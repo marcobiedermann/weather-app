@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import Layout from '.';
+import Layout from '..';
 
 describe('components/Layout', () => {
   it('renders correctly', () => {

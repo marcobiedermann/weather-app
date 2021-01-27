@@ -1,12 +1,12 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import Main from '.';
+import Header from '..';
 
-describe('components/Main', () => {
+describe('components/Header', () => {
   it('renders correctly', () => {
     expect.assertions(1);
 
-    const { asFragment } = render(<Main>Content</Main>);
+    const { asFragment } = render(<Header>Content</Header>);
 
     expect(asFragment()).toMatchSnapshot();
   });

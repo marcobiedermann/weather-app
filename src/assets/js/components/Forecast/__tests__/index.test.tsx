@@ -1,12 +1,12 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import Card from '.';
+import Forecast from '..';
 
-describe('components/Card', () => {
+describe('components/Forecast', () => {
   it('renders correctly', () => {
     expect.assertions(1);
 
-    const { asFragment } = render(<Card>Content</Card>);
+    const { asFragment } = render(<Forecast list={[]} />);
 
     expect(asFragment()).toMatchSnapshot();
   });

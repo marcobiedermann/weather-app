@@ -1,12 +1,12 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import Footer from '.';
+import Main from '..';
 
-describe('components/Footer', () => {
+describe('components/Main', () => {
   it('renders correctly', () => {
     expect.assertions(1);
 
-    const { asFragment } = render(<Footer>Content</Footer>);
+    const { asFragment } = render(<Main>Content</Main>);
 
     expect(asFragment()).toMatchSnapshot();
   });

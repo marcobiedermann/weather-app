@@ -1,13 +1,12 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import City from '.';
-import cityFixtures from './__fixtures__';
+import Search from '..';
 
-describe('components/City', () => {
+describe('components/Search', () => {
   it('renders correctly', () => {
     expect.assertions(1);
 
-    const { asFragment } = render(<City {...cityFixtures} />);
+    const { asFragment } = render(<Search initialValues={{ query: '' }} onSubmit={jest.fn()} />);
 
     expect(asFragment()).toMatchSnapshot();
   });

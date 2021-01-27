@@ -1,12 +1,12 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import Grid from '.';
+import Navigation from '..';
 
-describe('components/Grid', () => {
+describe('components/Navigation', () => {
   it('renders correctly', () => {
     expect.assertions(1);
 
-    const { asFragment } = render(<Grid>Content</Grid>);
+    const { asFragment } = render(<Navigation routes={[]} />);
 
     expect(asFragment()).toMatchSnapshot();
   });
