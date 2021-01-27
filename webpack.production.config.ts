@@ -4,7 +4,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { Configuration } from 'webpack';
 import { merge } from 'webpack-merge';
-import baseConfig from './webpack.config';
+import baseConfig, { paths } from './webpack.config';
 
 const config: Configuration = {
   devtool: 'source-map',
@@ -40,7 +40,7 @@ const config: Configuration = {
     new CopyPlugin({
       patterns: [
         {
-          from: 'public',
+          from: paths.public,
         },
       ],
     }),
@@ -75,7 +75,7 @@ const config: Configuration = {
         trimCustomFragments: true,
         useShortDoctype: true,
       },
-      template: 'src/index.html',
+      template: `${paths.src}/index.html`,
     }),
     new MiniCssExtractPlugin({
       filename: 'assets/css/[name].css',

@@ -2,9 +2,15 @@ import Dotenv from 'dotenv-webpack';
 import { resolve } from 'path';
 import { Configuration } from 'webpack';
 
+export const paths = {
+  dist: resolve(__dirname, 'dist'),
+  public: resolve(__dirname, 'public'),
+  src: resolve(__dirname, 'src'),
+};
+
 const config: Configuration = {
   entry: {
-    main: [resolve(__dirname, './src/assets/js/index')],
+    main: [`${paths.src}/assets/js/index`],
   },
   optimization: {
     splitChunks: {
@@ -13,7 +19,7 @@ const config: Configuration = {
   },
   output: {
     filename: 'assets/js/[name].js',
-    path: resolve(__dirname, './dist'),
+    path: paths.dist,
   },
   module: {
     rules: [
