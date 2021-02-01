@@ -103,6 +103,6 @@
     "react-i18next": "11.8.5",
     "react-redux": "^7.2.2",
     "react-router-dom": "5.2.0",
-    "swr": "^0.4.0"
+    "swr": "^0.4.1"
   }
 }
