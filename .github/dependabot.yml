@@ -1,0 +1,16 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: monthly
+    time: "04:00"
+    timezone: Europe/Berlin
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: "@sentry/tracing"
+    versions:
+    - 6.0.3
+  - dependency-name: "@sentry/react"
+    versions:
+    - 6.0.3
