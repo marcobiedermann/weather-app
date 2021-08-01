@@ -85,7 +85,7 @@
     "webpack-merge": "5.8.0"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^1.5.0",
+    "@reduxjs/toolkit": "^1.6.1",
     "@sentry/react": "^6.0.2",
     "@sentry/tracing": "^6.0.2",
     "@testing-library/jest-dom": "^5.12.0",
