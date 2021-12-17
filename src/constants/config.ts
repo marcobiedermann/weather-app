@@ -1,6 +1,4 @@
-import { name, version } from '../../../../package.json';
-
-const { NODE_ENV } = process.env;
+import { name, version } from '../../package.json';
 
 interface Config {
   environment: string;
@@ -9,7 +7,7 @@ interface Config {
 }
 
 const config: Config = {
-  environment: NODE_ENV || 'development',
+  environment: import.meta.env.MODE || 'development',
   name,
   version,
 };
