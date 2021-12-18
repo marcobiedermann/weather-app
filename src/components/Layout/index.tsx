@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { CITIES, SEARCH, SETTINGS } from '../../constants/routes';
 import Footer from '../Footer';
 import Grid from '../Grid';
 import Header from '../Header';
@@ -14,7 +13,22 @@ const Layout: FC = (props) => {
     <div className={styles.layout}>
       <Header>
         <Grid>
-          <Navigation routes={[CITIES, SEARCH, SETTINGS]} />
+          <Navigation
+            routes={[
+              {
+                name: 'Cities',
+                path: '/cities',
+              },
+              {
+                name: 'Search',
+                path: '/search',
+              },
+              {
+                name: 'Settings',
+                path: '/settings',
+              },
+            ]}
+          />
         </Grid>
       </Header>
       <Main>

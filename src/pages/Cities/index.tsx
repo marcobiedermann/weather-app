@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { Link, RouteComponentProps } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import useSWR from 'swr';
 import Cities from '../../components/Cities';
 import Error from '../../components/Error';
@@ -64,10 +64,8 @@ interface Wind {
   deg: number;
 }
 
-const CitiesPage: FC<RouteComponentProps> = (props) => {
-  const {
-    match: { path },
-  } = props;
+const CitiesPage: FC = () => {
+  const { pathname } = useLocation();
   const cities = useSelector(selectCities);
   const { t } = useTranslation();
   const { data, error } = useSWR<CitiesPageQuery>(`/group?id=${cities.join(',')}`);
@@ -86,7 +84,7 @@ const CitiesPage: FC<RouteComponentProps> = (props) => {
         <title>Cities</title>
       </Helmet>
       <Cities cities={data.list} />
-      <Link to={`${path}/edit`}>{t('translation:edit')}</Link>
+      <Link to={`${pathname}/edit`}>{t('translation:edit')}</Link>
     </>
   );
 };

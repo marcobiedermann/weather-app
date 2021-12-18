@@ -1,13 +1,12 @@
 import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, RouteComponentProps } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import useSWR from 'swr';
 import Card from '../../../components/Card';
 import City from '../../../components/CityPreview';
 import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
-import { SEARCH } from '../../../constants/routes';
 import { removeCity, selectCities } from '../../../reducers/cities';
 import styles from './style.module.css';
 
@@ -66,7 +65,7 @@ interface Wind {
   deg: number;
 }
 
-const EditPage: FC<RouteComponentProps> = () => {
+const EditPage: FC = () => {
   const dispatch = useDispatch();
   const cities = useSelector(selectCities);
   const { data, error } = useSWR<EditPageQuery>(`/group?id=${cities.join(',')}`);
@@ -97,7 +96,7 @@ const EditPage: FC<RouteComponentProps> = () => {
         ))}
         <li>
           <Card>
-            <Link to={SEARCH.path}>Add</Link>
+            <Link to="/search">Add</Link>
           </Card>
         </li>
       </ul>

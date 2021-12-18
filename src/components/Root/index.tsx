@@ -2,7 +2,6 @@ import { parse, stringify } from 'qs';
 import React, { FC, Suspense } from 'react';
 import { SWRConfig } from 'swr';
 import { API_BASE, API_KEY } from '../../constants/open-weather-map';
-import routes from '../../constants/routes';
 import Loader from '../Loader';
 import Providers from '../Providers';
 import Router from '../Router';
@@ -36,7 +35,7 @@ const Root: FC = () => (
           fetcher,
         }}
       >
-        <Router routes={routes} />
+        <Router />
       </SWRConfig>
     </Suspense>
   </Providers>
