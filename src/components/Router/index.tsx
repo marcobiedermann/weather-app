@@ -1,26 +1,14 @@
 import React, { FC } from 'react';
-import { BrowserRouter, Switch } from 'react-router-dom';
-import AppRoute, { AppRouteProps } from '../AppRoute';
+import { BrowserRouter } from 'react-router-dom';
 import Layout from '../Layout';
+import Routes from '../Routes';
 
-export interface RouterProps {
-  routes: AppRouteProps[];
-}
-
-const Router: FC<RouterProps> = (props) => {
-  const { routes } = props;
-
-  return (
-    <BrowserRouter>
-      <Layout>
-        <Switch>
-          {routes.map((route) => (
-            <AppRoute key={route.path} {...route} />
-          ))}
-        </Switch>
-      </Layout>
-    </BrowserRouter>
-  );
-};
+const Router: FC = () => (
+  <BrowserRouter>
+    <Layout>
+      <Routes />
+    </Layout>
+  </BrowserRouter>
+);
 
 export default Router;

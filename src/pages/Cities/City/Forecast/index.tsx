@@ -1,14 +1,10 @@
 import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
-import { RouteComponentProps } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import useSWR from 'swr';
 import Error from '../../../../components/Error';
 import Forecast from '../../../../components/Forecast';
 import Loader from '../../../../components/Loader';
-
-interface Params {
-  cityId: string;
-}
 
 interface ForecastPageQuery {
   city: City;
@@ -70,12 +66,8 @@ interface Weather {
   main: string;
 }
 
-const ForecastPage: FC<RouteComponentProps<Params>> = (props) => {
-  const {
-    match: {
-      params: { cityId },
-    },
-  } = props;
+const ForecastPage: FC = () => {
+  const { cityId } = useParams();
   const { data, error } = useSWR<ForecastPageQuery>(`/forecast/daily?id=${cityId}`);
 
   if (error) {

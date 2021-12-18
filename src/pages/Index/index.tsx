@@ -1,14 +1,13 @@
 import React, { FC } from 'react';
 import { Helmet } from 'react-helmet';
-import { Redirect, RouteComponentProps } from 'react-router-dom';
-import { CITIES } from '../../constants/routes';
+import { Navigate } from 'react-router-dom';
 
-const IndexPage: FC<RouteComponentProps> = () => (
+const IndexPage: FC = () => (
   <>
     <Helmet>
       <title>Weather App</title>
     </Helmet>
-    <Redirect to={CITIES.path} />
+    <Navigate to="/cities" />
   </>
 );
 
