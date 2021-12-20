@@ -51,6 +51,11 @@ exports[`components/Settings renders correctly 1`] = `
         >
           metric
         </option>
+        <option
+          value="standard"
+        >
+          standard
+        </option>
       </select>
     </div>
     <div
