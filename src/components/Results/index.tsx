@@ -1,12 +1,12 @@
-import React, { FC } from 'react';
+import React from 'react';
 import Result, { ResultProps } from '../Result';
 import styles from './style.module.css';
 
-export interface ResultsProps {
+interface ResultsProps {
   results: ResultProps[];
 }
 
-const Results: FC<ResultsProps> = (props) => {
+function Results(props: ResultsProps): JSX.Element {
   const { results } = props;
 
   return (
@@ -18,6 +18,7 @@ const Results: FC<ResultsProps> = (props) => {
       ))}
     </ul>
   );
-};
+}
 
+export type { ResultsProps };
 export default Results;

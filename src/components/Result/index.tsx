@@ -1,10 +1,10 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { addCity } from '../../reducers/cities';
 import styles from './style.module.css';
 
-export interface ResultProps {
+interface ResultProps {
   id: number;
   main: {
     temp: number;
@@ -15,7 +15,7 @@ export interface ResultProps {
   };
 }
 
-const Result: FC<ResultProps> = (props) => {
+function Result(props: ResultProps): JSX.Element {
   const { id, main, name, sys } = props;
   const dispatch = useDispatch();
   const { t } = useTranslation();
@@ -32,6 +32,7 @@ const Result: FC<ResultProps> = (props) => {
       </button>
     </div>
   );
-};
+}
 
+export type { ResultProps };
 export default Result;

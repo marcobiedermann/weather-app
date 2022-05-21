@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -65,7 +65,7 @@ interface Wind {
   deg: number;
 }
 
-const EditPage: FC = () => {
+function EditPage(): JSX.Element {
   const dispatch = useDispatch();
   const cities = useSelector(selectCities);
   const { data, error } = useSWR<EditPageQuery>(`/group?id=${cities.join(',')}`);
@@ -102,6 +102,6 @@ const EditPage: FC = () => {
       </ul>
     </>
   );
-};
+}
 
 export default EditPage;

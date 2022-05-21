@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { ReactNode } from 'react';
 import Footer from '../Footer';
 import Grid from '../Grid';
 import Header from '../Header';
@@ -6,7 +6,11 @@ import Main from '../Main';
 import Navigation from '../Navigation';
 import styles from './style.module.css';
 
-const Layout: FC = (props) => {
+interface LayoutProps {
+  children: ReactNode;
+}
+
+function Layout(props: LayoutProps): JSX.Element {
   const { children } = props;
 
   return (
@@ -45,6 +49,7 @@ const Layout: FC = (props) => {
       </Footer>
     </div>
   );
-};
+}
 
+export type { LayoutProps };
 export default Layout;

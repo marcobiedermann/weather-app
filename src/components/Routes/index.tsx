@@ -39,10 +39,10 @@ const routes = [
   },
 ];
 
-const Routes = () => {
+function Routes(): JSX.Element {
   const element = useRoutes(routes);
 
-  return element;
+  return element!;
 };
 
 export default Routes;

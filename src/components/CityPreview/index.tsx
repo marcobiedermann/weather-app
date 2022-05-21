@@ -1,9 +1,9 @@
 import clsx from 'clsx';
-import React, { FC } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './style.module.css';
 
-export interface CityPreviewProps {
+interface CityPreviewProps {
   id: number;
   main: {
     temp: number;
@@ -14,7 +14,7 @@ export interface CityPreviewProps {
   };
 }
 
-const CityPreview: FC<CityPreviewProps> = (props) => {
+function CityPreview(props: CityPreviewProps): JSX.Element {
   const { id, main, name, sys, ...otherProps } = props;
 
   return (
@@ -32,6 +32,7 @@ const CityPreview: FC<CityPreviewProps> = (props) => {
       </Link>
     </div>
   );
-};
+}
 
+export type { CityPreviewProps };
 export default CityPreview;

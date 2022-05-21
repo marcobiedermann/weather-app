@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { Field, Form, Formik, FormikHelpers } from 'formik';
-import React, { FC } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from '../Settings/style.module.css';
 
@@ -8,13 +8,13 @@ interface Values {
   query: string;
 }
 
-export interface SearchProps {
+interface SearchProps {
   initialValues: Values;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onSubmit: (values: Values, formikHelpers: FormikHelpers<Values>) => void | Promise<any>;
 }
 
-const Search: FC<SearchProps> = (props) => {
+function Search(props: SearchProps): JSX.Element {
   const { t } = useTranslation();
 
   return (
@@ -38,6 +38,7 @@ const Search: FC<SearchProps> = (props) => {
       )}
     </Formik>
   );
-};
+}
 
+export type { SearchProps };
 export default Search;

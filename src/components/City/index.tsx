@@ -1,5 +1,5 @@
 import format from 'date-fns/format';
-import React, { FC } from 'react';
+import React from 'react';
 
 interface Weather {
   description: string;
@@ -7,7 +7,7 @@ interface Weather {
   id: number;
 }
 
-export interface CityProps {
+interface CityProps {
   dt: number;
   main: {
     temp: number;
@@ -16,7 +16,7 @@ export interface CityProps {
   weather: Weather[];
 }
 
-const City: FC<CityProps> = (props) => {
+function City(props: CityProps): JSX.Element {
   const { dt, main, name, weather, ...otherProps } = props;
 
   return (
@@ -39,6 +39,7 @@ const City: FC<CityProps> = (props) => {
       )}
     </div>
   );
-};
+}
 
+export type { CityProps };
 export default City;

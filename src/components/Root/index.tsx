@@ -1,5 +1,5 @@
 import { parse, stringify } from 'qs';
-import React, { FC, Suspense } from 'react';
+import React, { Suspense } from 'react';
 import { SWRConfig } from 'swr';
 import { API_BASE, API_KEY } from '../../constants/open-weather-map';
 import Loader from '../Loader';
@@ -27,18 +27,20 @@ async function fetcher(url: string) {
   return response.json();
 }
 
-const Root: FC = () => (
-  <Providers>
-    <Suspense fallback={<Loader />}>
-      <SWRConfig
-        value={{
-          fetcher,
-        }}
-      >
-        <Router />
-      </SWRConfig>
-    </Suspense>
-  </Providers>
-);
+function Root(): JSX.Element {
+  return (
+    <Providers>
+      <Suspense fallback={<Loader />}>
+        <SWRConfig
+          value={{
+            fetcher,
+          }}
+        >
+          <Router />
+        </SWRConfig>
+      </Suspense>
+    </Providers>
+  );
+}
 
 export default Root;

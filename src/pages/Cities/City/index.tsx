@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
 import useSWR from 'swr';
@@ -60,7 +60,7 @@ interface Wind {
   deg: number;
 }
 
-const CityPage: FC = () => {
+function CityPage(): JSX.Element {
   const { cityId } = useParams();
   const { data, error } = useSWR<CityPageQuery>(`/weather?id=${cityId}`);
 
@@ -80,6 +80,6 @@ const CityPage: FC = () => {
       <City {...data} />
     </>
   );
-};
+}
 
 export default CityPage;
