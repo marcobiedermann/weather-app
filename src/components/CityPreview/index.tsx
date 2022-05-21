@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './style.module.css';
@@ -19,7 +19,7 @@ const CityPreview: FC<CityPreviewProps> = (props) => {
 
   return (
     <div
-      className={classNames(styles.city, {
+      className={clsx(styles.city, {
         [styles['city--cold']]: main.temp <= 0,
         [styles['city--warm']]: main.temp >= 15,
       })}
