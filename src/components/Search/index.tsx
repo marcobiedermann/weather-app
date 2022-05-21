@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import clsx from 'clsx';
 import { Field, Form, Formik, FormikHelpers } from 'formik';
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -29,7 +29,7 @@ const Search: FC<SearchProps> = (props) => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={classNames(styles.form__input, styles['form__input--submit'])}
+              className={clsx(styles.form__input, styles['form__input--submit'])}
             >
               {t('translation:search')}
             </button>
