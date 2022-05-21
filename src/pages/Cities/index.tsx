@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -64,7 +64,7 @@ interface Wind {
   deg: number;
 }
 
-const CitiesPage: FC = () => {
+function CitiesPage(): JSX.Element {
   const { pathname } = useLocation();
   const cities = useSelector(selectCities);
   const { t } = useTranslation();
@@ -87,6 +87,6 @@ const CitiesPage: FC = () => {
       <Link to={`${pathname}/edit`}>{t('translation:edit')}</Link>
     </>
   );
-};
+}
 
 export default CitiesPage;

@@ -1,5 +1,5 @@
 import { FormikHelpers } from 'formik';
-import React, { FC } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useDispatch, useSelector } from 'react-redux';
 import Settings from '../../components/Settings';
@@ -12,7 +12,7 @@ interface Values {
   unit: Unit;
 }
 
-const SettingsPage: FC = () => {
+function SettingsPage(): JSX.Element {
   const dispatch = useDispatch();
   const { language, unit } = useSelector(selectSettings);
 

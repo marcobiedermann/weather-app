@@ -1,5 +1,7 @@
-import React, { FC } from 'react';
+import React from 'react';
 
-const Loader: FC = () => <div>loading …</div>;
+function Loader(): JSX.Element {
+  return <div>loading …</div>;
+}
 
 export default Loader;

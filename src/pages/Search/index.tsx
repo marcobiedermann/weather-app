@@ -1,5 +1,5 @@
 import { FormikHelpers } from 'formik';
-import React, { FC, useState } from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import useSWR from 'swr';
 import Error from '../../components/Error';
@@ -66,7 +66,7 @@ interface Values {
   query: string;
 }
 
-const SearchPage: FC = () => {
+function SearchPage(): JSX.Element {
   const [query, setQuery] = useState('London, GB');
   const { data, error } = useSWR<SearchPageQuery>(`/find?q=${query}`);
 

@@ -1,11 +1,15 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
-import React, { FC } from 'react';
+import React, { ReactNode } from 'react';
 
-export interface LabelProps {
+interface LabelProps {
+  children: ReactNode;
   htmlFor: string;
 }
 
-const Label: FC<LabelProps> = (props) => <label {...props} />;
+function Label(props: LabelProps): JSX.Element {
+  return <label {...props} />;
+}
 
+export type { LabelProps };
 export default Label;

@@ -1,6 +1,13 @@
-import React, { FC } from 'react';
+import React, { ReactNode } from 'react';
 import styles from './style.module.css';
 
-const Card: FC = (props) => <div className={styles.card} {...props} />;
+interface CardProps {
+  children: ReactNode;
+}
 
+function Card(props: CardProps): JSX.Element {
+  return <div className={styles.card} {...props} />;
+}
+
+export type { CardProps };
 export default Card;

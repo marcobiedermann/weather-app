@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './style.module.css';
 
@@ -7,11 +7,11 @@ interface Route {
   path: string;
 }
 
-export interface NavigationProps {
+interface NavigationProps {
   routes: Route[];
 }
 
-const Navigation: FC<NavigationProps> = (props) => {
+function Navigation(props: NavigationProps): JSX.Element {
   const { routes, ...otherProps } = props;
 
   return (
@@ -27,6 +27,7 @@ const Navigation: FC<NavigationProps> = (props) => {
       </ul>
     </nav>
   );
-};
+}
 
+export type { NavigationProps };
 export default Navigation;

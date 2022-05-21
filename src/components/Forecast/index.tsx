@@ -1,6 +1,6 @@
 import format from 'date-fns/format';
 import fromUnixTime from 'date-fns/fromUnixTime';
-import React, { FC } from 'react';
+import React from 'react';
 
 interface Temp {
   max: number;
@@ -17,11 +17,11 @@ interface List {
   temp: Temp;
   weather: Weather[];
 }
-export interface ForecaseProps {
+interface ForecaseProps {
   list: List[];
 }
 
-const Forecast: FC<ForecaseProps> = (props) => {
+function Forecast(props: ForecaseProps): JSX.Element {
   const { list, ...otherProps } = props;
 
   return (
@@ -50,6 +50,7 @@ const Forecast: FC<ForecaseProps> = (props) => {
       </tbody>
     </table>
   );
-};
+}
 
+export type { ForecaseProps };
 export default Forecast;

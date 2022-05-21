@@ -1,12 +1,12 @@
-import React, { FC } from 'react';
+import React from 'react';
 import CityPreview, { CityPreviewProps } from '../CityPreview';
 import styles from './style.module.css';
 
-export interface CitiesProps {
+interface CitiesProps {
   cities: CityPreviewProps[];
 }
 
-const Cities: FC<CitiesProps> = (props) => {
+function Cities(props: CitiesProps): JSX.Element {
   const { cities, ...otherProps } = props;
 
   return (
@@ -18,6 +18,7 @@ const Cities: FC<CitiesProps> = (props) => {
       ))}
     </ul>
   );
-};
+}
 
+export type { CitiesProps };
 export default Cities;

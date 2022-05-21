@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
 import useSWR from 'swr';
@@ -66,7 +66,7 @@ interface Weather {
   main: string;
 }
 
-const ForecastPage: FC = () => {
+function ForecastPage(): JSX.Element {
   const { cityId } = useParams();
   const { data, error } = useSWR<ForecastPageQuery>(`/forecast/daily?id=${cityId}`);
 
@@ -86,6 +86,6 @@ const ForecastPage: FC = () => {
       <Forecast list={data.list} />
     </>
   );
-};
+}
 
 export default ForecastPage;
