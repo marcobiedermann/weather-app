@@ -67,7 +67,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.3",
-    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/jest-dom": "^5.16.5",
     "clsx": "^1.2.1",
     "date-fns": "2.29.1",
     "formik": "2.2.9",
