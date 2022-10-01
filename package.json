@@ -71,7 +71,7 @@
     "clsx": "^1.2.1",
     "date-fns": "2.29.2",
     "formik": "2.2.9",
-    "i18next": "21.9.1",
+    "i18next": "21.9.2",
     "i18next-browser-languagedetector": "6.1.5",
     "i18next-http-backend": "^1.4.1",
     "qs": "^6.11.0",
