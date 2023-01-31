@@ -18,11 +18,11 @@ interface List {
   weather: Weather[];
 }
 interface ForecaseProps {
-  list: List[];
+  list?: List[];
 }
 
 function Forecast(props: ForecaseProps): JSX.Element {
-  const { list, ...otherProps } = props;
+  const { list = [], ...otherProps } = props;
 
   return (
     <table {...otherProps}>
