@@ -3,11 +3,11 @@ import CityPreview, { CityPreviewProps } from '../CityPreview';
 import styles from './style.module.css';
 
 interface CitiesProps {
-  cities: CityPreviewProps[];
+  cities?: CityPreviewProps[];
 }
 
 function Cities(props: CitiesProps): JSX.Element {
-  const { cities, ...otherProps } = props;
+  const { cities = [], ...otherProps } = props;
 
   return (
     <ul className={styles.cities} {...otherProps}>

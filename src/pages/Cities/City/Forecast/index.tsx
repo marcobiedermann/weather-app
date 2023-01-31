@@ -1,80 +1,20 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
-import useSWR from 'swr';
 import Error from '../../../../components/Error';
 import Forecast from '../../../../components/Forecast';
 import Loader from '../../../../components/Loader';
-
-interface ForecastPageQuery {
-  city: City;
-  cnt: number;
-  cod: string;
-  list: List[];
-  message: number;
-}
-
-interface City {
-  coord: Coord;
-  country: string;
-  id: number;
-  name: string;
-  population: number;
-  timezone: number;
-}
-
-interface Coord {
-  lat: number;
-  lon: number;
-}
-
-interface List {
-  clouds: number;
-  deg: number;
-  dt: number;
-  feels_like: FeelsLike;
-  humidity: number;
-  pop: number;
-  pressure: number;
-  speed: number;
-  sunrise: number;
-  sunset: number;
-  temp: Temp;
-  weather: Weather[];
-}
-
-interface FeelsLike {
-  day: number;
-  eve: number;
-  morn: number;
-  night: number;
-}
-
-interface Temp {
-  day: number;
-  eve: number;
-  max: number;
-  min: number;
-  morn: number;
-  night: number;
-}
-
-interface Weather {
-  description: string;
-  icon: string;
-  id: number;
-  main: string;
-}
+import { useDailyForeCast } from '../../../../hooks';
 
 function ForecastPage(): JSX.Element {
   const { cityId } = useParams();
-  const { data, error } = useSWR<ForecastPageQuery>(`/forecast/daily?id=${cityId}`);
+  const { data, error, isError, isLoading } = useDailyForeCast(parseInt(cityId!, 10));
 
-  if (error) {
+  if (isError) {
     return <Error message={error.message} />;
   }
 
-  if (!data) {
+  if (isLoading) {
     return <Loader />;
   }
 
@@ -83,7 +23,7 @@ function ForecastPage(): JSX.Element {
       <Helmet>
         <title>Daily Forecast</title>
       </Helmet>
-      <Forecast list={data.list} />
+      <Forecast list={data?.list} />
     </>
   );
 }
