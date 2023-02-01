@@ -1,11 +1,10 @@
-import { FormikHelpers } from 'formik';
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import useSWR from 'swr';
 import Error from '../../components/Error';
 import Loader from '../../components/Loader';
 import Results from '../../components/Results';
-import Search from '../../components/Search';
+import Search, { FormData } from '../../components/Search';
 
 interface SearchPageQuery {
   message: string;
@@ -62,10 +61,6 @@ interface Wind {
   deg: number;
 }
 
-interface Values {
-  query: string;
-}
-
 function SearchPage(): JSX.Element {
   const [query, setQuery] = useState('London, GB');
   const { data, error } = useSWR<SearchPageQuery>(`/find?q=${query}`);
@@ -74,16 +69,15 @@ function SearchPage(): JSX.Element {
     return <Error message={error.message} />;
   }
 
-  const initialValues: Values = {
+  const defaultValues: FormData = {
     query,
   };
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  function onSubmit(values: Values, formikHelpers: FormikHelpers<Values>): void | Promise<any> {
-    const { setSubmitting } = formikHelpers;
+  function onSubmit(data: FormData): void | Promise<any> {
+    const { query } = data;
 
-    setQuery(values.query);
-    setSubmitting(false);
+    setQuery(query);
   }
 
   return (
@@ -91,10 +85,10 @@ function SearchPage(): JSX.Element {
       <Helmet>
         <title>Search</title>
       </Helmet>
-      <Search initialValues={initialValues} onSubmit={onSubmit} />
+      <Search defaultValues={defaultValues} onSubmit={onSubmit} />
       {data ? <Results results={data.list} /> : <Loader />}
     </>
   );
-};
+}
 
 export default SearchPage;

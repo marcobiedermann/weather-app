@@ -2,9 +2,7 @@
 
 exports[`components/Settings renders correctly 1`] = `
 <DocumentFragment>
-  <form
-    action="#"
-  >
+  <form>
     <div
       class="form__field"
     >

@@ -6,7 +6,7 @@ describe('components/Search', () => {
   it('renders correctly', () => {
     expect.assertions(1);
 
-    const { asFragment } = render(<Search initialValues={{ query: '' }} onSubmit={jest.fn()} />);
+    const { asFragment } = render(<Search defaultValues={{ query: '' }} onSubmit={jest.fn()} />);
 
     expect(asFragment()).toMatchSnapshot();
   });

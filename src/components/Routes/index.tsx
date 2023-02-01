@@ -43,6 +43,6 @@ function Routes(): JSX.Element {
   const element = useRoutes(routes);
 
   return element!;
-};
+}
 
 export default Routes;

@@ -1,44 +1,41 @@
 import clsx from 'clsx';
-import { Field, Form, Formik, FormikHelpers } from 'formik';
 import React from 'react';
+import { useForm } from 'react-hook-form';
+
 import { useTranslation } from 'react-i18next';
 import styles from '../Settings/style.module.css';
 
-interface Values {
+interface FormData {
   query: string;
 }
 
 interface SearchProps {
-  initialValues: Values;
+  defaultValues: FormData;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  onSubmit: (values: Values, formikHelpers: FormikHelpers<Values>) => void | Promise<any>;
+  onSubmit: (data: FormData) => void | Promise<any>;
 }
 
 function Search(props: SearchProps): JSX.Element {
+  const { defaultValues, onSubmit } = props;
+  const { register, handleSubmit } = useForm<FormData>({
+    defaultValues,
+  });
   const { t } = useTranslation();
 
   return (
-    <Formik {...props}>
-      {({ isSubmitting }) => (
-        <Form>
-          <div className={styles.form__field}>
-            <Field name="query" className={styles.form__input} />
-          </div>
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div className={styles.form__field}>
+        <input {...register('query')} className={styles.form__input} />
+      </div>
 
-          <div className={styles.form__field}>
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className={clsx(styles.form__input, styles['form__input--submit'])}
-            >
-              {t('translation:search')}
-            </button>
-          </div>
-        </Form>
-      )}
-    </Formik>
+      <div className={styles.form__field}>
+        <button type="submit" className={clsx(styles.form__input, styles['form__input--submit'])}>
+          {t('translation:search')}
+        </button>
+      </div>
+    </form>
   );
 }
 
-export type { SearchProps };
+export type { FormData, SearchProps };
 export default Search;
