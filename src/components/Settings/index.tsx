@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import { Field, Form, Formik, FormikHelpers } from 'formik';
 import React from 'react';
+import { useForm } from 'react-hook-form';
 import { Language, languages, supportedLanguages, units } from '../../constants/localization';
 import Label from '../Label';
 import styles from './style.module.css';
@@ -11,56 +11,53 @@ function isSupportedLanguage(language: Language): boolean {
 
 type Unit = 'metric' | 'imperial';
 
-interface Values {
+interface FormData {
   language: string;
   unit: Unit;
 }
 
 interface SettingsProps {
-  initialValues: Values;
+  defaultValues: FormData;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  onSubmit: (values: Values, formikHelpers: FormikHelpers<Values>) => void | Promise<any>;
+  onSubmit: (data: FormData) => void | Promise<any>;
 }
 
 function Settings(props: SettingsProps): JSX.Element {
+  const { defaultValues, onSubmit } = props;
+  const { register, handleSubmit } = useForm<FormData>({
+    defaultValues,
+  });
+
   return (
-    <Formik {...props}>
-      {({ isSubmitting }) => (
-        <Form>
-          <div className={styles.form__field}>
-            <Label htmlFor="language">Language</Label>
-            <Field component="select" name="language" className={styles.form__input}>
-              {languages.filter(isSupportedLanguage).map((language) => (
-                <option value={language.id} key={language.id}>
-                  {language.name}
-                </option>
-              ))}
-            </Field>
-          </div>
-          <div className={styles.form__field}>
-            <Label htmlFor="unit">Unit</Label>
-            <Field component="select" name="unit" className={styles.form__input}>
-              {units.map((unit) => (
-                <option value={unit.id} key={unit.id}>
-                  {unit.name}
-                </option>
-              ))}
-            </Field>
-          </div>
-          <div className={styles.form__field}>
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className={clsx(styles.form__input, styles['form__input--submit'])}
-            >
-              Save
-            </button>
-          </div>
-        </Form>
-      )}
-    </Formik>
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div className={styles.form__field}>
+        <Label htmlFor="language">Language</Label>
+        <select {...register('language')} className={styles.form__input}>
+          {languages.filter(isSupportedLanguage).map((language) => (
+            <option value={language.id} key={language.id}>
+              {language.name}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div className={styles.form__field}>
+        <Label htmlFor="unit">Unit</Label>
+        <select {...register('unit')} className={styles.form__input}>
+          {units.map((unit) => (
+            <option value={unit.id} key={unit.id}>
+              {unit.name}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div className={styles.form__field}>
+        <button type="submit" className={clsx(styles.form__input, styles['form__input--submit'])}>
+          Save
+        </button>
+      </div>
+    </form>
   );
 }
 
-export type { SettingsProps };
+export type { FormData, SettingsProps };
 export default Settings;

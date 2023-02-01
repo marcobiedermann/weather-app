@@ -7,7 +7,7 @@ describe('components/Settings', () => {
     expect.assertions(1);
 
     const { asFragment } = render(
-      <Settings initialValues={{ language: 'en', unit: 'metric' }} onSubmit={jest.fn()} />,
+      <Settings defaultValues={{ language: 'en', unit: 'metric' }} onSubmit={jest.fn()} />,
     );
 
     expect(asFragment()).toMatchSnapshot();

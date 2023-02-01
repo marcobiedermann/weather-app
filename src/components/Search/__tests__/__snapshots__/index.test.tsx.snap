@@ -2,16 +2,13 @@
 
 exports[`components/Search renders correctly 1`] = `
 <DocumentFragment>
-  <form
-    action="#"
-  >
+  <form>
     <div
       class="form__field"
     >
       <input
         class="form__input"
         name="query"
-        value=""
       />
     </div>
     <div
