@@ -1,12 +1,13 @@
-import React from 'react';
+import { lazy } from 'react';
 import { useRoutes } from 'react-router-dom';
-import CitiesPage from '../../pages/Cities';
-import CityPage from '../../pages/Cities/City';
-import CityForecastPage from '../../pages/Cities/City/Forecast';
-import CitiesEditPage from '../../pages/Cities/Edit';
-import HomePage from '../../pages/Index';
-import SearchPage from '../../pages/Search';
-import SettingsPage from '../../pages/Settings';
+
+const HomePage = lazy(() => import('../../pages/Index'));
+const CitiesPage = lazy(() => import('../../pages/Cities'));
+const CityPage = lazy(() => import('../../pages/Cities/City'));
+const CityForecastPage = lazy(() => import('../../pages/Cities/City/Forecast'));
+const CitiesEditPage = lazy(() => import('../../pages/Cities/Edit'));
+const SearchPage = lazy(() => import('../../pages/Search'));
+const SettingsPage = lazy(() => import('../../pages/Settings'));
 
 const routes = [
   {
