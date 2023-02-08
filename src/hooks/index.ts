@@ -35,6 +35,7 @@ function useFind(query: string): UseQueryResult<FindResponse, Error> {
   return useQuery<FindResponse, Error>({
     queryFn: () => getFind(query),
     queryKey: ['find', query],
+    enabled: Boolean(query),
   });
 }
 

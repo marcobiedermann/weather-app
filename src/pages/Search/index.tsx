@@ -7,7 +7,7 @@ import Search, { FormData } from '../../components/Search';
 import { useFind } from '../../hooks';
 
 function SearchPage(): JSX.Element {
-  const [query, setQuery] = useState('London, GB');
+  const [query, setQuery] = useState<string>('');
   const { data, isError, error } = useFind(query);
 
   if (isError) {
@@ -31,7 +31,7 @@ function SearchPage(): JSX.Element {
         <title>Search</title>
       </Helmet>
       <Search defaultValues={defaultValues} onSubmit={onSubmit} />
-      {data ? <Results results={data.list} /> : <Loader />}
+      {query && (data ? <Results results={data.list} /> : <Loader />)}
     </>
   );
 }
