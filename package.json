@@ -36,7 +36,7 @@
     "@types/classnames": "^2.3.1",
     "@types/node": "^18.11.18",
     "@types/qs": "^6.9.7",
-    "@types/react": "^18.0.27",
+    "@types/react": "^18.0.31",
     "@types/react-dom": "^18.0.10",
     "@types/react-helmet": "^6.1.6",
     "@types/react-redux": "^7.1.25",
