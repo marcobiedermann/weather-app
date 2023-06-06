@@ -1,17 +1,16 @@
-import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom';
 import Cities from '../../components/Cities';
 import Error from '../../components/Error';
 import Loader from '../../components/Loader';
 import { useGroup } from '../../hooks';
 import { selectCities } from '../../reducers/cities';
+import { useAppSelector } from '../../store';
 
 function CitiesPage(): JSX.Element {
   const { pathname } = useLocation();
-  const cities = useSelector(selectCities);
+  const cities = useAppSelector(selectCities);
   const { t } = useTranslation();
   const { data, error, isError, isLoading } = useGroup(cities);
 

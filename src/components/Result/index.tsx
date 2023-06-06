@@ -1,7 +1,6 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch } from 'react-redux';
 import { addCity } from '../../reducers/cities';
+import { useAppDispatch } from '../../store';
 import styles from './style.module.css';
 
 interface ResultProps {
@@ -17,7 +16,7 @@ interface ResultProps {
 
 function Result(props: ResultProps): JSX.Element {
   const { id, main, name, sys } = props;
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { t } = useTranslation();
 
   return (

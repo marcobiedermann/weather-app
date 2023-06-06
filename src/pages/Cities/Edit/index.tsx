@@ -1,6 +1,4 @@
-import React from 'react';
 import { Helmet } from 'react-helmet';
-import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Card from '../../../components/Card';
 import City from '../../../components/CityPreview';
@@ -8,11 +6,12 @@ import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
 import { useGroup } from '../../../hooks';
 import { removeCity, selectCities } from '../../../reducers/cities';
+import { useAppDispatch, useAppSelector } from '../../../store';
 import styles from './style.module.css';
 
 function EditPage(): JSX.Element {
-  const dispatch = useDispatch();
-  const cities = useSelector(selectCities);
+  const dispatch = useAppDispatch();
+  const cities = useAppSelector(selectCities);
   const { data, error, isError, isLoading } = useGroup(cities);
 
   if (isError) {

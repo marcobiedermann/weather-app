@@ -1,12 +1,11 @@
-import React from 'react';
 import { Helmet } from 'react-helmet';
-import { useDispatch, useSelector } from 'react-redux';
 import Settings, { FormData } from '../../components/Settings';
 import { selectSettings, updateSettings } from '../../reducers/settings';
+import { useAppDispatch, useAppSelector } from '../../store';
 
 function SettingsPage(): JSX.Element {
-  const dispatch = useDispatch();
-  const { language, unit } = useSelector(selectSettings);
+  const dispatch = useAppDispatch();
+  const { language, unit } = useAppSelector(selectSettings);
 
   const defaultValues: FormData = {
     language,
