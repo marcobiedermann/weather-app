@@ -1,6 +1,8 @@
+import { zodResolver } from '@hookform/resolvers/zod';
 import clsx from 'clsx';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { z } from 'zod';
 import { Language, languages, supportedLanguages, units } from '../../constants/localization';
 import Label from '../Label';
 import styles from './style.module.css';
@@ -9,12 +11,12 @@ function isSupportedLanguage(language: Language): boolean {
   return supportedLanguages.includes(language.id);
 }
 
-type Unit = 'metric' | 'imperial';
+const formDataSchema = z.object({
+  language: z.string(),
+  unit: z.union([z.literal('metric'), z.literal('imperial')]),
+});
 
-interface FormData {
-  language: string;
-  unit: Unit;
-}
+type FormData = z.infer<typeof formDataSchema>;
 
 interface SettingsProps {
   defaultValues: FormData;
@@ -26,6 +28,7 @@ function Settings(props: SettingsProps): JSX.Element {
   const { defaultValues, onSubmit } = props;
   const { register, handleSubmit } = useForm<FormData>({
     defaultValues,
+    resolver: zodResolver(formDataSchema),
   });
 
   return (
