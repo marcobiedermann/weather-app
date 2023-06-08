@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import React, { ReactNode, Suspense } from 'react';
+import { ReactNode, Suspense } from 'react';
 import { Provider } from 'react-redux';
 import store from '../../store';
 import Loader from '../Loader';

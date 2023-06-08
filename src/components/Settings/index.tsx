@@ -1,6 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import clsx from 'clsx';
-import React from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { Language, languages, supportedLanguages, units } from '../../constants/localization';

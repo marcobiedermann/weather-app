@@ -1,6 +1,4 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 interface LabelProps {
   children: ReactNode;

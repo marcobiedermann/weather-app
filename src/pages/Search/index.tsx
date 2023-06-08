@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import Error from '../../components/Error';
 import Loader from '../../components/Loader';
