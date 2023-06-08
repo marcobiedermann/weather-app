@@ -1,52 +1,39 @@
-export interface WeatherResponse {
-  coord: Coord;
-  weather: Weather[];
-  base: string;
-  main: Main;
-  visibility: number;
-  wind: Wind;
-  clouds: Clouds;
-  dt: number;
-  sys: Sys;
-  id: number;
-  name: string;
-  cod: number;
-}
+import { z } from 'zod';
+import { cloudsSchema, coordSchema, weatherSchema, windSchema } from './common';
 
-export interface Clouds {
-  all: number;
-}
+const mainSchema = z.object({
+  humidity: z.number(),
+  pressure: z.number(),
+  temp_max: z.number(),
+  temp_min: z.number(),
+  temp: z.number(),
+});
 
-export interface Coord {
-  lon: number;
-  lat: number;
-}
+const sysSchema = z.object({
+  country: z.string(),
+  id: z.number(),
+  message: z.number(),
+  sunrise: z.number(),
+  sunset: z.number(),
+  type: z.number(),
+});
 
-export interface Main {
-  temp: number;
-  pressure: number;
-  humidity: number;
-  temp_min: number;
-  temp_max: number;
-}
+const weatherResponseSchema = z.object({
+  base: z.string(),
+  clouds: cloudsSchema,
+  cod: z.number(),
+  coord: coordSchema,
+  dt: z.number(),
+  id: z.number(),
+  main: mainSchema,
+  name: z.string(),
+  sys: sysSchema,
+  visibility: z.number(),
+  weather: z.array(weatherSchema),
+  wind: windSchema,
+});
 
-export interface Sys {
-  type: number;
-  id: number;
-  message: number;
-  country: string;
-  sunrise: number;
-  sunset: number;
-}
+type WeatherResponse = z.infer<typeof weatherResponseSchema>;
 
-export interface Weather {
-  id: number;
-  main: string;
-  description: string;
-  icon: string;
-}
-
-export interface Wind {
-  speed: number;
-  deg: number;
-}
+export type { WeatherResponse };
+export { weatherResponseSchema };

@@ -1,7 +1,7 @@
 import { useQuery, UseQueryResult } from '@tanstack/react-query';
 import axios from 'axios';
 import { API_KEY } from '../constants/open-weather-map';
-import { FindResponse } from './find';
+import { FindResponse, findResponseSchema } from './find';
 import { DailyForecastResponse } from './forecast/daily';
 import { GroupResponse } from './group';
 import { WeatherResponse } from './weather';
@@ -28,7 +28,7 @@ async function getFind(query: string): Promise<FindResponse> {
     },
   });
 
-  return data;
+  return findResponseSchema.parse(data);
 }
 
 function useFind(query: string): UseQueryResult<FindResponse, Error> {
@@ -39,7 +39,7 @@ function useFind(query: string): UseQueryResult<FindResponse, Error> {
   });
 }
 
-async function getGroup(ids: number[]) {
+async function getGroup(ids: number[]): Promise<GroupResponse> {
   const { data } = await instance.get<GroupResponse>('/group', {
     params: {
       ...defaultParams,
@@ -50,7 +50,7 @@ async function getGroup(ids: number[]) {
   return data;
 }
 
-function useGroup(ids: number[]) {
+function useGroup(ids: number[]): UseQueryResult<GroupResponse, Error> {
   return useQuery<GroupResponse, Error>({
     queryFn: () => getGroup(ids),
     queryKey: ['group', ids],
