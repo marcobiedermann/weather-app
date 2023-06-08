@@ -1,15 +1,17 @@
 import { name, version } from '../../package.json';
 
 interface Config {
-  environment: string;
   name: string;
   version: string;
 }
 
 const config: Config = {
-  environment: import.meta.env.MODE || 'development',
   name,
   version,
 };
 
+const isDevelopment = import.meta.env.DEV;
+const isProduction = import.meta.env.PROD;
+
+export { isDevelopment, isProduction };
 export default config;

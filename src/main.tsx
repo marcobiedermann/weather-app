@@ -1,11 +1,11 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import Root from './components/Root';
+import { isDevelopment } from './constants/config';
 import './i18n';
-import { worker } from './mocks/browser';
 
-if (import.meta.env.DEV) {
-  worker.start();
+if (isDevelopment) {
+  import('./mocks/browser').then(({ worker }) => worker.start());
 }
 
 createRoot(document.getElementById('root') as HTMLElement).render(

@@ -2,7 +2,7 @@ import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import HttpApi from 'i18next-http-backend';
 import { initReactI18next } from 'react-i18next';
-import { isDevelopment } from '../utils/environment';
+import { isDevelopment } from '../constants/config';
 
 i18n
   .use(HttpApi)
@@ -12,7 +12,7 @@ i18n
     backend: {
       loadPath: 'data/locales/{{lng}}/{{ns}}.json',
     },
-    debug: isDevelopment(),
+    debug: isDevelopment,
     fallbackLng: 'en',
     lng: 'de',
     interpolation: {
