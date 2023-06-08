@@ -13,7 +13,7 @@ const initialState: SettingsState = {
   unit: 'metric',
 };
 
-export const settingsSlice = createSlice({
+const settingsSlice = createSlice({
   name: 'settings',
   initialState,
   reducers: {
@@ -24,8 +24,9 @@ export const settingsSlice = createSlice({
   },
 });
 
-export const { updateSettings } = settingsSlice.actions;
+const { updateSettings } = settingsSlice.actions;
 
-export const selectSettings = (state: RootState): SettingsState => state.settings;
+const selectSettings = (state: RootState): SettingsState => state.settings;
 
+export { updateSettings, selectSettings };
 export default settingsSlice.reducer;

@@ -12,8 +12,7 @@ function SettingsPage(): JSX.Element {
     unit,
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  function onSubmit(data: FormData): void | Promise<any> {
+  function onSubmit(data: FormData): void {
     dispatch(updateSettings(data));
   }
 

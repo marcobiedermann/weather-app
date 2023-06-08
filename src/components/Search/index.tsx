@@ -10,8 +10,7 @@ interface FormData {
 
 interface SearchProps {
   defaultValues: FormData;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  onSubmit: (data: FormData) => void | Promise<any>;
+  onSubmit: (data: FormData) => void;
 }
 
 function Search(props: SearchProps): JSX.Element {
