@@ -1,6 +1,5 @@
 import format from 'date-fns/format';
 import fromUnixTime from 'date-fns/fromUnixTime';
-import React from 'react';
 
 interface Temp {
   max: number;

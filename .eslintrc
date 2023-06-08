@@ -1,65 +1,20 @@
 {
   "env": {
     "browser": true,
-    "es2021": true,
-    "node": true
+    "es2020": true
   },
   "extends": [
-    "airbnb",
+    "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:import/typescript",
-    "plugin:react/recommended",
-    "prettier"
-  ],
-  "overrides": [
-    {
-      "files": ["**/*.tsx"],
-      "rules": {
-        "react/prop-types": "off"
-      }
-    }
+    "plugin:react-hooks/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 12,
-    "project": ["./tsconfig.json"],
+    "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react-refresh"],
   "rules": {
-    "@typescript-eslint/no-use-before-define": ["error"],
-    "camelcase": "off",
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "js": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never"
-      }
-    ],
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": ["**/*.test.tsx", "**/webpack*config.ts"]
-      }
-    ],
-    "no-use-before-define": "off",
-    "react/jsx-filename-extension": [
-      2,
-      {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      }
-    ],
-    "react/jsx-props-no-spreading": "off"
-  },
-  "settings": {
-    "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"]
-    }
+    "react-refresh/only-export-components": "warn"
   }
 }

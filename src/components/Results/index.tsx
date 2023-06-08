@@ -1,4 +1,3 @@
-import React from 'react';
 import Result, { ResultProps } from '../Result';
 import styles from './style.module.css';
 

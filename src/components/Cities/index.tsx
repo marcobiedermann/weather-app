@@ -1,4 +1,3 @@
-import React from 'react';
 import CityPreview, { CityPreviewProps } from '../CityPreview';
 import styles from './style.module.css';
 
