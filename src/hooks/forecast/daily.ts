@@ -1,61 +1,57 @@
-export interface DailyForecastResponse {
-  city: City;
-  cod: string;
-  message: number;
-  cnt: number;
-  list: List[];
-}
+import { z } from 'zod';
+import { coordSchema, weatherSchema } from '../common';
 
-export interface City {
-  id: number;
-  name: string;
-  coord: Coord;
-  country: string;
-  population: number;
-  timezone: number;
-}
+const citySchema = z.object({
+  coord: coordSchema,
+  country: z.string(),
+  id: z.number(),
+  name: z.string(),
+  population: z.number(),
+  timezone: z.number(),
+});
 
-export interface Coord {
-  lon: number;
-  lat: number;
-}
+const feelsLikeSchema = z.object({
+  day: z.number(),
+  eve: z.number(),
+  morn: z.number(),
+  night: z.number(),
+});
 
-export interface List {
-  dt: number;
-  sunrise: number;
-  sunset: number;
-  temp: Temp;
-  feels_like: FeelsLike;
-  pressure: number;
-  humidity: number;
-  weather: Weather[];
-  speed: number;
-  deg: number;
-  gust: number;
-  clouds: number;
-  pop: number;
-  rain?: number;
-}
+const tempSchema = z.object({
+  day: z.number(),
+  eve: z.number(),
+  max: z.number(),
+  min: z.number(),
+  morn: z.number(),
+  night: z.number(),
+});
 
-export interface FeelsLike {
-  day: number;
-  night: number;
-  eve: number;
-  morn: number;
-}
+const listSchema = z.object({
+  clouds: z.number(),
+  deg: z.number(),
+  dt: z.number(),
+  feels_like: feelsLikeSchema,
+  gust: z.number(),
+  humidity: z.number(),
+  pop: z.number(),
+  pressure: z.number(),
+  rain: z.number(),
+  speed: z.number(),
+  sunrise: z.number(),
+  sunset: z.number(),
+  temp: tempSchema,
+  weather: z.array(weatherSchema),
+});
 
-export interface Temp {
-  day: number;
-  min: number;
-  max: number;
-  night: number;
-  eve: number;
-  morn: number;
-}
+const dailyForecastResponseSchema = z.object({
+  city: citySchema,
+  cnt: z.number(),
+  cod: z.string(),
+  list: z.array(listSchema),
+  message: z.number(),
+});
 
-export interface Weather {
-  id: number;
-  main: string;
-  description: string;
-  icon: string;
-}
+type DailyForecastResponse = z.infer<typeof dailyForecastResponseSchema>;
+
+export type { DailyForecastResponse };
+export { dailyForecastResponseSchema };

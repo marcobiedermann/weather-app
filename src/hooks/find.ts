@@ -1,56 +1,43 @@
-export interface FindResponse {
-  message: string;
-  cod: string;
-  count: number;
-  list: List[];
-}
+import { z } from 'zod';
+import { cloudsSchema, coordSchema, weatherSchema, windSchema } from './common';
 
-export interface List {
-  id: number;
-  name: string;
-  coord: Coord;
-  main: Main;
-  dt: number;
-  wind: Wind;
-  sys: Sys;
-  rain: null;
-  snow: null;
-  clouds: Clouds;
-  weather: Weather[];
-}
+const mainSchema = z.object({
+  feels_like: z.number(),
+  grnd_level: z.number().optional(),
+  humidity: z.number(),
+  pressure: z.number(),
+  sea_level: z.number().optional(),
+  temp_max: z.number(),
+  temp_min: z.number(),
+  temp: z.number(),
+});
 
-export interface Clouds {
-  all: number;
-}
+const sysSchema = z.object({
+  country: z.string(),
+});
 
-export interface Coord {
-  lat: number;
-  lon: number;
-}
+const listSchema = z.object({
+  id: z.number(),
+  name: z.string(),
+  coord: coordSchema,
+  main: mainSchema,
+  dt: z.number(),
+  wind: windSchema,
+  sys: sysSchema,
+  rain: z.null(),
+  snow: z.null(),
+  clouds: cloudsSchema,
+  weather: z.array(weatherSchema),
+});
 
-export interface Main {
-  temp: number;
-  feels_like: number;
-  temp_min: number;
-  temp_max: number;
-  pressure: number;
-  humidity: number;
-  sea_level?: number;
-  grnd_level?: number;
-}
+const findResponseSchema = z.object({
+  cod: z.string(),
+  count: z.number(),
+  list: z.array(listSchema),
+  message: z.string(),
+});
 
-export interface Sys {
-  country: string;
-}
+type FindResponse = z.infer<typeof findResponseSchema>;
 
-export interface Weather {
-  id: number;
-  main: string;
-  description: string;
-  icon: string;
-}
-
-export interface Wind {
-  speed: number;
-  deg: number;
-}
+export type { FindResponse };
+export { findResponseSchema };
