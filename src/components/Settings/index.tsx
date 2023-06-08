@@ -17,8 +17,8 @@ function isSupportedLanguage(language: Language): boolean {
 }
 
 const formDataSchema = z.object({
-  language: z.string(),
-  unit: z.union([z.literal('metric'), z.literal('imperial')]),
+  language: z.union([z.literal('de'), z.literal('en')]),
+  unit: z.union([z.literal('metric'), z.literal('imperial'), z.literal('standard')]),
 });
 
 type FormData = z.infer<typeof formDataSchema>;

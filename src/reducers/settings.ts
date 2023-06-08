@@ -1,11 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from '../store';
-
-type Unit = 'metric' | 'imperial';
+import { SupportedLanguage, SupportedUnit } from '../constants/localization';
 
 interface SettingsState {
-  language: string;
-  unit: Unit;
+  language: SupportedLanguage;
+  unit: SupportedUnit;
 }
 
 const initialState: SettingsState = {
@@ -17,7 +15,10 @@ const settingsSlice = createSlice({
   name: 'settings',
   initialState,
   reducers: {
-    updateSettings: (state, action: PayloadAction<{ language: string; unit: Unit }>) => {
+    updateSettings: (
+      state,
+      action: PayloadAction<{ language: SupportedLanguage; unit: SupportedUnit }>,
+    ) => {
       state.language = action.payload.language;
       state.unit = action.payload.unit;
     },
@@ -26,7 +27,6 @@ const settingsSlice = createSlice({
 
 const { updateSettings } = settingsSlice.actions;
 
-const selectSettings = (state: RootState): SettingsState => state.settings;
-
-export { updateSettings, selectSettings };
+export type { SettingsState };
+export { updateSettings };
 export default settingsSlice.reducer;

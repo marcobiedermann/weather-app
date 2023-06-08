@@ -134,9 +134,9 @@ const languages: readonly Language[] = [
   },
 ] as const;
 
-type SupportedLanguage = 'de' | 'en';
+const supportedLanguages = ['de', 'en'] as const;
 
-const supportedLanguages: readonly SupportedLanguage[] = ['de', 'en'] as const;
+type SupportedLanguage = (typeof supportedLanguages)[number];
 
 interface Unit {
   id: string;
@@ -158,5 +158,9 @@ const units: readonly Unit[] = [
   },
 ] as const;
 
-export type { Language, SupportedLanguage, Unit };
-export { languages, supportedLanguages, units };
+const supportedUnits = ['imperial', 'metric', 'standard'] as const;
+
+type SupportedUnit = (typeof supportedUnits)[number];
+
+export type { Language, SupportedLanguage, SupportedUnit, Unit };
+export { languages, supportedLanguages, supportedUnits, units };

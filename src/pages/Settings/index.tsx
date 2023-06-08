@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet';
 import Settings, { FormData } from '../../components/Settings';
-import { selectSettings, updateSettings } from '../../reducers/settings';
+import { updateSettings } from '../../reducers/settings';
+import { selectSettings } from '../../selectors/settings';
 import { useAppDispatch, useAppSelector } from '../../store';
 
 function SettingsPage(): JSX.Element {

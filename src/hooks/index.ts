@@ -5,6 +5,7 @@ import { FindResponse, findResponseSchema } from './find';
 import { DailyForecastResponse, dailyForecastResponseSchema } from './forecast/daily';
 import { GroupResponse, groupResponseSchema } from './group';
 import { WeatherResponse, weatherResponseSchema } from './weather';
+import { SupportedLanguage, SupportedUnit } from '../constants/localization';
 
 const defaultParams = {
   appid: API_KEY,
@@ -16,80 +17,101 @@ const instance = axios.create({
   baseURL: 'https://api.openweathermap.org/data/2.5',
 });
 
+interface Settings {
+  language: SupportedLanguage;
+  unit: SupportedUnit;
+}
+
 interface Error {
   message: string;
 }
 
-async function getFind(query: string): Promise<FindResponse> {
+async function getFind(query: string, settings?: Partial<Settings>): Promise<FindResponse> {
   const { data } = await instance.get<FindResponse>('/find', {
     params: {
       ...defaultParams,
       q: query,
+      ...settings,
     },
   });
 
   return findResponseSchema.parse(data);
 }
 
-function useFind(query: string): UseQueryResult<FindResponse, Error> {
+function useFind(query: string, settings?: Partial<Settings>): UseQueryResult<FindResponse, Error> {
   return useQuery<FindResponse, Error>({
-    queryFn: () => getFind(query),
-    queryKey: ['find', query],
+    queryFn: () => getFind(query, settings),
+    queryKey: ['find', query, settings],
     enabled: Boolean(query),
   });
 }
 
-async function getGroup(ids: number[]): Promise<GroupResponse> {
+async function getGroup(ids: number[], settings?: Partial<Settings>): Promise<GroupResponse> {
   const { data } = await instance.get<GroupResponse>('/group', {
     params: {
       ...defaultParams,
       id: ids.join(','),
+      ...settings,
     },
   });
 
   return groupResponseSchema.parse(data);
 }
 
-function useGroup(ids: number[]): UseQueryResult<GroupResponse, Error> {
+function useGroup(
+  ids: number[],
+  settings?: Partial<Settings>,
+): UseQueryResult<GroupResponse, Error> {
   return useQuery<GroupResponse, Error>({
-    queryFn: () => getGroup(ids),
-    queryKey: ['group', ids],
+    queryFn: () => getGroup(ids, settings),
+    queryKey: ['group', ids, settings],
   });
 }
 
-async function getWeather(id: number): Promise<WeatherResponse> {
+async function getWeather(id: number, settings?: Partial<Settings>): Promise<WeatherResponse> {
   const { data } = await instance.get<WeatherResponse>('/weather', {
     params: {
       ...defaultParams,
       id,
+      ...settings,
     },
   });
 
   return weatherResponseSchema.parse(data);
 }
 
-function useWeather(id: number): UseQueryResult<WeatherResponse, Error> {
+function useWeather(
+  id: number,
+  settings?: Partial<Settings>,
+): UseQueryResult<WeatherResponse, Error> {
   return useQuery<WeatherResponse, Error>({
-    queryFn: () => getWeather(id),
-    queryKey: ['weather', id],
+    queryFn: () => getWeather(id, settings),
+    queryKey: ['weather', id, settings],
   });
 }
 
-async function getDailyForecast(id: number): Promise<DailyForecastResponse> {
+async function getDailyForecast(
+  id: number,
+  settings?: Partial<Settings>,
+): Promise<DailyForecastResponse> {
   const { data } = await instance.get<DailyForecastResponse>('/forecast/daily', {
     params: {
       ...defaultParams,
       id,
+      ...settings,
     },
   });
 
   return dailyForecastResponseSchema.parse(data);
 }
 
-function useDailyForeCast(id: number): UseQueryResult<DailyForecastResponse, Error> {
+function useDailyForeCast(
+  id: number,
+  settings?: Partial<Settings>,
+): UseQueryResult<DailyForecastResponse, Error> {
   return useQuery<DailyForecastResponse, Error>({
-    queryFn: () => getDailyForecast(id),
-    queryKey: ['forecast/daily', id],
+    queryFn: () => getDailyForecast(id, settings),
+    queryKey: ['forecast/daily', id, settings],
   });
 }
 

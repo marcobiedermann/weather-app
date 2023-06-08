@@ -5,14 +5,17 @@ import City from '../../../components/CityPreview';
 import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
 import { useGroup } from '../../../hooks';
-import { removeCity, selectCities } from '../../../reducers/cities';
+import { removeCity } from '../../../reducers/cities';
+import { selectCities } from '../../../selectors/cities';
+import { selectSettings } from '../../../selectors/settings';
 import { useAppDispatch, useAppSelector } from '../../../store';
 import styles from './style.module.css';
 
 function EditPage(): JSX.Element {
   const dispatch = useAppDispatch();
   const cities = useAppSelector(selectCities);
-  const { data, error, isError, isLoading } = useGroup(cities);
+  const settings = useAppSelector(selectSettings);
+  const { data, error, isError, isLoading } = useGroup(cities, settings);
 
   if (isError) {
     return <Error message={error.message} />;
