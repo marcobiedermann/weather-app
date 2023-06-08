@@ -10,7 +10,7 @@
 .cities > li button {
   background-color: #fff;
   border-radius: 50%;
-  box-shadow: 0 0 1em rgba(0, 0, 0, 0.125);
+  box-shadow: 0 0 1em rgb(0 0 0 / 12.5%);
   height: 1.5em;
   line-height: 1em;
   position: absolute;
