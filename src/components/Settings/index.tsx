@@ -2,12 +2,18 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import clsx from 'clsx';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import { Language, languages, supportedLanguages, units } from '../../constants/localization';
+import {
+  Language,
+  SupportedLanguage,
+  languages,
+  supportedLanguages,
+  units,
+} from '../../constants/localization';
 import Label from '../Label';
 import styles from './style.module.css';
 
 function isSupportedLanguage(language: Language): boolean {
-  return supportedLanguages.includes(language.id);
+  return supportedLanguages.includes(language.id as SupportedLanguage);
 }
 
 const formDataSchema = z.object({
@@ -19,8 +25,7 @@ type FormData = z.infer<typeof formDataSchema>;
 
 interface SettingsProps {
   defaultValues: FormData;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  onSubmit: (data: FormData) => void | Promise<any>;
+  onSubmit: (data: FormData) => void;
 }
 
 function Settings(props: SettingsProps): JSX.Element {

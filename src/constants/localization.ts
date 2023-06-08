@@ -1,150 +1,9 @@
-export interface Language {
+interface Language {
   id: string;
   name: string;
 }
 
-// <ul class="docs-list">
-//   <li>
-//     <code>af</code> Afrikaans
-//   </li>
-//   <li>
-//     <code>al</code> Albanian
-//   </li>
-//   <li>
-//     <code>ar</code> Arabic
-//   </li>
-//   <li>
-//     <code>az</code> Azerbaijani
-//   </li>
-//   <li>
-//     <code>bg</code> Bulgarian
-//   </li>
-//   <li>
-//     <code>ca</code> Catalan
-//   </li>
-//   <li>
-//     <code>cz</code> Czech
-//   </li>
-//   <li>
-//     <code>da</code> Danish
-//   </li>
-//   <li>
-//     <code>de</code> German
-//   </li>
-//   <li>
-//     <code>el</code> Greek
-//   </li>
-//   <li>
-//     <code>en</code> English
-//   </li>
-//   <li>
-//     <code>eu</code> Basque
-//   </li>
-//   <li>
-//     <code>fa</code> Persian (Farsi)
-//   </li>
-//   <li>
-//     <code>fi</code> Finnish
-//   </li>
-//   <li>
-//     <code>fr</code> French
-//   </li>
-//   <li>
-//     <code>gl</code> Galician
-//   </li>
-//   <li>
-//     <code>he</code> Hebrew
-//   </li>
-//   <li>
-//     <code>hi</code> Hindi
-//   </li>
-//   <li>
-//     <code>hr</code> Croatian
-//   </li>
-//   <li>
-//     <code>hu</code> Hungarian
-//   </li>
-//   <li>
-//     <code>id</code> Indonesian
-//   </li>
-//   <li>
-//     <code>it</code> Italian
-//   </li>
-//   <li>
-//     <code>ja</code> Japanese
-//   </li>
-//   <li>
-//     <code>kr</code> Korean
-//   </li>
-//   <li>
-//     <code>la</code> Latvian
-//   </li>
-//   <li>
-//     <code>lt</code> Lithuanian
-//   </li>
-//   <li>
-//     <code>mk</code> Macedonian
-//   </li>
-//   <li>
-//     <code>no</code> Norwegian
-//   </li>
-//   <li>
-//     <code>nl</code> Dutch
-//   </li>
-//   <li>
-//     <code>pl</code> Polish
-//   </li>
-//   <li>
-//     <code>pt</code> Portuguese
-//   </li>
-//   <li>
-//     <code>pt_br</code> Português Brasil
-//   </li>
-//   <li>
-//     <code>ro</code> Romanian
-//   </li>
-//   <li>
-//     <code>ru</code> Russian
-//   </li>
-//   <li>
-//     <code>sv, se</code> Swedish
-//   </li>
-//   <li>
-//     <code>sk</code> Slovak
-//   </li>
-//   <li>
-//     <code>sl</code> Slovenian
-//   </li>
-//   <li>
-//     <code>sp, es</code> Spanish
-//   </li>
-//   <li>
-//     <code>sr</code> Serbian
-//   </li>
-//   <li>
-//     <code>th</code> Thai
-//   </li>
-//   <li>
-//     <code>tr</code> Turkish
-//   </li>
-//   <li>
-//     <code>ua, uk</code> Ukrainian
-//   </li>
-//   <li>
-//     <code>vi</code> Vietnamese
-//   </li>
-//   <li>
-//     <code>zh_cn</code> Chinese Simplified
-//   </li>
-//   <li>
-//     <code>zh_tw</code> Chinese Traditional
-//   </li>
-//   <li>
-//     <code>zu</code> Zulu
-//   </li>
-// </ul>;
-
-export const languages: Language[] = [
+const languages: readonly Language[] = [
   {
     id: 'ar',
     name: 'Arabic',
@@ -273,16 +132,18 @@ export const languages: Language[] = [
     id: 'vi',
     name: 'Vietnamese',
   },
-];
+] as const;
 
-export const supportedLanguages = ['de', 'en'];
+type SupportedLanguage = 'de' | 'en';
 
-export interface Unit {
+const supportedLanguages: readonly SupportedLanguage[] = ['de', 'en'] as const;
+
+interface Unit {
   id: string;
   name: string;
 }
 
-export const units = [
+const units: readonly Unit[] = [
   {
     id: 'imperial',
     name: 'imperial',
@@ -295,4 +156,7 @@ export const units = [
     id: 'standard',
     name: 'standard',
   },
-];
+] as const;
+
+export type { Language, SupportedLanguage, Unit };
+export { languages, supportedLanguages, units };

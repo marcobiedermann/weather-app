@@ -9,7 +9,7 @@ const initialState: CitiesState = {
   cities: [],
 };
 
-export const citiesSlice = createSlice({
+const citiesSlice = createSlice({
   name: 'cities',
   initialState,
   reducers: {
@@ -22,8 +22,9 @@ export const citiesSlice = createSlice({
   },
 });
 
-export const { addCity, removeCity } = citiesSlice.actions;
+const { addCity, removeCity } = citiesSlice.actions;
 
-export const selectCities = (state: RootState): number[] => state.cities.cities;
+const selectCities = (state: RootState): number[] => state.cities.cities;
 
+export { addCity, removeCity, selectCities };
 export default citiesSlice.reducer;
