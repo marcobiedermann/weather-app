@@ -2,9 +2,9 @@ import { useQuery, UseQueryResult } from '@tanstack/react-query';
 import axios from 'axios';
 import { API_KEY } from '../constants/open-weather-map';
 import { FindResponse, findResponseSchema } from './find';
-import { DailyForecastResponse } from './forecast/daily';
-import { GroupResponse } from './group';
-import { WeatherResponse } from './weather';
+import { DailyForecastResponse, dailyForecastResponseSchema } from './forecast/daily';
+import { GroupResponse, groupResponseSchema } from './group';
+import { WeatherResponse, weatherResponseSchema } from './weather';
 
 const defaultParams = {
   appid: API_KEY,
@@ -47,7 +47,7 @@ async function getGroup(ids: number[]): Promise<GroupResponse> {
     },
   });
 
-  return data;
+  return groupResponseSchema.parse(data);
 }
 
 function useGroup(ids: number[]): UseQueryResult<GroupResponse, Error> {
@@ -65,7 +65,7 @@ async function getWeather(id: number): Promise<WeatherResponse> {
     },
   });
 
-  return data;
+  return weatherResponseSchema.parse(data);
 }
 
 function useWeather(id: number): UseQueryResult<WeatherResponse, Error> {
@@ -83,7 +83,7 @@ async function getDailyForecast(id: number): Promise<DailyForecastResponse> {
     },
   });
 
-  return data;
+  return dailyForecastResponseSchema.parse(data);
 }
 
 function useDailyForeCast(id: number): UseQueryResult<DailyForecastResponse, Error> {
