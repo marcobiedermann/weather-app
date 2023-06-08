@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from '../store';
 
 interface CitiesState {
   cities: number[];
@@ -24,7 +23,6 @@ const citiesSlice = createSlice({
 
 const { addCity, removeCity } = citiesSlice.actions;
 
-const selectCities = (state: RootState): number[] => state.cities.cities;
-
-export { addCity, removeCity, selectCities };
+export type { CitiesState };
+export { addCity, removeCity };
 export default citiesSlice.reducer;

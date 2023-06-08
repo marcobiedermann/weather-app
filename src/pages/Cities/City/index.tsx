@@ -5,6 +5,8 @@ import City from '../../../components/City';
 import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
 import { useWeather } from '../../../hooks';
+import { selectSettings } from '../../../selectors/settings';
+import { useAppSelector } from '../../../store';
 
 const paramsSchema = z.object({
   cityId: z.coerce.number(),
@@ -13,7 +15,8 @@ const paramsSchema = z.object({
 function CityPage(): JSX.Element {
   const params = useParams();
   const { cityId } = paramsSchema.parse(params);
-  const { data, error, isError, isLoading } = useWeather(cityId);
+  const settings = useAppSelector(selectSettings);
+  const { data, error, isError, isLoading } = useWeather(cityId, settings);
 
   if (isError) {
     return <Error message={error.message} />;

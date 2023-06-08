@@ -5,10 +5,13 @@ import Loader from '../../components/Loader';
 import Results from '../../components/Results';
 import Search, { FormData } from '../../components/Search';
 import { useFind } from '../../hooks';
+import { selectSettings } from '../../selectors/settings';
+import { useAppSelector } from '../../store';
 
 function SearchPage(): JSX.Element {
   const [query, setQuery] = useState<string>('');
-  const { data, isError, error } = useFind(query);
+  const settings = useAppSelector(selectSettings);
+  const { data, isError, error } = useFind(query, settings);
 
   if (isError) {
     return <Error message={error.message} />;
