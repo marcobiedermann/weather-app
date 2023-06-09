@@ -23,7 +23,7 @@ function City(props: CityProps): JSX.Element {
       <h1>{name}</h1>
       {format(dt * 1000, 'yyyy-MM-dd hh:mm')}
       <div>Temp: {main.temp}</div>
-      {weather && (
+      {weather.length > 0 && (
         <ul>
           {weather.map((entry) => (
             <li key={entry.id}>

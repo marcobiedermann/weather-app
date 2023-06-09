@@ -15,15 +15,17 @@ function Navigation(props: NavigationProps): JSX.Element {
 
   return (
     <nav className={styles.navigation} {...otherProps}>
-      <ul className={styles.navigation__list}>
-        {routes.map((route) => (
-          <li key={route.path} className={styles.navigation__item}>
-            <Link to={route.path} className={styles.navigation__link}>
-              {route.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      {routes.length > 0 && (
+        <ul className={styles.navigation__list}>
+          {routes.map((route) => (
+            <li key={route.path} className={styles.navigation__item}>
+              <Link to={route.path} className={styles.navigation__link}>
+                {route.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </nav>
   );
 }

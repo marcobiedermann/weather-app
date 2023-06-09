@@ -1,13 +1,32 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/Navigation > renders correctly 1`] = `
+exports[`components/Navigation > should render correctly 1`] = `
 <DocumentFragment>
   <nav
     class="navigation"
   >
     <ul
       class="navigation__list"
-    />
+    >
+      <li
+        class="navigation__item"
+      >
+        <a
+          class="navigation__link"
+          href="/"
+        >
+          Home
+        </a>
+      </li>
+    </ul>
   </nav>
+</DocumentFragment>
+`;
+
+exports[`components/Navigation > should render empty routes correctly 1`] = `
+<DocumentFragment>
+  <nav
+    class="navigation"
+  />
 </DocumentFragment>
 `;

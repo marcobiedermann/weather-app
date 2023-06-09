@@ -29,7 +29,7 @@ function CitiesPage(): JSX.Element {
       <Helmet>
         <title>Cities</title>
       </Helmet>
-      <Cities cities={data?.list} />
+      <Cities cities={data.list} />
       <Link to={`${pathname}/edit`}>{t('translation:edit')}</Link>
     </>
   );
