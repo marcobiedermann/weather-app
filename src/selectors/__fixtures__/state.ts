@@ -8,6 +8,10 @@ const state: RootState = {
     unit: 'metric',
     language: 'en',
   },
+  _persist: {
+    rehydrated: true,
+    version: -1,
+  },
 };
 
 export default state;
