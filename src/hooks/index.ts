@@ -31,7 +31,8 @@ async function getFind(query: string, settings?: Partial<Settings>): Promise<Fin
     params: {
       ...defaultParams,
       q: query,
-      ...settings,
+      ...(settings?.language && { lang: settings.language }),
+      ...(settings?.unit && { units: settings.unit }),
     },
   });
 
@@ -51,7 +52,8 @@ async function getGroup(ids: number[], settings?: Partial<Settings>): Promise<Gr
     params: {
       ...defaultParams,
       id: ids.join(','),
-      ...settings,
+      ...(settings?.language && { lang: settings.language }),
+      ...(settings?.unit && { units: settings.unit }),
     },
   });
 
@@ -73,7 +75,8 @@ async function getWeather(id: number, settings?: Partial<Settings>): Promise<Wea
     params: {
       ...defaultParams,
       id,
-      ...settings,
+      ...(settings?.language && { lang: settings.language }),
+      ...(settings?.unit && { units: settings.unit }),
     },
   });
 
@@ -98,7 +101,8 @@ async function getDailyForecast(
     params: {
       ...defaultParams,
       id,
-      ...settings,
+      ...(settings?.language && { lang: settings.language }),
+      ...(settings?.unit && { units: settings.unit }),
     },
   });
 
