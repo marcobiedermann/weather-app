@@ -9,13 +9,17 @@ function Results(props: ResultsProps): JSX.Element {
   const { results } = props;
 
   return (
-    <ul className={styles.results}>
-      {results.map((result) => (
-        <li key={result.id}>
-          <Result {...result} />
-        </li>
-      ))}
-    </ul>
+    <>
+      {results.length > 0 && (
+        <ul className={styles.results}>
+          {results.map((result) => (
+            <li key={result.id}>
+              <Result {...result} />
+            </li>
+          ))}
+        </ul>
+      )}
+    </>
   );
 }
 

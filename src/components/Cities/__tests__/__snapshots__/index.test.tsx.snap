@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/Cities > renders correctly 1`] = `
+exports[`components/Cities > should render correctly 1`] = `
 <DocumentFragment>
   <ul
     class="cities"
@@ -40,3 +40,5 @@ exports[`components/Cities > renders correctly 1`] = `
   </ul>
 </DocumentFragment>
 `;
+
+exports[`components/Cities > should render empty cities correctly 1`] = `<DocumentFragment />`;
