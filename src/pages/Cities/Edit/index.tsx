@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Card from '../../../components/Card';
 import City from '../../../components/CityPreview';
 import Error from '../../../components/Error';
@@ -15,7 +15,14 @@ function EditPage(): JSX.Element {
   const dispatch = useAppDispatch();
   const cities = useAppSelector(selectCities);
   const settings = useAppSelector(selectSettings);
+  const navigate = useNavigate();
   const { data, error, isError, isLoading } = useGroup(cities, settings);
+
+  function onClick(id: number) {
+    dispatch(removeCity(id));
+
+    navigate('/cities');
+  }
 
   if (isError) {
     return <Error message={error.message} />;
@@ -35,7 +42,7 @@ function EditPage(): JSX.Element {
           <li key={city.id}>
             <Card>
               <City {...city} />
-              <button type="button" onClick={() => dispatch(removeCity(city.id))}>
+              <button type="button" onClick={() => onClick(city.id)}>
                 x
               </button>
             </Card>

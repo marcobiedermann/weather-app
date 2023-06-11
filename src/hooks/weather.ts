@@ -12,7 +12,7 @@ const mainSchema = z.object({
 const sysSchema = z.object({
   country: z.string(),
   id: z.number(),
-  message: z.number(),
+  message: z.number().optional(),
   sunrise: z.number(),
   sunset: z.number(),
   type: z.number(),
