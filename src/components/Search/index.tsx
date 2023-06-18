@@ -1,15 +1,14 @@
-import clsx from 'clsx';
 import { useForm } from 'react-hook-form';
-
+import { Search as SearchIcon } from 'react-feather';
 import { useTranslation } from 'react-i18next';
-import styles from '../Settings/style.module.css';
+import styles from './style.module.css';
 
 interface FormData {
   query: string;
 }
 
 interface SearchProps {
-  defaultValues: FormData;
+  defaultValues?: FormData;
   onSubmit: (data: FormData) => void;
 }
 
@@ -21,19 +20,19 @@ function Search(props: SearchProps): JSX.Element {
   const { t } = useTranslation();
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div className={styles.form__field}>
-        <input {...register('query')} className={styles.form__input} />
-      </div>
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.search}>
+      <input
+        {...register('query')}
+        className={styles.search__input}
+        placeholder="Search location here"
+      />
 
-      <div className={styles.form__field}>
-        <button type="submit" className={clsx(styles.form__input, styles['form__input--submit'])}>
-          {t('translation:search')}
-        </button>
-      </div>
+      <button type="submit" className={styles.search__submit}>
+        <span style={{ display: 'none' }}>{t('translation:search')}</span>
+        <SearchIcon />
+      </button>
     </form>
   );
 }
 
-export type { FormData, SearchProps };
 export default Search;

@@ -16,15 +16,15 @@ interface List {
   temp: Temp;
   weather: Weather[];
 }
-interface ForecaseProps {
-  list?: List[];
+interface ForecastProps {
+  list: List[];
 }
 
-function Forecast(props: ForecaseProps): JSX.Element {
-  const { list = [], ...otherProps } = props;
+function Forecast(props: ForecastProps): JSX.Element {
+  const { list } = props;
 
   return (
-    <table {...otherProps}>
+    <table>
       <tbody>
         {list.map((day) => (
           <tr key={day.dt}>
@@ -42,8 +42,8 @@ function Forecast(props: ForecaseProps): JSX.Element {
                 />
               ))}
             </td>
-            <td>{Math.round(day.temp.max)}</td>
-            <td>{Math.round(day.temp.min)}</td>
+            <td>{Math.round(day.temp.max)} °C</td>
+            <td>{Math.round(day.temp.min)} °C</td>
           </tr>
         ))}
       </tbody>
@@ -51,5 +51,5 @@ function Forecast(props: ForecaseProps): JSX.Element {
   );
 }
 
-export type { ForecaseProps };
+export type { ForecastProps };
 export default Forecast;

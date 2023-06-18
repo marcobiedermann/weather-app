@@ -1,0 +1,12 @@
+.footer {
+  font-size: 0.875rem;
+  padding: 0.5em 3em 3em;
+}
+
+.footer > :first-child {
+  margin-block-start: 0;
+}
+
+.footer > :last-child {
+  margin-block-end: 0;
+}

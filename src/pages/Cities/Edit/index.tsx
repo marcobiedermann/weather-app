@@ -1,7 +1,8 @@
+import { XCircle } from 'react-feather';
 import { Helmet } from 'react-helmet';
 import { Link, useNavigate } from 'react-router-dom';
 import Card from '../../../components/Card';
-import City from '../../../components/CityPreview';
+import CityPreview from '../../../components/CityPreview';
 import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
 import { useGroup } from '../../../hooks';
@@ -37,23 +38,23 @@ function EditPage(): JSX.Element {
       <Helmet>
         <title>Edit</title>
       </Helmet>
-      <ul className={styles.cities}>
-        {data.list.map((city) => (
-          <li key={city.id}>
-            <Card>
-              <City {...city} />
-              <button type="button" onClick={() => onClick(city.id)}>
-                x
-              </button>
-            </Card>
-          </li>
-        ))}
-        <li>
-          <Card>
-            <Link to="/search">Add</Link>
-          </Card>
-        </li>
-      </ul>
+      {data.list.length > 0 && (
+        <ul className={styles.cities}>
+          {data.list.map((city) => (
+            <li key={city.id}>
+              <Card>
+                <CityPreview {...city} />
+                <button type="button" onClick={() => onClick(city.id)}>
+                  <XCircle />
+                </button>
+              </Card>
+            </li>
+          ))}
+        </ul>
+      )}
+      <p>
+        <Link to="/cities">Back</Link>
+      </p>
     </>
   );
 }

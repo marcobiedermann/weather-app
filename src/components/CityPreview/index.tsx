@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 import styles from './style.module.css';
 
@@ -14,22 +13,16 @@ interface CityPreviewProps {
 }
 
 function CityPreview(props: CityPreviewProps): JSX.Element {
-  const { id, main, name, sys, ...otherProps } = props;
+  const { id, main, name, sys } = props;
 
   return (
-    <div
-      className={clsx(styles.city, {
-        [styles['city--cold']]: main.temp <= 0,
-        [styles['city--warm']]: main.temp >= 15,
-      })}
-      {...otherProps}
-    >
-      <Link to={`/cities/${id}`} className={styles.city__link}>
-        <div className={styles.city__temp}>{main.temp} °</div>
-        <h2 className={styles.city__name}>{name}</h2>
+    <Link to={`/cities/${id}`} className={styles.city}>
+      <div>
         <h3 className={styles.city__country}>{sys.country}</h3>
-      </Link>
-    </div>
+        <h2 className={styles.city__name}>{name}</h2>
+      </div>
+      <div className={styles.city__temp}>{main.temp} °C</div>
+    </Link>
   );
 }
 

@@ -1,13 +1,11 @@
 /* stylelint-disable block-no-empty */
 
 .navigation {
-  text-transform: uppercase;
 }
 
 .navigation__list {
   list-style: none;
-  margin-bottom: 1.5em;
-  margin-top: 0;
+  margin: 0;
   padding: 0;
 }
 
@@ -15,6 +13,19 @@
 }
 
 .navigation__link {
-  padding-bottom: 0.25em;
-  padding-top: 0.25em;
+  align-items: center;
+  display: flex;
+  gap: 0.5em;
+  padding: 0.5em 3em;
+  position: relative;
+  text-decoration: none;
+}
+
+.navigation__linkActive::after {
+  background-color: currentcolor;
+  content: '';
+  height: 100%;
+  position: absolute;
+  right: 0;
+  width: 3px
 }

@@ -1,39 +1,24 @@
-/* stylelint-disable block-no-empty */
-
 .city {
-  background-color: #929fb3;
-  border-radius: 1.5em;
-  padding: 1em;
-}
-
-.city > :first-child {
-  margin-top: 0;
-}
-
-.city > :last-child {
-  margin-bottom: 0;
-}
-
-.city--cold {
-  background-color: #3f73be;
-}
-
-.city--warm {
-  background-color: #ec9414;
+  align-items: center;
+  background-color: #fcfcfc;
+  border-radius: 0.25em;
+  color: #8f9298;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 1.5em;
+  text-decoration: none;
 }
 
 .city__country {
-  color: #b6bbc7;
-  margin: 0;
-}
-
-.city__link {
-  display: block;
+  color: inherit;
+  font-size: 1.25rem;
+  font-weight: normal;
+  line-height: 1.25;
+  margin-bottom: 0.25em;
+  margin-top: 0;
 }
 
 .city__name {
-  margin: 0;
-}
-
-.city__temp {
+  margin-bottom: 0;
+  margin-top: 0.25em;
 }

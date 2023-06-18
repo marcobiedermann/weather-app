@@ -1,7 +1,10 @@
-import { Link } from 'react-router-dom';
+import clsx from 'clsx';
+import { ReactNode } from 'react';
+import { NavLink } from 'react-router-dom';
 import styles from './style.module.css';
 
 interface Route {
+  icon?: ReactNode;
   name: string;
   path: string;
 }
@@ -17,13 +20,25 @@ function Navigation(props: NavigationProps): JSX.Element {
     <nav className={styles.navigation} {...otherProps}>
       {routes.length > 0 && (
         <ul className={styles.navigation__list}>
-          {routes.map((route) => (
-            <li key={route.path} className={styles.navigation__item}>
-              <Link to={route.path} className={styles.navigation__link}>
-                {route.name}
-              </Link>
-            </li>
-          ))}
+          {routes.map((route) => {
+            const { icon, name, path } = route;
+
+            return (
+              <li key={path} className={styles.navigation__item}>
+                <NavLink
+                  to={path}
+                  className={({ isActive }) =>
+                    clsx(styles.navigation__link, {
+                      [styles.navigation__linkActive]: isActive,
+                    })
+                  }
+                >
+                  {icon}
+                  <span>{name}</span>
+                </NavLink>
+              </li>
+            );
+          })}
         </ul>
       )}
     </nav>

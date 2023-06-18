@@ -6,36 +6,28 @@ exports[`components/Cities > should render correctly 1`] = `
     class="cities"
   >
     <li>
-      <div
+      <a
         class="city"
-        clouds="[object Object]"
-        coord="[object Object]"
-        dt="1605434959"
-        visibility="10000"
-        weather="[object Object]"
-        wind="[object Object]"
+        href="/cities/2950159"
       >
-        <a
-          class="city__link"
-          href="/cities/2950159"
-        >
-          <div
-            class="city__temp"
-          >
-            12.61 °
-          </div>
-          <h2
-            class="city__name"
-          >
-            Berlin
-          </h2>
+        <div>
           <h3
             class="city__country"
           >
             DE
           </h3>
-        </a>
-      </div>
+          <h2
+            class="city__name"
+          >
+            Berlin
+          </h2>
+        </div>
+        <div
+          class="city__temp"
+        >
+          12.61 °C
+        </div>
+      </a>
     </li>
   </ul>
 </DocumentFragment>

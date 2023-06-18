@@ -35,7 +35,7 @@ const listSchema = z.object({
   humidity: z.number(),
   pop: z.number(),
   pressure: z.number(),
-  rain: z.number(),
+  rain: z.number().optional(),
   speed: z.number(),
   sunrise: z.number(),
   sunset: z.number(),
