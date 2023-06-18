@@ -109,7 +109,7 @@ async function getDailyForecast(
   return dailyForecastResponseSchema.parse(data);
 }
 
-function useDailyForeCast(
+function useDailyForecast(
   id: number,
   settings?: Partial<Settings>,
 ): UseQueryResult<DailyForecastResponse, Error> {
@@ -119,4 +119,4 @@ function useDailyForeCast(
   });
 }
 
-export { useFind, useGroup, useWeather, useDailyForeCast };
+export { useFind, useGroup, useWeather, useDailyForecast };

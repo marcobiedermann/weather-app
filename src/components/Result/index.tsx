@@ -3,6 +3,7 @@ import { addCity } from '../../reducers/cities';
 import { useAppDispatch } from '../../store';
 import styles from './style.module.css';
 import { useNavigate } from 'react-router-dom';
+import { PlusCircle } from 'react-feather';
 
 interface ResultProps {
   id: number;
@@ -35,7 +36,8 @@ function Result(props: ResultProps): JSX.Element {
       {main.temp}
 
       <button type="button" onClick={() => onClick(id)}>
-        {t('translation:add')}
+        <span style={{ display: 'none' }}>{t('translation:add')}</span>
+        <PlusCircle />
       </button>
     </div>
   );

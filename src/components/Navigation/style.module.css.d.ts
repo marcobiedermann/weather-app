@@ -3,5 +3,6 @@ declare const styles: {
   readonly navigation__list: string;
   readonly navigation__item: string;
   readonly navigation__link: string;
+  readonly navigation__linkActive: string;
 };
 export = styles;

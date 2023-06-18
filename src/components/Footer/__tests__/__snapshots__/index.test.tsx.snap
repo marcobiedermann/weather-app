@@ -2,8 +2,10 @@
 
 exports[`components/Footer > renders correctly 1`] = `
 <DocumentFragment>
-  <div>
+  <footer
+    class="footer"
+  >
     Content
-  </div>
+  </footer>
 </DocumentFragment>
 `;

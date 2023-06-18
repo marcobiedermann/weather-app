@@ -5,10 +5,85 @@ exports[`components/Layout > renders correctly 1`] = `
   <div
     class="layout"
   >
-    <header>
-      <div
-        class="grid"
+    <div
+      style="display: flex; flex-direction: column; flex-grow: 1;"
+    >
+      <header
+        class="header"
       >
+        <form
+          class="search"
+        >
+          <input
+            class="search__input"
+            name="query"
+            placeholder="Search location here"
+          />
+          <button
+            class="search__submit"
+            type="submit"
+          >
+            <span
+              style="display: none;"
+            >
+              translation:search
+            </span>
+            <svg
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="11"
+                cy="11"
+                r="8"
+              />
+              <line
+                x1="21"
+                x2="16.65"
+                y1="21"
+                y2="16.65"
+              />
+            </svg>
+          </button>
+        </form>
+      </header>
+      <main
+        class="main"
+      >
+        Content
+      </main>
+      <footer
+        class="footer"
+      >
+        <p>
+          Data provided by the 
+          <a
+            href="https://openweathermap.org/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            OpenWeather
+          </a>
+           API.
+        </p>
+      </footer>
+    </div>
+    <aside
+      style="background-color: #eef2f3; color: #0e2546; display: flex; flex-direction: column; justify-content: space-between; min-width: 300px; order: -1;"
+    >
+      <div>
+        <div>
+          <h4>
+            Application
+          </h4>
+        </div>
         <nav
           class="navigation"
         >
@@ -22,19 +97,62 @@ exports[`components/Layout > renders correctly 1`] = `
                 class="navigation__link"
                 href="/cities"
               >
-                Cities
+                <svg
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    height="7"
+                    width="7"
+                    x="3"
+                    y="3"
+                  />
+                  <rect
+                    height="7"
+                    width="7"
+                    x="14"
+                    y="3"
+                  />
+                  <rect
+                    height="7"
+                    width="7"
+                    x="14"
+                    y="14"
+                  />
+                  <rect
+                    height="7"
+                    width="7"
+                    x="3"
+                    y="14"
+                  />
+                </svg>
+                <span>
+                  Dashboard
+                </span>
               </a>
             </li>
-            <li
-              class="navigation__item"
-            >
-              <a
-                class="navigation__link"
-                href="/search"
-              >
-                Search
-              </a>
-            </li>
+          </ul>
+        </nav>
+      </div>
+      <div>
+        <div>
+          <h4>
+            System
+          </h4>
+        </div>
+        <nav
+          class="navigation"
+        >
+          <ul
+            class="navigation__list"
+          >
             <li
               class="navigation__item"
             >
@@ -42,37 +160,35 @@ exports[`components/Layout > renders correctly 1`] = `
                 class="navigation__link"
                 href="/settings"
               >
-                Settings
+                <svg
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="3"
+                  />
+                  <path
+                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+                  />
+                </svg>
+                <span>
+                  Settings
+                </span>
               </a>
             </li>
           </ul>
         </nav>
       </div>
-    </header>
-    <main
-      class="main"
-    >
-      <div
-        class="grid"
-      >
-        Content
-      </div>
-    </main>
-    <div>
-      <div
-        class="grid"
-      >
-        <p>
-          <a
-            href="https://openweathermap.org/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            OpenWeather
-          </a>
-        </p>
-      </div>
-    </div>
+    </aside>
   </div>
 </DocumentFragment>
 `;

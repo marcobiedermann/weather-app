@@ -1,0 +1,18 @@
+.search {
+  align-items: center;
+  background-color: #fcfcfc;
+  border-radius: 0.25em;
+  color: #8f9298;
+  display: flex;
+}
+
+.search__input {
+  flex-grow: 1;
+  padding: 1em 1.5em;
+}
+
+.search__submit {
+  flex-grow: 0;
+  order: -1;
+  padding: 1em;
+}

@@ -12,10 +12,13 @@ exports[`components/Navigation > should render correctly 1`] = `
         class="navigation__item"
       >
         <a
-          class="navigation__link"
+          aria-current="page"
+          class="navigation__link navigation__linkActive"
           href="/"
         >
-          Home
+          <span>
+            Home
+          </span>
         </a>
       </li>
     </ul>

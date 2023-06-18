@@ -1,22 +1,14 @@
 .cities {
   display: grid;
-  grid-gap: 1.5em;
-  grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
+  gap: 1.5em;
   list-style: none;
-  margin: 0;
+  margin-block: 0.5em 1.5em;
   padding: 0;
 }
 
 .cities > li button {
-  background-color: #fff;
-  border-radius: 50%;
-  box-shadow: 0 0 1em rgb(0 0 0 / 12.5%);
-  height: 1.5em;
-  line-height: 1em;
   position: absolute;
   right: 0;
-  text-align: center;
   top: 0;
   transform: translate(50%, -50%);
-  width: 1.5em;
 }
