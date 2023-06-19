@@ -6,6 +6,7 @@ import { DailyForecastResponse, dailyForecastResponseSchema } from './forecast/d
 import { GroupResponse, groupResponseSchema } from './group';
 import { WeatherResponse, weatherResponseSchema } from './weather';
 import { SupportedLanguage, SupportedUnit } from '../constants/localization';
+import { ForecastResponse, forecastResponseSchema } from './forecast';
 
 const defaultParams = {
   appid: API_KEY,
@@ -93,6 +94,29 @@ function useWeather(
   });
 }
 
+async function getForecast(id: number, settings?: Partial<Settings>): Promise<ForecastResponse> {
+  const { data } = await instance.get<ForecastResponse>('/forecast', {
+    params: {
+      ...defaultParams,
+      id,
+      ...(settings?.language && { lang: settings.language }),
+      ...(settings?.unit && { units: settings.unit }),
+    },
+  });
+
+  return forecastResponseSchema.parse(data);
+}
+
+function useForecast(
+  id: number,
+  settings?: Partial<Settings>,
+): UseQueryResult<ForecastResponse, Error> {
+  return useQuery<ForecastResponse, Error>({
+    queryFn: () => getForecast(id, settings),
+    queryKey: ['forecast', id, settings],
+  });
+}
+
 async function getDailyForecast(
   id: number,
   settings?: Partial<Settings>,
@@ -101,6 +125,7 @@ async function getDailyForecast(
     params: {
       ...defaultParams,
       id,
+      cnt: 16,
       ...(settings?.language && { lang: settings.language }),
       ...(settings?.unit && { units: settings.unit }),
     },
@@ -119,4 +144,4 @@ function useDailyForecast(
   });
 }
 
-export { useFind, useGroup, useWeather, useDailyForecast };
+export { useFind, useGroup, useWeather, useForecast, useDailyForecast };

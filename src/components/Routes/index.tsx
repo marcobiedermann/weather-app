@@ -4,7 +4,6 @@ import { useRoutes } from 'react-router-dom';
 const HomePage = lazy(() => import('../../pages/Index'));
 const CitiesPage = lazy(() => import('../../pages/Cities'));
 const CityPage = lazy(() => import('../../pages/Cities/City'));
-const CityForecastPage = lazy(() => import('../../pages/Cities/City/Forecast'));
 const CitiesEditPage = lazy(() => import('../../pages/Cities/Edit'));
 const SearchPage = lazy(() => import('../../pages/Search'));
 const SettingsPage = lazy(() => import('../../pages/Settings'));
@@ -25,10 +24,6 @@ const routes = [
   {
     element: <CityPage />,
     path: '/cities/:cityId',
-  },
-  {
-    element: <CityForecastPage />,
-    path: '/cities/:cityId/forecast',
   },
   {
     element: <SearchPage />,

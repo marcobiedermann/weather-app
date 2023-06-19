@@ -1,9 +1,10 @@
 import { format, formatISO, fromUnixTime } from 'date-fns';
 import { useTranslation } from 'react-i18next';
-import { HOUR } from '../../utils/date';
+import { DAY_OF_WEEK } from '../../utils/date';
 
-interface Main {
-  temp: number;
+interface Temp {
+  max: number;
+  min: number;
 }
 
 interface Weather {
@@ -13,14 +14,14 @@ interface Weather {
 }
 interface List {
   dt: number;
-  main: Main;
+  temp: Temp;
   weather: Weather[];
 }
-interface ForecastProps {
+interface DailyForecastProps {
   list: List[];
 }
 
-function Forecast(props: ForecastProps): JSX.Element {
+function DailyForecast(props: DailyForecastProps): JSX.Element {
   const { list } = props;
   const { t } = useTranslation();
 
@@ -33,7 +34,13 @@ function Forecast(props: ForecastProps): JSX.Element {
           return (
             <tr key={day.dt}>
               <td>
-                <time dateTime={formatISO(dateTime)}>{format(dateTime, HOUR)}</time>
+                <time
+                  dateTime={formatISO(dateTime, {
+                    representation: 'date',
+                  })}
+                >
+                  {format(dateTime, DAY_OF_WEEK)}
+                </time>
               </td>
               <td>
                 {day.weather.map((entry) => (
@@ -44,7 +51,8 @@ function Forecast(props: ForecastProps): JSX.Element {
                   />
                 ))}
               </td>
-              <td>{t('intlNumberCelsius', { val: day.main.temp })}</td>
+              <td>{t('intlNumberCelsius', { val: day.temp.min })}</td>
+              <td>{t('intlNumberCelsius', { val: day.temp.max })}</td>
             </tr>
           );
         })}
@@ -53,5 +61,5 @@ function Forecast(props: ForecastProps): JSX.Element {
   );
 }
 
-export type { ForecastProps };
-export default Forecast;
+export type { DailyForecastProps };
+export default DailyForecast;

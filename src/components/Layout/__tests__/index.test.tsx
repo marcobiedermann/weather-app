@@ -1,17 +1,10 @@
-import { render } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it } from 'vitest';
 import Layout from '..';
+import { render } from '../../../__test__/testing-library';
 
 describe('components/Layout', () => {
   it('renders correctly', () => {
-    expect.assertions(1);
-
-    const { asFragment } = render(
-      <MemoryRouter>
-        <Layout>Content</Layout>
-      </MemoryRouter>,
-    );
+    const { asFragment } = render(<Layout>Content</Layout>);
 
     expect(asFragment()).toMatchSnapshot();
   });

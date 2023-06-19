@@ -1,11 +1,9 @@
-import { render } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import Loader from '..';
+import { render } from '../../../__test__/testing-library';
 
 describe('components/Loader', () => {
   it('renders correctly', () => {
-    expect.assertions(1);
-
     const { asFragment } = render(<Loader />);
 
     expect(asFragment()).toMatchSnapshot();

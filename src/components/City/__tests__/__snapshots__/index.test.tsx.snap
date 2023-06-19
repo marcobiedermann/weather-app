@@ -5,6 +5,7 @@ exports[`components/City > renders correctly 1`] = `
   <div
     clouds="[object Object]"
     coord="[object Object]"
+    dt="1605434959"
     id="2950159"
     sys="[object Object]"
     visibility="10000"
@@ -13,19 +14,12 @@ exports[`components/City > renders correctly 1`] = `
     <h1>
       Berlin
     </h1>
-    2020-11-15 10:09
+    <p>
+      clear sky
+    </p>
     <div>
-      Temp: 12.61
+      H: 14°C L: 11°C
     </div>
-    <ul>
-      <li>
-        clear sky
-        <img
-          alt="clear sky"
-          src="https://openweathermap.org/img/w/01d.png"
-        />
-      </li>
-    </ul>
   </div>
 </DocumentFragment>
 `;

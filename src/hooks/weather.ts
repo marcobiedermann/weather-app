@@ -2,6 +2,7 @@ import { z } from 'zod';
 import { cloudsSchema, coordSchema, weatherSchema, windSchema } from './common';
 
 const mainSchema = z.object({
+  feels_like: z.number(),
   humidity: z.number(),
   pressure: z.number(),
   temp_max: z.number(),

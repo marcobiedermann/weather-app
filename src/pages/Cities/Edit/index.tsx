@@ -17,7 +17,7 @@ function EditPage(): JSX.Element {
   const cities = useAppSelector(selectCities);
   const settings = useAppSelector(selectSettings);
   const navigate = useNavigate();
-  const { data, error, isError, isLoading } = useGroup(cities, settings);
+  const { data: group, error, isError, isLoading } = useGroup(cities, settings);
 
   function onClick(id: number) {
     dispatch(removeCity(id));
@@ -38,9 +38,9 @@ function EditPage(): JSX.Element {
       <Helmet>
         <title>Edit</title>
       </Helmet>
-      {data.list.length > 0 && (
+      {group.list.length > 0 && (
         <ul className={styles.cities}>
-          {data.list.map((city) => (
+          {group.list.map((city) => (
             <li key={city.id}>
               <Card>
                 <CityPreview {...city} />

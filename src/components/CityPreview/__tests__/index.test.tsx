@@ -1,18 +1,11 @@
-import { render } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it } from 'vitest';
 import CityPreview from '..';
+import { render } from '../../../__test__/testing-library';
 import cityFixtures from '../../City/__fixtures__';
 
 describe('components/CityPreview', () => {
   it('renders correctly', () => {
-    expect.assertions(1);
-
-    const { asFragment } = render(
-      <MemoryRouter>
-        <CityPreview {...cityFixtures} />
-      </MemoryRouter>,
-    );
+    const { asFragment } = render(<CityPreview {...cityFixtures} />);
 
     expect(asFragment()).toMatchSnapshot();
   });

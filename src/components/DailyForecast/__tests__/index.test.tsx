@@ -1,10 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import Card from '..';
+import DailyForecast from '..';
 import { render } from '../../../__test__/testing-library';
 
-describe('components/Card', () => {
+describe('components/DailyForecast', () => {
   it('renders correctly', () => {
-    const { asFragment } = render(<Card>Content</Card>);
+    const { asFragment } = render(<DailyForecast list={[]} />);
 
     expect(asFragment()).toMatchSnapshot();
   });

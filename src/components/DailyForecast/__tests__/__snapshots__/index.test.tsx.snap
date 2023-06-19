@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`components/DailyForecast > renders correctly 1`] = `
+<DocumentFragment>
+  <table>
+    <tbody />
+  </table>
+</DocumentFragment>
+`;

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './style.module.css';
+import { useTranslation } from 'react-i18next';
 
 interface CityPreviewProps {
   id: number;
@@ -14,6 +15,7 @@ interface CityPreviewProps {
 
 function CityPreview(props: CityPreviewProps): JSX.Element {
   const { id, main, name, sys } = props;
+  const { t } = useTranslation();
 
   return (
     <Link to={`/cities/${id}`} className={styles.city}>
@@ -21,7 +23,7 @@ function CityPreview(props: CityPreviewProps): JSX.Element {
         <h3 className={styles.city__country}>{sys.country}</h3>
         <h2 className={styles.city__name}>{name}</h2>
       </div>
-      <div className={styles.city__temp}>{main.temp} °C</div>
+      <div className={styles.city__temp}>{t('intlNumberCelsius', { val: main.temp })}</div>
     </Link>
   );
 }

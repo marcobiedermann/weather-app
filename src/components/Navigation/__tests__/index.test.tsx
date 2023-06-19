@@ -1,16 +1,11 @@
-import { render } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it } from 'vitest';
 import Navigation from '..';
 import routes from '../__fixtures__';
+import { render } from '../../../__test__/testing-library';
 
 describe('components/Navigation', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(
-      <MemoryRouter>
-        <Navigation routes={routes} />
-      </MemoryRouter>,
-    );
+    const { asFragment } = render(<Navigation routes={routes} />);
 
     expect(asFragment()).toMatchSnapshot();
   });

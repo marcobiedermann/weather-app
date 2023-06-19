@@ -15,7 +15,7 @@ function CitiesPage(): JSX.Element {
   const cities = useAppSelector(selectCities);
   const settings = useAppSelector(selectSettings);
   const { t } = useTranslation();
-  const { data, error, isError, isLoading } = useGroup(cities, settings);
+  const { data: group, error, isError, isLoading } = useGroup(cities, settings);
 
   if (!cities.length) {
     navigate('/search');
@@ -34,7 +34,7 @@ function CitiesPage(): JSX.Element {
       <Helmet>
         <title>Cities</title>
       </Helmet>
-      <Cities cities={data.list} />
+      <Cities cities={group.list} />
       <Link to={`${pathname}/edit`}>{t('translation:edit')}</Link>
     </>
   );
