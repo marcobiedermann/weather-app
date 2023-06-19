@@ -17,7 +17,7 @@ exports[`components/Search > renders correctly 1`] = `
       <span
         style="display: none;"
       >
-        translation:search
+        Search
       </span>
       <svg
         fill="none"

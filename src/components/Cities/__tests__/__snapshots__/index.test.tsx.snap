@@ -25,7 +25,7 @@ exports[`components/Cities > should render correctly 1`] = `
         <div
           class="city__temp"
         >
-          12.61 °C
+          13°C
         </div>
       </a>
     </li>

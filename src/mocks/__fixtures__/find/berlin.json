@@ -8,104 +8,104 @@
       "name": "Berlin",
       "coord": { "lat": 52.5244, "lon": 13.4105 },
       "main": {
-        "temp": 277.75,
-        "feels_like": 273.62,
-        "temp_min": 275.98,
-        "temp_max": 278.76,
-        "pressure": 1012,
-        "humidity": 89
+        "temp": 18.54,
+        "feels_like": 18.02,
+        "temp_min": 17.01,
+        "temp_max": 20.55,
+        "pressure": 1008,
+        "humidity": 60
       },
-      "dt": 1639944547,
-      "wind": { "speed": 5.81, "deg": 349 },
+      "dt": 1686813794,
+      "wind": { "speed": 3.09, "deg": 330 },
       "sys": { "country": "DE" },
       "rain": null,
       "snow": null,
-      "clouds": { "all": 40 },
-      "weather": [{ "id": 802, "main": "Clouds", "description": "scattered clouds", "icon": "03n" }]
+      "clouds": { "all": 0 },
+      "weather": [{ "id": 800, "main": "Clear", "description": "clear sky", "icon": "01d" }]
     },
     {
       "id": 3587266,
       "name": "Berlín",
       "coord": { "lat": 13.5, "lon": -88.5333 },
       "main": {
-        "temp": 301.12,
-        "feels_like": 301.07,
-        "temp_min": 298.89,
-        "temp_max": 303.28,
-        "pressure": 1009,
-        "humidity": 44,
-        "sea_level": 1009,
-        "grnd_level": 903
+        "temp": 18.42,
+        "feels_like": 18.85,
+        "temp_min": 18.42,
+        "temp_max": 18.42,
+        "pressure": 1010,
+        "humidity": 97,
+        "sea_level": 1010,
+        "grnd_level": 900
       },
-      "dt": 1639944565,
-      "wind": { "speed": 1.65, "deg": 194 },
+      "dt": 1686814064,
+      "wind": { "speed": 0.32, "deg": 12 },
       "sys": { "country": "SV" },
       "rain": null,
       "snow": null,
-      "clouds": { "all": 66 },
-      "weather": [{ "id": 803, "main": "Clouds", "description": "broken clouds", "icon": "04d" }]
+      "clouds": { "all": 100 },
+      "weather": [{ "id": 804, "main": "Clouds", "description": "overcast clouds", "icon": "04n" }]
     },
     {
       "id": 5083330,
       "name": "Berlin",
       "coord": { "lat": 44.4687, "lon": -71.1851 },
       "main": {
-        "temp": 267.85,
-        "feels_like": 262.26,
-        "temp_min": 266.45,
-        "temp_max": 270.16,
-        "pressure": 1018,
-        "humidity": 63
+        "temp": 12.85,
+        "feels_like": 12.65,
+        "temp_min": 11.93,
+        "temp_max": 13.39,
+        "pressure": 998,
+        "humidity": 94
       },
-      "dt": 1639944572,
-      "wind": { "speed": 4.12, "deg": 340 },
+      "dt": 1686810739,
+      "wind": { "speed": 0, "deg": 0 },
       "sys": { "country": "US" },
       "rain": null,
       "snow": null,
-      "clouds": { "all": 90 },
-      "weather": [{ "id": 600, "main": "Snow", "description": "light snow", "icon": "13d" }]
+      "clouds": { "all": 100 },
+      "weather": [{ "id": 804, "main": "Clouds", "description": "overcast clouds", "icon": "04n" }]
     },
     {
       "id": 4500771,
       "name": "Berlin",
       "coord": { "lat": 39.7912, "lon": -74.929 },
       "main": {
-        "temp": 276.26,
-        "feels_like": 276.26,
-        "temp_min": 275.18,
-        "temp_max": 277.41,
-        "pressure": 1019,
-        "humidity": 62
+        "temp": 14.92,
+        "feels_like": 14.43,
+        "temp_min": 12.32,
+        "temp_max": 17.08,
+        "pressure": 1002,
+        "humidity": 75
       },
-      "dt": 1639944571,
-      "wind": { "speed": 0.89, "deg": 302 },
+      "dt": 1686814154,
+      "wind": { "speed": 1.54, "deg": 220 },
       "sys": { "country": "US" },
       "rain": null,
       "snow": null,
-      "clouds": { "all": 1 },
-      "weather": [{ "id": 800, "main": "Clear", "description": "clear sky", "icon": "01d" }]
+      "clouds": { "all": 0 },
+      "weather": [{ "id": 800, "main": "Clear", "description": "clear sky", "icon": "01n" }]
     },
     {
       "id": 5245497,
       "name": "Berlin",
       "coord": { "lat": 43.968, "lon": -88.9435 },
       "main": {
-        "temp": 271.48,
-        "feels_like": 265.65,
-        "temp_min": 269.4,
-        "temp_max": 272.58,
-        "pressure": 1024,
-        "humidity": 68,
-        "sea_level": 1024,
-        "grnd_level": 994
+        "temp": 16.85,
+        "feels_like": 17.1,
+        "temp_min": 15.57,
+        "temp_max": 18.06,
+        "pressure": 1005,
+        "humidity": 96,
+        "sea_level": 1005,
+        "grnd_level": 977
       },
-      "dt": 1639944572,
-      "wind": { "speed": 5.86, "deg": 206 },
+      "dt": 1686810765,
+      "wind": { "speed": 2.25, "deg": 349 },
       "sys": { "country": "US" },
       "rain": null,
       "snow": null,
-      "clouds": { "all": 90 },
-      "weather": [{ "id": 804, "main": "Clouds", "description": "overcast clouds", "icon": "04d" }]
+      "clouds": { "all": 9 },
+      "weather": [{ "id": 800, "main": "Clear", "description": "clear sky", "icon": "01n" }]
     }
   ]
 }

@@ -33,7 +33,7 @@ function Result(props: ResultProps): JSX.Element {
       <h3>
         {name}, {sys.country}
       </h3>
-      {main.temp}
+      {t('intlNumberCelsius', { val: main.temp })}
 
       <button type="button" onClick={() => onClick(id)}>
         <span style={{ display: 'none' }}>{t('translation:add')}</span>

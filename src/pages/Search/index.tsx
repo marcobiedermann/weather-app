@@ -11,7 +11,7 @@ function SearchPage(): JSX.Element {
   const [searchParams] = useSearchParams();
   const { query } = Object.fromEntries(searchParams);
   const settings = useAppSelector(selectSettings);
-  const { data, isError, isLoading, error } = useFind(query, settings);
+  const { data: find, isError, isLoading, error } = useFind(query, settings);
 
   if (isError) {
     return <Error message={error.message} />;
@@ -26,7 +26,7 @@ function SearchPage(): JSX.Element {
       <Helmet>
         <title>Search</title>
       </Helmet>
-      <Results results={data.list} />
+      <Results results={find.list} />
     </>
   );
 }

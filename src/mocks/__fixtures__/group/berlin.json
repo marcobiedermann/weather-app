@@ -1,26 +1,62 @@
 {
-  "cnt": 1,
+  "cnt": 3,
   "list": [
     {
       "coord": { "lon": 13.4105, "lat": 52.5244 },
-      "sys": { "country": "DE", "timezone": 3600, "sunrise": 1639898036, "sunset": 1639925583 },
-      "weather": [
-        { "id": 802, "main": "Clouds", "description": "scattered clouds", "icon": "03n" }
-      ],
+      "sys": { "country": "DE", "timezone": 7200, "sunrise": 1686796973, "sunset": 1686857444 },
+      "weather": [{ "id": 800, "main": "Clear", "description": "clear sky", "icon": "01d" }],
       "main": {
-        "temp": 277.75,
-        "feels_like": 273.62,
-        "temp_min": 275.98,
-        "temp_max": 278.76,
-        "pressure": 1012,
-        "humidity": 89
+        "temp": 18.54,
+        "feels_like": 18.02,
+        "temp_min": 17.01,
+        "temp_max": 20.55,
+        "pressure": 1008,
+        "humidity": 60
       },
       "visibility": 10000,
-      "wind": { "speed": 5.81, "deg": 349 },
-      "clouds": { "all": 40 },
-      "dt": 1639944547,
+      "wind": { "speed": 3.09, "deg": 330 },
+      "clouds": { "all": 0 },
+      "dt": 1686813794,
       "id": 2950159,
       "name": "Berlin"
+    },
+    {
+      "coord": { "lon": -0.1257, "lat": 51.5085 },
+      "sys": { "country": "GB", "timezone": 3600, "sunrise": 1686800570, "sunset": 1686860344 },
+      "weather": [{ "id": 804, "main": "Clouds", "description": "overcast clouds", "icon": "04d" }],
+      "main": {
+        "temp": 17.57,
+        "feels_like": 17.34,
+        "temp_min": 15.58,
+        "temp_max": 19.86,
+        "pressure": 1020,
+        "humidity": 75
+      },
+      "visibility": 10000,
+      "wind": { "speed": 1.54, "deg": 0 },
+      "clouds": { "all": 99 },
+      "dt": 1686813491,
+      "id": 2643743,
+      "name": "London"
+    },
+    {
+      "coord": { "lon": 4.8897, "lat": 52.374 },
+      "sys": { "country": "NL", "timezone": 7200, "sunrise": 1686799071, "sunset": 1686859436 },
+      "weather": [{ "id": 800, "main": "Clear", "description": "clear sky", "icon": "01d" }],
+      "main": {
+        "temp": 20.64,
+        "feels_like": 20.51,
+        "temp_min": 18.79,
+        "temp_max": 22.16,
+        "pressure": 1020,
+        "humidity": 67
+      },
+      "visibility": 10000,
+      "wind": { "speed": 2.06, "deg": 70 },
+      "clouds": { "all": 0 },
+      "dt": 1686813642,
+      "id": 2759794,
+      "name": "Amsterdam"
     }
   ]
 }

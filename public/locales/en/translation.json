@@ -1,0 +1,17 @@
+{
+  "add": "Add",
+  "edit": "Edit",
+  "feelsLike": "Feels Like",
+  "humidity": "Humidity",
+  "intlNumberCelsius": "{{val, number(style: 'unit'; unit: 'celsius'; notation: 'compact')}}",
+  "intlNumberHectoPascal": "{{val}} hPa",
+  "intlNumberKilometer": "{{val, number(style: 'unit'; unit: 'kilometer')}}",
+  "intlNumberKmh": "$t(intlNumberKilometer)/h",
+  "intlNumberPercent": "{{val, number(style: 'percent')}}",
+  "pressure": "Pressure",
+  "search": "Search",
+  "sunrise": "Sunrise",
+  "sunset": "Sunset",
+  "visibility": "Visibility",
+  "wind": "Wind"
+}
