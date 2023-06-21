@@ -1,11 +1,9 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`components/Grid > renders correctly 1`] = `
+exports[`components/Error > renders correctly 1`] = `
 <DocumentFragment>
-  <div
-    class="grid"
-  >
-    Content
+  <div>
+    Error: Error message
   </div>
 </DocumentFragment>
 `;

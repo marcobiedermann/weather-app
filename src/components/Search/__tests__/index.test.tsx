@@ -1,10 +1,12 @@
-import { describe, expect, it, vi } from 'vitest';
-import Search from '..';
+import { composeStory } from '@storybook/react';
+import { describe, expect, it } from 'vitest';
 import { render } from '../../../__test__/testing-library';
+import Meta, { Default } from '../Search.stories';
 
 describe('components/Search', () => {
   it('renders correctly', () => {
-    const { asFragment } = render(<Search onSubmit={vi.fn()} />);
+    const ComposedDefault = composeStory(Default, Meta);
+    const { asFragment } = render(<ComposedDefault />);
 
     expect(asFragment()).toMatchSnapshot();
   });

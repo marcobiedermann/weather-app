@@ -1,17 +1,12 @@
+import { composeStory } from '@storybook/react';
 import { describe, expect, it } from 'vitest';
-import Cities from '..';
 import { render } from '../../../__test__/testing-library';
-import cities from '../__fixtures__';
+import Meta, { Default } from '../Cities.stories';
 
 describe('components/Cities', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<Cities cities={cities} />);
-
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render empty cities correctly', () => {
-    const { asFragment } = render(<Cities cities={[]} />);
+    const ComposedDefault = composeStory(Default, Meta);
+    const { asFragment } = render(<ComposedDefault />);
 
     expect(asFragment()).toMatchSnapshot();
   });

@@ -5,7 +5,7 @@ exports[`components/Header > renders correctly 1`] = `
   <header
     class="header"
   >
-    Content
+    Header
   </header>
 </DocumentFragment>
 `;

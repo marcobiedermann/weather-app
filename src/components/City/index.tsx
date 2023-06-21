@@ -7,7 +7,6 @@ interface Weather {
 }
 
 interface CityProps {
-  dt: number;
   main: {
     temp: number;
     temp_min: number;

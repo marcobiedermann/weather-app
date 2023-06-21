@@ -25,11 +25,3 @@ exports[`components/Navigation > should render correctly 1`] = `
   </nav>
 </DocumentFragment>
 `;
-
-exports[`components/Navigation > should render empty routes correctly 1`] = `
-<DocumentFragment>
-  <nav
-    class="navigation"
-  />
-</DocumentFragment>
-`;

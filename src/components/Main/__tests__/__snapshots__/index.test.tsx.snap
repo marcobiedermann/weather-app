@@ -5,7 +5,7 @@ exports[`components/Main > renders correctly 1`] = `
   <main
     class="main"
   >
-    Content
+    Main
   </main>
 </DocumentFragment>
 `;

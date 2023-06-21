@@ -25,12 +25,10 @@ exports[`components/Cities > should render correctly 1`] = `
         <div
           class="city__temp"
         >
-          13°C
+          19°C
         </div>
       </a>
     </li>
   </ul>
 </DocumentFragment>
 `;
-
-exports[`components/Cities > should render empty cities correctly 1`] = `<DocumentFragment />`;

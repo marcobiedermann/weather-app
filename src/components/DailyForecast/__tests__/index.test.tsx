@@ -1,10 +1,12 @@
+import { composeStory } from '@storybook/react';
 import { describe, expect, it } from 'vitest';
-import DailyForecast from '..';
 import { render } from '../../../__test__/testing-library';
+import Meta, { Default } from '../DailyForecast.stories';
 
 describe('components/DailyForecast', () => {
   it('renders correctly', () => {
-    const { asFragment } = render(<DailyForecast list={[]} />);
+    const ComposedDefault = composeStory(Default, Meta);
+    const { asFragment } = render(<ComposedDefault />);
 
     expect(asFragment()).toMatchSnapshot();
   });

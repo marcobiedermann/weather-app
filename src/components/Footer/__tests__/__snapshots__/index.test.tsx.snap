@@ -5,7 +5,7 @@ exports[`components/Footer > renders correctly 1`] = `
   <footer
     class="footer"
   >
-    Content
+    Footer
   </footer>
 </DocumentFragment>
 `;

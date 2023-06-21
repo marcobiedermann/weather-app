@@ -3,9 +3,9 @@
 exports[`components/Label > renders correctly 1`] = `
 <DocumentFragment>
   <label
-    for="foo"
+    for="username"
   >
-    Content
+    Label
   </label>
 </DocumentFragment>
 `;

@@ -1,10 +1,12 @@
+import { composeStory } from '@storybook/react';
 import { describe, expect, it } from 'vitest';
-import Layout from '..';
 import { render } from '../../../__test__/testing-library';
+import Meta, { Default } from '../Layout.stories';
 
 describe('components/Layout', () => {
   it('renders correctly', () => {
-    const { asFragment } = render(<Layout>Content</Layout>);
+    const ComposedDefault = composeStory(Default, Meta);
+    const { asFragment } = render(<ComposedDefault />);
 
     expect(asFragment()).toMatchSnapshot();
   });
