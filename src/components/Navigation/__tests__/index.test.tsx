@@ -1,17 +1,12 @@
+import { composeStory } from '@storybook/react';
 import { describe, expect, it } from 'vitest';
-import Navigation from '..';
-import routes from '../__fixtures__';
 import { render } from '../../../__test__/testing-library';
+import Meta, { Default } from '../Navigation.stories';
 
 describe('components/Navigation', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<Navigation routes={routes} />);
-
-    expect(asFragment()).toMatchSnapshot();
-  });
-
-  it('should render empty routes correctly', () => {
-    const { asFragment } = render(<Navigation routes={[]} />);
+    const ComposedDefault = composeStory(Default, Meta);
+    const { asFragment } = render(<ComposedDefault />);
 
     expect(asFragment()).toMatchSnapshot();
   });

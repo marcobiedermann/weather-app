@@ -3,7 +3,26 @@
 exports[`components/Forecast > renders correctly 1`] = `
 <DocumentFragment>
   <table>
-    <tbody />
+    <tbody>
+      <tr>
+        <td>
+          <time
+            datetime="2023-06-18T15:00:00Z"
+          >
+            15
+          </time>
+        </td>
+        <td>
+          <img
+            alt="scattered clouds"
+            src="https://openweathermap.org/img/wn/03d.png"
+          />
+        </td>
+        <td>
+          25°C
+        </td>
+      </tr>
+    </tbody>
   </table>
 </DocumentFragment>
 `;

@@ -1,18 +1,12 @@
-import { describe, expect, it, vi } from 'vitest';
-import Settings from '..';
+import { composeStory } from '@storybook/react';
+import { describe, expect, it } from 'vitest';
 import { render } from '../../../__test__/testing-library';
+import Meta, { Default } from '../Settings.stories';
 
 describe('components/Settings', () => {
   it('renders correctly', () => {
-    const { asFragment } = render(
-      <Settings
-        defaultValues={{
-          language: 'en',
-          unit: 'metric',
-        }}
-        onSubmit={vi.fn()}
-      />,
-    );
+    const ComposedDefault = composeStory(Default, Meta);
+    const { asFragment } = render(<ComposedDefault />);
 
     expect(asFragment()).toMatchSnapshot();
   });

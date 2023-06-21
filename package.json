@@ -30,6 +30,8 @@
   },
   "homepage": "https://github.com/marcobiedermann/weather-app#readme",
   "devDependencies": {
+    "@storybook/react": "^7.0.22",
+    "@storybook/testing-react": "^2.0.1",
     "@testing-library/react": "^14.0.0",
     "@types/node": "^20.2.5",
     "@types/react": "^18.2.9",

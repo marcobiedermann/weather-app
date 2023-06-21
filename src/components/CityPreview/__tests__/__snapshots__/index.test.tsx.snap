@@ -21,7 +21,7 @@ exports[`components/CityPreview > renders correctly 1`] = `
     <div
       class="city__temp"
     >
-      13°C
+      19°C
     </div>
   </a>
 </DocumentFragment>

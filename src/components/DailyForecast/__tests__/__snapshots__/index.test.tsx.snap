@@ -3,7 +3,29 @@
 exports[`components/DailyForecast > renders correctly 1`] = `
 <DocumentFragment>
   <table>
-    <tbody />
+    <tbody>
+      <tr>
+        <td>
+          <time
+            datetime="2023-06-18"
+          >
+            Sun
+          </time>
+        </td>
+        <td>
+          <img
+            alt="sky is clear"
+            src="https://openweathermap.org/img/wn/01d.png"
+          />
+        </td>
+        <td>
+          14°C
+        </td>
+        <td>
+          26°C
+        </td>
+      </tr>
+    </tbody>
   </table>
 </DocumentFragment>
 `;

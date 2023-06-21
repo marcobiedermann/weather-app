@@ -1,11 +1,12 @@
+import { composeStory } from '@storybook/react';
 import { describe, expect, it } from 'vitest';
-import City from '..';
 import { render } from '../../../__test__/testing-library';
-import cityFixtures from '../__fixtures__';
+import Meta, { Default } from '../City.stories';
 
 describe('components/City', () => {
   it('renders correctly', () => {
-    const { asFragment } = render(<City {...cityFixtures} />);
+    const ComposedDefault = composeStory(Default, Meta);
+    const { asFragment } = render(<ComposedDefault />);
 
     expect(asFragment()).toMatchSnapshot();
   });

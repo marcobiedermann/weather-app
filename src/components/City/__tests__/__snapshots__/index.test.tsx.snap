@@ -2,15 +2,7 @@
 
 exports[`components/City > renders correctly 1`] = `
 <DocumentFragment>
-  <div
-    clouds="[object Object]"
-    coord="[object Object]"
-    dt="1605434959"
-    id="2950159"
-    sys="[object Object]"
-    visibility="10000"
-    wind="[object Object]"
-  >
+  <div>
     <h1>
       Berlin
     </h1>
@@ -18,7 +10,7 @@ exports[`components/City > renders correctly 1`] = `
       clear sky
     </p>
     <div>
-      H: 14°C L: 11°C
+      H: 29°C L: 23°C
     </div>
   </div>
 </DocumentFragment>
