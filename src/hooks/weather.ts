@@ -1,5 +1,11 @@
 import { z } from 'zod';
-import { cloudsSchema, coordSchema, weatherSchema, windSchema } from './common';
+import { cloudsSchema, coordSchema, weatherSchema } from './common';
+
+const windSchema = z.object({
+  deg: z.number(),
+  gust: z.number(),
+  speed: z.number(),
+});
 
 const mainSchema = z.object({
   feels_like: z.number(),
@@ -29,6 +35,7 @@ const weatherResponseSchema = z.object({
   main: mainSchema,
   name: z.string(),
   sys: sysSchema,
+  timezone: z.number(),
   visibility: z.number(),
   weather: z.array(weatherSchema),
   wind: windSchema,
