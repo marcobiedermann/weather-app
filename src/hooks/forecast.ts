@@ -7,6 +7,8 @@ const citySchema = z.object({
   id: z.number(),
   name: z.string(),
   population: z.number(),
+  sunrise: z.number(),
+  sunset: z.number(),
   timezone: z.number(),
 });
 
@@ -26,6 +28,11 @@ const listSchema = z.object({
     temp: z.number(),
   }),
   pop: z.number(),
+  rain: z
+    .object({
+      '3h': z.number(),
+    })
+    .optional(),
   sys: z.object({
     pod: z.string(),
   }),
