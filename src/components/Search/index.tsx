@@ -28,7 +28,7 @@ function Search(props: SearchProps): JSX.Element {
       />
 
       <button type="submit" className={styles.search__submit}>
-        <span style={{ display: 'none' }}>{t('translation:search')}</span>
+        <span style={{ display: 'none' }}>{t('search')}</span>
         <SearchIcon />
       </button>
     </form>

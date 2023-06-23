@@ -35,7 +35,7 @@ function CitiesPage(): JSX.Element {
         <title>Cities</title>
       </Helmet>
       <Cities cities={group.list} />
-      <Link to={`${pathname}/edit`}>{t('translation:edit')}</Link>
+      <Link to={`${pathname}/edit`}>{t('edit')}</Link>
     </>
   );
 }
