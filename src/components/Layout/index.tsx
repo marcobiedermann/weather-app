@@ -1,19 +1,14 @@
-import { ReactNode } from 'react';
+import { Suspense } from 'react';
+import { Grid, Loader, Settings } from 'react-feather';
+import { Outlet, createSearchParams, useNavigate } from 'react-router-dom';
 import Footer from '../Footer';
 import Header from '../Header';
 import Main from '../Main';
 import Navigation from '../Navigation';
-import styles from './style.module.css';
-import { Grid, Settings } from 'react-feather';
 import Search from '../Search';
-import { createSearchParams, useNavigate } from 'react-router-dom';
+import styles from './style.module.css';
 
-interface LayoutProps {
-  children: ReactNode;
-}
-
-function Layout(props: LayoutProps): JSX.Element {
-  const { children } = props;
+function Layout(): JSX.Element {
   const navigate = useNavigate();
 
   return (
@@ -40,7 +35,11 @@ function Layout(props: LayoutProps): JSX.Element {
             }}
           />
         </Header>
-        <Main>{children}</Main>
+        <Main>
+          <Suspense fallback={<Loader />}>
+            <Outlet />
+          </Suspense>
+        </Main>
         <Footer>
           <p>
             Data provided by the{' '}

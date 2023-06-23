@@ -3,9 +3,6 @@ import Layout from '.';
 
 const meta: Meta<typeof Layout> = {
   component: Layout,
-  args: {
-    children: 'Content',
-  },
 };
 
 type Story = StoryObj<typeof Layout>;
