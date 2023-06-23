@@ -8,6 +8,7 @@ export default defineConfig({
       provider: 'v8',
       all: true,
       include: ['src'],
+      exclude: ['**/__mocks__/*', '**/*.d.ts', 'test'],
     },
     css: {
       modules: {

@@ -1,6 +1,6 @@
 import { composeStory } from '@storybook/react';
 import { describe, expect, it } from 'vitest';
-import { render } from '../../../__test__/testing-library';
+import { render } from '../../../test/testing-library';
 import Meta, { Default } from '../Cities.stories';
 
 describe('components/Cities', () => {

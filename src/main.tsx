@@ -5,7 +5,7 @@ import { isDevelopment } from './constants/config';
 import './i18n';
 
 if (isDevelopment) {
-  import('./mocks/browser').then(({ worker }) => worker.start());
+  import('./__mocks__/browser').then(({ worker }) => worker.start());
 }
 
 createRoot(document.getElementById('root') as HTMLElement).render(
