@@ -8,7 +8,7 @@ describe('reducers/settings', () => {
   };
 
   describe('updateSettings', () => {
-    it('should add a new city', () => {
+    it('should update the language', () => {
       const state = reducer(
         initialState,
         updateSettings({
@@ -19,6 +19,20 @@ describe('reducers/settings', () => {
       expect(state).toStrictEqual({
         language: 'de',
         unit: 'metric',
+      });
+    });
+
+    it('should update the unit', () => {
+      const state = reducer(
+        initialState,
+        updateSettings({
+          unit: 'imperial',
+        }),
+      );
+
+      expect(state).toStrictEqual({
+        language: 'en',
+        unit: 'imperial',
       });
     });
   });
