@@ -16,7 +16,7 @@ function Providers(props: ProvidersProps): JSX.Element {
 
   return (
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
+      <PersistGate persistor={persistor}>
         <Suspense fallback={<Loader />}>
           <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
         </Suspense>

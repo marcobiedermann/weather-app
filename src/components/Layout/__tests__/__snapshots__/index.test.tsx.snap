@@ -56,9 +56,7 @@ exports[`components/Layout > renders correctly 1`] = `
       </header>
       <main
         class="main"
-      >
-        Content
-      </main>
+      />
       <footer
         class="footer"
       >

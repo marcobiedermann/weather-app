@@ -1,7 +1,6 @@
 import { XCircle } from 'react-feather';
 import { Helmet } from 'react-helmet';
 import { Link, useNavigate } from 'react-router-dom';
-import Card from '../../../components/Card';
 import CityPreview from '../../../components/CityPreview';
 import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
@@ -41,13 +40,16 @@ function EditPage(): JSX.Element {
       {group.list.length > 0 && (
         <ul className={styles.cities}>
           {group.list.map((city) => (
-            <li key={city.id}>
-              <Card>
-                <CityPreview {...city} />
-                <button type="button" onClick={() => onClick(city.id)}>
-                  <XCircle />
-                </button>
-              </Card>
+            <li
+              key={city.id}
+              style={{
+                position: 'relative',
+              }}
+            >
+              <CityPreview {...city} />
+              <button type="button" onClick={() => onClick(city.id)}>
+                <XCircle />
+              </button>
             </li>
           ))}
         </ul>
