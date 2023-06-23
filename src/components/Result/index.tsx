@@ -36,7 +36,7 @@ function Result(props: ResultProps): JSX.Element {
       {t('intlNumberCelsius', { val: main.temp })}
 
       <button type="button" onClick={() => onClick(id)}>
-        <span style={{ display: 'none' }}>{t('translation:add')}</span>
+        <span style={{ display: 'none' }}>{t('add')}</span>
         <PlusCircle />
       </button>
     </div>
