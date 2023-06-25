@@ -1,8 +1,8 @@
-import { Helmet } from 'react-helmet';
 import { useSearchParams } from 'react-router-dom';
 import Error from '../../components/Error';
 import Loader from '../../components/Loader';
 import Results from '../../components/Results';
+import Seo from '../../components/Seo';
 import { useFind } from '../../hooks';
 import { selectSettings } from '../../selectors/settings';
 import { useAppSelector } from '../../store';
@@ -23,9 +23,7 @@ function SearchPage(): JSX.Element {
 
   return (
     <>
-      <Helmet>
-        <title>Search</title>
-      </Helmet>
+      <Seo title="Search" />
       <Results results={find.list} />
     </>
   );
