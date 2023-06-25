@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
-import styles from './style.module.css';
 import { useTranslation } from 'react-i18next';
+import Link from '../Link';
+import styles from './style.module.css';
 
 interface CityPreviewProps {
   id: number;

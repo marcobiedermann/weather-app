@@ -1,13 +1,14 @@
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Cities from '../../components/Cities';
 import Error from '../../components/Error';
+import Link from '../../components/Link';
 import Loader from '../../components/Loader';
 import { useGroup } from '../../hooks';
 import { selectCities } from '../../selectors/cities';
-import { useAppSelector } from '../../store';
 import { selectSettings } from '../../selectors/settings';
+import { useAppSelector } from '../../store';
 
 function CitiesPage(): JSX.Element {
   const { pathname } = useLocation();
