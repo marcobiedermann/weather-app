@@ -1,10 +1,10 @@
 import { XCircle } from 'react-feather';
-import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
 import CityPreview from '../../../components/CityPreview';
 import Error from '../../../components/Error';
 import Link from '../../../components/Link';
 import Loader from '../../../components/Loader';
+import Seo from '../../../components/Seo';
 import { useGroup } from '../../../hooks';
 import { removeCity } from '../../../reducers/cities';
 import { selectCities } from '../../../selectors/cities';
@@ -35,9 +35,7 @@ function EditPage(): JSX.Element {
 
   return (
     <>
-      <Helmet>
-        <title>Edit</title>
-      </Helmet>
+      <Seo title="Edit" />
       {group.list.length > 0 && (
         <ul className={styles.cities}>
           {group.list.map((city) => (

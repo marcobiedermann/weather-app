@@ -1,17 +1,17 @@
-import { Helmet } from 'react-helmet';
+import { format, fromUnixTime } from 'date-fns';
+import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { z } from 'zod';
 import City from '../../../components/City';
 import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
+import Seo from '../../../components/Seo';
 import { useWeather } from '../../../hooks';
 import { selectSettings } from '../../../selectors/settings';
 import { useAppSelector } from '../../../store';
+import { LONG_LOCALIZED_TIME } from '../../../utils/date';
 import DailyForecastSection from './sections/DailyForecast';
 import ForecastSection from './sections/Forecast';
-import { format, fromUnixTime } from 'date-fns';
-import { useTranslation } from 'react-i18next';
-import { LONG_LOCALIZED_TIME } from '../../../utils/date';
 
 const itemStyles = {
   aspectRatio: 1,
@@ -41,9 +41,7 @@ function CityPage(): JSX.Element {
 
   return (
     <>
-      <Helmet>
-        <title>{weather.name}</title>
-      </Helmet>
+      <Seo title={weather.name} />
       <section>
         <City {...weather} />
       </section>

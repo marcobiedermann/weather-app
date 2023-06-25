@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet';
+import Seo from '../../components/Seo';
 import Settings, { FormData } from '../../components/Settings';
 import { updateSettings } from '../../reducers/settings';
 import { selectSettings } from '../../selectors/settings';
@@ -19,9 +19,7 @@ function SettingsPage(): JSX.Element {
 
   return (
     <>
-      <Helmet>
-        <title>Settings</title>
-      </Helmet>
+      <Seo title="Settings" />
       <Settings defaultValues={defaultValues} onSubmit={onSubmit} />
     </>
   );
