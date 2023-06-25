@@ -1,8 +1,9 @@
 import { XCircle } from 'react-feather';
 import { Helmet } from 'react-helmet';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import CityPreview from '../../../components/CityPreview';
 import Error from '../../../components/Error';
+import Link from '../../../components/Link';
 import Loader from '../../../components/Loader';
 import { useGroup } from '../../../hooks';
 import { removeCity } from '../../../reducers/cities';
