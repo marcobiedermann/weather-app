@@ -1,12 +1,12 @@
 import { lazy } from 'react';
-import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
-import Layout from '../Layout';
+import { Navigate } from 'react-router-dom';
+import Layout from '../components/Layout';
 
-const CitiesPage = lazy(() => import('../../pages/Cities'));
-const CityPage = lazy(() => import('../../pages/Cities/City'));
-const CitiesEditPage = lazy(() => import('../../pages/Cities/Edit'));
-const SearchPage = lazy(() => import('../../pages/Search'));
-const SettingsPage = lazy(() => import('../../pages/Settings'));
+const CitiesPage = lazy(() => import('../pages/Cities'));
+const CityPage = lazy(() => import('../pages/Cities/City'));
+const CitiesEditPage = lazy(() => import('../pages/Cities/Edit'));
+const SearchPage = lazy(() => import('../pages/Search'));
+const SettingsPage = lazy(() => import('../pages/Settings'));
 
 const routes = [
   {
@@ -40,10 +40,4 @@ const routes = [
   },
 ];
 
-const router = createBrowserRouter(routes);
-
-function Router(): JSX.Element {
-  return <RouterProvider router={router} />;
-}
-
-export default Router;
+export default routes;

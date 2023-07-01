@@ -15,8 +15,8 @@
     "lint:js": "eslint src --ext ts,tsx --ignore-path .gitignore",
     "lint": "npm run lint:css && npm run lint:js",
     "preview": "vite preview",
-    "test": "vitest",
-    "test:ci": "vitest run --coverage",
+    "test": "TZ=UTC vitest",
+    "test:ci": "npm test -- run --coverage",
     "update": "npx npm-check-updates --format group --interactive"
   },
   "repository": {
