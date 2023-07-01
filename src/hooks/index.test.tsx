@@ -1,13 +1,13 @@
 import { renderHook, waitFor } from '@testing-library/react';
 import { afterAll, afterEach, beforeAll, describe, expect, it } from 'vitest';
 import { useDailyForecast, useFind, useForecast, useGroup, useWeather } from '.';
-import Providers from '../components/Providers';
 import find from '../__mocks__/__fixtures__/find/berlin.json';
 import forecast from '../__mocks__/__fixtures__/forecast/berlin.json';
 import dailyForecast from '../__mocks__/__fixtures__/forecast/daily/berlin.json';
 import group from '../__mocks__/__fixtures__/group.json';
 import weather from '../__mocks__/__fixtures__/weather/berlin.json';
 import { server } from '../__mocks__/server';
+import { Providers } from '../test/testing-library';
 
 const cityId = 2950159;
 const cities = [cityId];

@@ -17,13 +17,12 @@ const handlers = [
   rest.get(`${BASE_PATH}/forecast/daily`, (_request, response, context) =>
     response(context.status(200), context.json(dailyForecast)),
   ),
-  rest.get(`${BASE_PATH}/group`, (_request, response, context) => {
-    return response(context.status(200), context.json(group));
-  }),
-  rest.get(`${BASE_PATH}/weather`, (_request, response, context) => {
-    console.log('Mocking /weather');
-    return response(context.status(200), context.json(weather));
-  }),
+  rest.get(`${BASE_PATH}/group`, (_request, response, context) =>
+    response(context.status(200), context.json(group)),
+  ),
+  rest.get(`${BASE_PATH}/weather`, (_request, response, context) =>
+    response(context.status(200), context.json(weather)),
+  ),
 ];
 
 export { handlers };

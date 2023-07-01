@@ -1,25 +1,37 @@
+import { Store } from '@reduxjs/toolkit';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ReactNode, Suspense } from 'react';
+import { i18n } from 'i18next';
+import { Suspense } from 'react';
+import { I18nextProvider } from 'react-i18next';
 import { Provider } from 'react-redux';
-import store, { persistor } from '../../store';
-import Loader from '../Loader';
+import { RouterProvider, RouterProviderProps } from 'react-router-dom';
+import { Persistor } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
+import Loader from '../Loader';
 
-const queryClient = new QueryClient();
+type Router = RouterProviderProps['router'];
 
 interface ProvidersProps {
-  children: ReactNode;
+  i18n: i18n;
+  persistor: Persistor;
+  queryClient?: QueryClient;
+  store: Store;
+  router: Router;
 }
 
 function Providers(props: ProvidersProps): JSX.Element {
-  const { children } = props;
+  const { i18n, persistor, queryClient = new QueryClient(), router, store } = props;
 
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>
-        <Suspense fallback={<Loader />}>
-          <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-        </Suspense>
+        <I18nextProvider i18n={i18n}>
+          <QueryClientProvider client={queryClient}>
+            <Suspense fallback={<Loader />}>
+              <RouterProvider router={router} />
+            </Suspense>
+          </QueryClientProvider>
+        </I18nextProvider>
       </PersistGate>
     </Provider>
   );
