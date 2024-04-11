@@ -29,14 +29,14 @@ function CityPage(): JSX.Element {
   const { cityId } = paramsSchema.parse(params);
   const settings = useAppSelector(selectSettings);
   const { t } = useTranslation();
-  const { data: weather, error, isError, isLoading } = useWeather(cityId, settings);
+  const { data: weather, error, isError, isPending } = useWeather(cityId, settings);
+
+  if (isPending) {
+    return <Loader />;
+  }
 
   if (isError) {
     return <Error message={error.message} />;
-  }
-
-  if (isLoading) {
-    return <Loader />;
   }
 
   return (
