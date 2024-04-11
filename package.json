@@ -58,7 +58,7 @@
     "stylelint-selector-bem-pattern": "^2.1.1",
     "typed-css-modules": "^0.7.2",
     "typescript": "^5.1.6",
-    "vite": "^4.4.6",
+    "vite": "^5.2.8",
     "vitest": "^0.33.0"
   },
   "dependencies": {
