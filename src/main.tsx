@@ -4,12 +4,20 @@ import Root from './components/Root';
 import { isDevelopment } from './constants/config';
 import './i18n';
 
-if (isDevelopment) {
-  import('./__mocks__/browser').then(({ worker }) => worker.start());
+async function enableMocking() {
+  if (!isDevelopment) {
+    return;
+  }
+
+  const { worker } = await import('./__mocks__/browser');
+
+  return worker.start();
 }
 
-createRoot(document.getElementById('root') as HTMLElement).render(
-  <StrictMode>
-    <Root />
-  </StrictMode>,
+enableMocking().then(() =>
+  createRoot(document.getElementById('root') as HTMLElement).render(
+    <StrictMode>
+      <Root />
+    </StrictMode>,
+  ),
 );
