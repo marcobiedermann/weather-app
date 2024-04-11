@@ -16,18 +16,18 @@ function CitiesPage(): JSX.Element {
   const cities = useAppSelector(selectCities);
   const settings = useAppSelector(selectSettings);
   const { t } = useTranslation();
-  const { data: group, error, isError, isLoading } = useGroup(cities, settings);
+  const { data: group, error, isError, isPending } = useGroup(cities, settings);
 
   if (!cities.length) {
     navigate('/search');
   }
 
-  if (isError) {
-    return <Error message={error.message} />;
+  if (isPending) {
+    return <Loader />;
   }
 
-  if (isLoading) {
-    return <Loader />;
+  if (isError) {
+    return <Error message={error.message} />;
   }
 
   return (

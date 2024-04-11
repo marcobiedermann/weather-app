@@ -17,7 +17,7 @@ function EditPage(): JSX.Element {
   const cities = useAppSelector(selectCities);
   const settings = useAppSelector(selectSettings);
   const navigate = useNavigate();
-  const { data: group, error, isError, isLoading } = useGroup(cities, settings);
+  const { data: group, error, isError, isPending } = useGroup(cities, settings);
 
   function onClick(id: number) {
     dispatch(removeCity(id));
@@ -25,12 +25,12 @@ function EditPage(): JSX.Element {
     navigate('/cities');
   }
 
-  if (isError) {
-    return <Error message={error.message} />;
+  if (isPending) {
+    return <Loader />;
   }
 
-  if (isLoading) {
-    return <Loader />;
+  if (isError) {
+    return <Error message={error.message} />;
   }
 
   return (

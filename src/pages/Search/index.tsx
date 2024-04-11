@@ -11,14 +11,14 @@ function SearchPage(): JSX.Element {
   const [searchParams] = useSearchParams();
   const { query } = Object.fromEntries(searchParams);
   const settings = useAppSelector(selectSettings);
-  const { data: find, isError, isLoading, error } = useFind(query, settings);
+  const { data: find, isError, isPending, error } = useFind(query, settings);
+
+  if (isPending) {
+    return <Loader />;
+  }
 
   if (isError) {
     return <Error message={error.message} />;
-  }
-
-  if (isLoading) {
-    return <Loader />;
   }
 
   return (

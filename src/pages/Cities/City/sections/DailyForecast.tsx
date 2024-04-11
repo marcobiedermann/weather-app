@@ -10,14 +10,14 @@ interface DailyForecastSectionProps {
 
 function DailyForecastSection(props: DailyForecastSectionProps) {
   const { cityId, settings } = props;
-  const { data: dailyForecast, error, isError, isLoading } = useDailyForecast(cityId, settings);
+  const { data: dailyForecast, error, isError, isPending } = useDailyForecast(cityId, settings);
+
+  if (isPending) {
+    return <Loader />;
+  }
 
   if (isError) {
     return <Error message={error.message} />;
-  }
-
-  if (isLoading) {
-    return <Loader />;
   }
 
   return (

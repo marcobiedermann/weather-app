@@ -11,14 +11,14 @@ interface ForecastSectionProps {
 
 function ForecastSection(props: ForecastSectionProps) {
   const { cityId, settings } = props;
-  const { data: forecast, error, isError, isLoading } = useForecast(cityId, settings);
+  const { data: forecast, error, isError, isPending } = useForecast(cityId, settings);
+
+  if (isPending) {
+    return <Loader />;
+  }
 
   if (isError) {
     return <Error message={error.message} />;
-  }
-
-  if (isLoading) {
-    return <Loader />;
   }
 
   const now = new Date();
