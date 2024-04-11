@@ -7,27 +7,27 @@ updates:
     groups:
       eslint:
         patterns:
-          - "@typescript-eslint/*"
-          - "eslint*"
+          - '@typescript-eslint/*'
+          - 'eslint*'
       i18next:
         patterns:
-          - "i18next*"
+          - 'i18next*'
       react:
         patterns:
-          - "@types/react"
-          - "@types/react-dom"
-          - "react"
-          - "react-dom"
+          - '@types/react'
+          - '@types/react-dom'
+          - 'react'
+          - 'react-dom'
       storybook:
         patterns:
-          - "@storybook/*"
+          - '@storybook/*'
       stylelint:
         patterns:
-          - "stylelint*"
+          - 'stylelint*'
       vite:
         patterns:
-          - "@vitejs/*"
-          - "@vitest/*"
-          - "happy-dom"
-          - "vite"
-          - "vitest"
+          - '@vitejs/*'
+          - '@vitest/*'
+          - 'happy-dom'
+          - 'vite'
+          - 'vitest'
