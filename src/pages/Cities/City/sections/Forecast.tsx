@@ -2,11 +2,15 @@ import { fromUnixTime, isSameDay } from 'date-fns';
 import Error from '../../../../components/Error';
 import Forecast from '../../../../components/Forecast';
 import Loader from '../../../../components/Loader';
+import type { SupportedLanguage, SupportedUnit } from '../../../../constants/localization';
 import { useForecast } from '../../../../hooks';
 
 interface ForecastSectionProps {
   cityId: number;
-  settings: any;
+  settings: {
+    language: SupportedLanguage;
+    unit: SupportedUnit;
+  };
 }
 
 function ForecastSection(props: ForecastSectionProps) {
