@@ -1,11 +1,15 @@
 import DailyForecast from '../../../../components/DailyForecast';
 import Error from '../../../../components/Error';
 import Loader from '../../../../components/Loader';
+import type { SupportedLanguage, SupportedUnit } from '../../../../constants/localization';
 import { useDailyForecast } from '../../../../hooks';
 
 interface DailyForecastSectionProps {
   cityId: number;
-  settings: any;
+  settings: {
+    language: SupportedLanguage;
+    unit: SupportedUnit;
+  };
 }
 
 function DailyForecastSection(props: DailyForecastSectionProps) {
