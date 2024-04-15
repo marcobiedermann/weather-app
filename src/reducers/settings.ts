@@ -29,8 +29,11 @@ const settingsSlice = createSlice({
   },
 });
 
-const { updateSettings } = settingsSlice.actions;
+const {
+  actions: { updateSettings },
+  reducer,
+} = settingsSlice;
 
-export type { SettingsState };
 export { updateSettings };
-export default settingsSlice.reducer;
+export type { SettingsState };
+export default reducer;

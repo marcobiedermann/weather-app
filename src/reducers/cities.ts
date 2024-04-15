@@ -21,8 +21,11 @@ const citiesSlice = createSlice({
   },
 });
 
-const { addCity, removeCity } = citiesSlice.actions;
+const {
+  actions: { addCity, removeCity },
+  reducer,
+} = citiesSlice;
 
-export type { CitiesState };
 export { addCity, removeCity };
-export default citiesSlice.reducer;
+export type { CitiesState };
+export default reducer;
