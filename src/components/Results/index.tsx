@@ -2,11 +2,12 @@ import Result, { ResultProps } from '../Result';
 import styles from './style.module.css';
 
 interface ResultsProps {
-  results: ResultProps[];
+  results: Omit<ResultProps, 'onClick'>[];
+  onResultClick: (id: number) => void;
 }
 
 function Results(props: ResultsProps): JSX.Element {
-  const { results } = props;
+  const { results, onResultClick } = props;
 
   return (
     <>
@@ -14,7 +15,7 @@ function Results(props: ResultsProps): JSX.Element {
         <ul className={styles.results}>
           {results.map((result) => (
             <li key={result.id}>
-              <Result {...result} />
+              <Result onClick={onResultClick} {...result} />
             </li>
           ))}
         </ul>

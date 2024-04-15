@@ -1,9 +1,6 @@
-import { useTranslation } from 'react-i18next';
-import { addCity } from '../../reducers/cities';
-import { useAppDispatch } from '../../store';
-import styles from './style.module.css';
-import { useNavigate } from 'react-router-dom';
 import { PlusCircle } from 'react-feather';
+import { useTranslation } from 'react-i18next';
+import styles from './style.module.css';
 
 interface ResultProps {
   id: number;
@@ -14,19 +11,12 @@ interface ResultProps {
   sys: {
     country: string;
   };
+  onClick: (id: number) => void;
 }
 
 function Result(props: ResultProps): JSX.Element {
-  const { id, main, name, sys } = props;
-  const navigate = useNavigate();
-  const dispatch = useAppDispatch();
+  const { id, main, name, sys, onClick } = props;
   const { t } = useTranslation();
-
-  function onClick(id: number) {
-    dispatch(addCity(id));
-
-    navigate('/cities');
-  }
 
   return (
     <div className={styles.result}>
