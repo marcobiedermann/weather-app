@@ -1,13 +1,17 @@
-import { initReactI18next } from 'react-i18next';
 import i18n from 'i18next';
-import translation from '../../public/locales/en/translation.json';
+import { initReactI18next } from 'react-i18next';
+import deTranslation from '../../public/locales/de/translation.json';
+import enTranslation from '../../public/locales/en/translation.json';
+import { options } from '../i18n';
 
 i18n.use(initReactI18next).init({
-  fallbackLng: 'en',
-  lng: 'en',
+  ...options,
   resources: {
+    de: {
+      translation: deTranslation,
+    },
     en: {
-      translation,
+      translation: enTranslation,
     },
   },
 });

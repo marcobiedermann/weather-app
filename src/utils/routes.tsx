@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, RouteObject, createBrowserRouter } from 'react-router-dom';
 import Layout from '../components/Layout';
 
 const CitiesPage = lazy(() => import('../pages/Cities'));
@@ -38,6 +38,8 @@ const routes = [
       },
     ],
   },
-];
+] satisfies RouteObject[];
 
-export default routes;
+const router = createBrowserRouter(routes);
+
+export { router, routes };

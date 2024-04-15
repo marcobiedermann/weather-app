@@ -1,20 +1,19 @@
-import i18n from 'i18next';
+import i18n, { type InitOptions } from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import HttpApi from 'i18next-http-backend';
+import Backend from 'i18next-http-backend';
 import { initReactI18next } from 'react-i18next';
 import { isDevelopment } from '../constants/config';
 
-i18n
-  .use(HttpApi)
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    backend: {
-      loadPath: '/locales/{{lng}}/{{ns}}.json',
-    },
-    debug: isDevelopment,
-    fallbackLng: 'en',
-    lng: 'en',
-  });
+const options = {
+  debug: isDevelopment,
+  interpolation: {
+    escapeValue: false,
+  },
+  fallbackLng: 'en',
+  lng: 'en',
+} satisfies InitOptions;
 
+i18n.use(LanguageDetector).use(Backend).use(initReactI18next).init(options);
+
+export { options };
 export default i18n;
