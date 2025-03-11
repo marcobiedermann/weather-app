@@ -18,7 +18,7 @@ function CityPreview(props: CityPreviewProps): JSX.Element {
   const { t } = useTranslation();
 
   return (
-    <Link to={`/cities/${id}`} className={styles.city}>
+    <Link to={`../cities/${id}`} className={styles.city}>
       <div>
         <h3 className={styles.city__country}>{sys.country}</h3>
         <h2 className={styles.city__name}>{name}</h2>

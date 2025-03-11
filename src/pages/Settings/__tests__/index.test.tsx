@@ -1,5 +1,5 @@
 import { waitFor } from '@testing-library/react';
-import { RouterProvider, createMemoryRouter } from 'react-router-dom';
+import { RouterProvider, createMemoryRouter } from 'react-router';
 import { describe, expect, it } from 'vitest';
 import { render } from '../../../test/testing-library';
 import { routes } from '../../../utils/routes';

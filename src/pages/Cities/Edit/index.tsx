@@ -1,5 +1,5 @@
 import { XCircle } from 'react-feather';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import CityPreview from '../../../components/CityPreview';
 import Error from '../../../components/Error';
 import Link from '../../../components/Link';

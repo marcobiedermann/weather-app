@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Link as ReactRouterLink } from 'react-router-dom';
+import { Link as ReactRouterLink } from 'react-router';
 
 interface LinkProps {
   children: ReactNode;

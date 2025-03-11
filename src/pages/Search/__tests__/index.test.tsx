@@ -1,5 +1,5 @@
 import { waitFor } from '@testing-library/react';
-import { RouterProvider, createMemoryRouter } from 'react-router-dom';
+import { RouterProvider, createMemoryRouter } from 'react-router';
 import { afterAll, afterEach, beforeAll, describe, expect, it } from 'vitest';
 import { server } from '../../../__mocks__/server';
 import { render } from '../../../test/testing-library';

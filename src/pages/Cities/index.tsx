@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router';
 import Cities from '../../components/Cities';
 import Error from '../../components/Error';
 import Link from '../../components/Link';

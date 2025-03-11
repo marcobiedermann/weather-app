@@ -93,6 +93,7 @@ exports[`components/Layout > renders correctly 1`] = `
             >
               <a
                 class="navigation__link"
+                data-discover="true"
                 href="/cities"
               >
                 <svg
@@ -156,6 +157,7 @@ exports[`components/Layout > renders correctly 1`] = `
             >
               <a
                 class="navigation__link"
+                data-discover="true"
                 href="/settings"
               >
                 <svg
