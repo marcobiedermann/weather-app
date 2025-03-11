@@ -7,6 +7,7 @@
   "scripts": {
     "build": "tsc && vite build",
     "check": "tsc --noEmit",
+    "dev": "npm run develop",
     "develop": "vite",
     "format": "prettier --ignore-path .gitignore --write .",
     "generate:css": "tcm --pattern 'src/**/*.module.css' .",
