@@ -1,0 +1,48 @@
+@baseUrl = {{$dotenv VITE_OPEN_WEATHER_MAP_API_BASE}} 
+@apiKey = {{$dotenv VITE_OPEN_WEATHER_MAP_API_KEY}}
+@units = standard
+@lang = en
+
+###
+# @name findCity
+GET {{baseUrl}}/find
+?appid={{apiKey}}
+&units={{units}}
+&lang={{lang}}
+&q=London
+
+###
+# @name getWeather
+GET {{baseUrl}}/weather
+?appid={{apiKey}}
+&units={{units}}
+&lang={{lang}}
+&lat={{findCity.response.body.list.0.coord.lat}}
+&lon={{findCity.response.body.list.0.coord.lon}}
+
+###
+# @name getForecast
+GET {{baseUrl}}/forecast
+?appid={{apiKey}}
+&units={{units}}
+&lang={{lang}}
+&lat={{findCity.response.body.list.0.coord.lat}}
+&lon={{findCity.response.body.list.0.coord.lon}}
+
+###
+# @name getDailyForecast
+GET {{baseUrl}}/forecast/daily
+?appid={{apiKey}}
+&units={{units}}
+&lang={{lang}}
+&lat={{findCity.response.body.list.0.coord.lat}}
+&lon={{findCity.response.body.list.0.coord.lon}}
+
+###
+# @name getAirPollution
+GET {{baseUrl}}/air_pollution
+?appid={{apiKey}}
+&units={{units}}
+&lang={{lang}}
+&lat={{findCity.response.body.list.0.coord.lat}}
+&lon={{findCity.response.body.list.0.coord.lon}}
