@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { fn } from '@storybook/test';
 import Result from '.';
 
 const meta: Meta<typeof Result> = {
@@ -12,6 +13,7 @@ const meta: Meta<typeof Result> = {
     sys: {
       country: 'DE',
     },
+    onClick: fn(),
   },
 };
 

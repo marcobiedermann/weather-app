@@ -8,8 +8,24 @@ import Navigation from '../Navigation';
 import Search from '../Search';
 import styles from './style.module.css';
 
+interface FormData {
+  query: string;
+}
+
 function Layout(): JSX.Element {
   const navigate = useNavigate();
+
+  function onSearchSubmit(data: FormData) {
+    const { query } = data;
+    const search = createSearchParams({
+      query,
+    }).toString();
+
+    navigate({
+      pathname: 'search',
+      search,
+    });
+  }
 
   return (
     <div className={styles.layout}>
@@ -21,19 +37,7 @@ function Layout(): JSX.Element {
         }}
       >
         <Header>
-          <Search
-            onSubmit={(data) => {
-              const { query } = data;
-              const search = createSearchParams({
-                query,
-              }).toString();
-
-              navigate({
-                pathname: 'search',
-                search,
-              });
-            }}
-          />
+          <Search onSubmit={onSearchSubmit} />
         </Header>
         <Main>
           <Suspense fallback={<Loader />}>

@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import Root from './components/Root';
 import { isDevelopment } from './constants/config';
 import './i18n';
+import './style.css';
 
 async function enableMocking() {
   if (!isDevelopment) {

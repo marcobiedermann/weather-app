@@ -1,8 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { MemoryRouter } from 'react-router-dom';
 import Layout from '.';
 
 const meta: Meta<typeof Layout> = {
   component: Layout,
+  decorators: [
+    (Story) => (
+      <MemoryRouter>
+        <Story />
+      </MemoryRouter>
+    ),
+  ],
 };
 
 type Story = StoryObj<typeof Layout>;
