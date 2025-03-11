@@ -1,4 +1,5 @@
-import Result, { ResultProps } from '../Result';
+import type { ResultProps } from '../Result';
+import Result from '../Result';
 import styles from './style.module.css';
 
 interface ResultsProps {

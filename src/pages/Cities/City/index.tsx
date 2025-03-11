@@ -16,8 +16,8 @@ import ForecastSection from './sections/Forecast';
 const itemStyles = {
   aspectRatio: 1,
   backgroundColor: '#fcfcfc',
-  padding: '1.5em',
   borderRadius: '0.25em',
+  padding: '1.5em',
 };
 
 const paramsSchema = z.object({

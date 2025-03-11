@@ -6,10 +6,10 @@ import { isDevelopment } from '../constants/config';
 
 const options = {
   debug: isDevelopment,
+  fallbackLng: 'en',
   interpolation: {
     escapeValue: false,
   },
-  fallbackLng: 'en',
   lng: 'en',
 } satisfies InitOptions;
 

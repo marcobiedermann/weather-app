@@ -3,7 +3,6 @@ import { MemoryRouter } from 'react-router';
 import Navigation from '.';
 
 const meta: Meta<typeof Navigation> = {
-  component: Navigation,
   args: {
     routes: [
       {
@@ -12,6 +11,7 @@ const meta: Meta<typeof Navigation> = {
       },
     ],
   },
+  component: Navigation,
   decorators: [
     (Story) => (
       <MemoryRouter>

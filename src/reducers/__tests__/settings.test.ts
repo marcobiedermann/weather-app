@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import reducer, { updateSettings, SettingsState } from '../settings';
+import type { SettingsState } from '../settings';
+import reducer, { updateSettings } from '../settings';
 
 describe('reducers/settings', () => {
   const initialState: SettingsState = {

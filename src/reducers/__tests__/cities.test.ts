@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import reducer, { CitiesState, addCity, removeCity } from '../cities';
+import type { CitiesState } from '../cities';
+import reducer, { addCity, removeCity } from '../cities';
 
 describe('reducers/cities', () => {
   const initialState: CitiesState = {

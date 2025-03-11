@@ -1,4 +1,5 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 interface CitiesState {
   cities: number[];
@@ -9,8 +10,8 @@ const initialState: CitiesState = {
 };
 
 const citiesSlice = createSlice({
-  name: 'cities',
   initialState,
+  name: 'cities',
   reducers: {
     addCity: (state, action: PayloadAction<number>) => {
       state.cities.push(action.payload);

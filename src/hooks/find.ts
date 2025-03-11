@@ -7,9 +7,9 @@ const mainSchema = z.object({
   humidity: z.number(),
   pressure: z.number(),
   sea_level: z.number().optional(),
+  temp: z.number(),
   temp_max: z.number(),
   temp_min: z.number(),
-  temp: z.number(),
 });
 
 const sysSchema = z.object({
@@ -17,17 +17,17 @@ const sysSchema = z.object({
 });
 
 const listSchema = z.object({
-  id: z.number(),
-  name: z.string(),
+  clouds: cloudsSchema,
   coord: coordSchema,
-  main: mainSchema,
   dt: z.number(),
-  wind: windSchema,
-  sys: sysSchema,
+  id: z.number(),
+  main: mainSchema,
+  name: z.string(),
   rain: z.null(),
   snow: z.null(),
-  clouds: cloudsSchema,
+  sys: sysSchema,
   weather: z.array(weatherSchema),
+  wind: windSchema,
 });
 
 const findResponseSchema = z.object({

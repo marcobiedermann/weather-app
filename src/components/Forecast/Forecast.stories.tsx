@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Forecast from '.';
 
 const meta: Meta<typeof Forecast> = {
-  component: Forecast,
   args: {
     list: [
       {
@@ -12,14 +11,15 @@ const meta: Meta<typeof Forecast> = {
         },
         weather: [
           {
-            id: 802,
             description: 'scattered clouds',
             icon: '03d',
+            id: 802,
           },
         ],
       },
     ],
   },
+  component: Forecast,
 };
 
 type Story = StoryObj<typeof Forecast>;

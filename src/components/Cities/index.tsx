@@ -1,4 +1,5 @@
-import CityPreview, { CityPreviewProps } from '../CityPreview';
+import type { CityPreviewProps } from '../CityPreview';
+import CityPreview from '../CityPreview';
 import styles from './style.module.css';
 
 interface CitiesProps {

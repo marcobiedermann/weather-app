@@ -1,5 +1,6 @@
 import Seo from '../../components/Seo';
-import Settings, { FormData } from '../../components/Settings';
+import type { FormData } from '../../components/Settings';
+import Settings from '../../components/Settings';
 import { updateSettings } from '../../reducers/settings';
 import { selectSettings } from '../../selectors/settings';
 import { useAppDispatch, useAppSelector } from '../../store';

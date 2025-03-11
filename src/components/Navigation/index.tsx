@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { NavLink } from 'react-router';
 import styles from './style.module.css';
 

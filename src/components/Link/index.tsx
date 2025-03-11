@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { Link as ReactRouterLink } from 'react-router';
 
 interface LinkProps {
