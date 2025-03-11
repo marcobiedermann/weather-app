@@ -4,6 +4,7 @@ exports[`components/CityPreview > renders correctly 1`] = `
 <DocumentFragment>
   <a
     class="city"
+    data-discover="true"
     href="/cities/2950159"
   >
     <div>

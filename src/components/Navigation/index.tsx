@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { ReactNode } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router';
 import styles from './style.module.css';
 
 interface Route {

@@ -1,6 +1,6 @@
 import { format, fromUnixTime } from 'date-fns';
 import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router';
 import { z } from 'zod';
 import City from '../../../components/City';
 import Error from '../../../components/Error';

@@ -3,6 +3,7 @@
 exports[`components/Link > renders correctly 1`] = `
 <DocumentFragment>
   <a
+    data-discover="true"
     href="/"
   >
     Link

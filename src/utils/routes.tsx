@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import { Navigate, RouteObject, createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router';
 import Layout from '../components/Layout';
 
 const CitiesPage = lazy(() => import('../pages/Cities'));
@@ -38,7 +38,7 @@ const routes = [
       },
     ],
   },
-] satisfies RouteObject[];
+];
 
 const router = createBrowserRouter(routes);
 

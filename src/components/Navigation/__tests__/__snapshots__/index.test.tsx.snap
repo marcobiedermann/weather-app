@@ -14,6 +14,7 @@ exports[`components/Navigation > should render correctly 1`] = `
         <a
           aria-current="page"
           class="navigation__link navigation__linkActive"
+          data-discover="true"
           href="/"
         >
           <span>

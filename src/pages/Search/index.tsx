@@ -1,4 +1,4 @@
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router';
 import Error from '../../components/Error';
 import Loader from '../../components/Loader';
 import Results from '../../components/Results';

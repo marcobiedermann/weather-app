@@ -8,6 +8,7 @@ exports[`components/Cities > should render correctly 1`] = `
     <li>
       <a
         class="city"
+        data-discover="true"
         href="/cities/2950159"
       >
         <div>
