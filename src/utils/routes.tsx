@@ -10,7 +10,6 @@ const SettingsPage = lazy(() => import('../pages/Settings'));
 
 const routes = [
   {
-    element: <Layout />,
     children: [
       {
         element: <Navigate to="/cities" />,
@@ -37,6 +36,7 @@ const routes = [
         path: '/settings',
       },
     ],
+    element: <Layout />,
   },
 ];
 

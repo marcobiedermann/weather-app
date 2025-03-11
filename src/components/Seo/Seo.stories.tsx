@@ -2,10 +2,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Seo from '.';
 
 const meta: Meta<typeof Seo> = {
-  component: Seo,
   args: {
     title: 'Weather App',
   },
+  component: Seo,
 };
 
 type Story = StoryObj<typeof Seo>;

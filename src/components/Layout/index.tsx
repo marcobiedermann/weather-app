@@ -73,9 +73,9 @@ function Layout(): JSX.Element {
           <Navigation
             routes={[
               {
+                icon: <Grid />,
                 name: 'Dashboard',
                 path: '/cities',
-                icon: <Grid />,
               },
             ]}
           />
@@ -87,9 +87,9 @@ function Layout(): JSX.Element {
           <Navigation
             routes={[
               {
+                icon: <Settings />,
                 name: 'Settings',
                 path: '/settings',
-                icon: <Settings />,
               },
             ]}
           />

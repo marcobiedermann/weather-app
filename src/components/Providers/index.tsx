@@ -1,8 +1,9 @@
-import { Store } from '@reduxjs/toolkit';
+import type { Store } from '@reduxjs/toolkit';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Provider } from 'react-redux';
-import { RouterProvider, RouterProviderProps } from 'react-router';
-import { Persistor } from 'redux-persist';
+import type { RouterProviderProps } from 'react-router';
+import { RouterProvider } from 'react-router';
+import type { Persistor } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
 
 type Router = RouterProviderProps['router'];

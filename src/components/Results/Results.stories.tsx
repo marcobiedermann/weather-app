@@ -2,21 +2,21 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Results from '.';
 
 const meta: Meta<typeof Results> = {
-  component: Results,
   args: {
     results: [
       {
         id: 2950159,
-        name: 'Berlin',
         main: {
           temp: 18.54,
         },
+        name: 'Berlin',
         sys: {
           country: 'DE',
         },
       },
     ],
   },
+  component: Results,
 };
 
 type Story = StoryObj<typeof Results>;

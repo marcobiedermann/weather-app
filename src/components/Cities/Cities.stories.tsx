@@ -3,21 +3,21 @@ import { MemoryRouter } from 'react-router';
 import Cities from '.';
 
 const meta: Meta<typeof Cities> = {
-  component: Cities,
   args: {
     cities: [
       {
-        sys: {
-          country: 'DE',
-        },
+        id: 2950159,
         main: {
           temp: 18.54,
         },
-        id: 2950159,
         name: 'Berlin',
+        sys: {
+          country: 'DE',
+        },
       },
     ],
   },
+  component: Cities,
   decorators: [
     (Story) => (
       <MemoryRouter>

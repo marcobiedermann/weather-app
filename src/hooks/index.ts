@@ -1,12 +1,18 @@
-import { useQuery, UseQueryResult } from '@tanstack/react-query';
+import type { UseQueryResult } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
+import type { SupportedLanguage, SupportedUnit } from '../constants/localization';
 import { API_KEY } from '../constants/open-weather-map';
-import { FindResponse, findResponseSchema } from './find';
-import { DailyForecastResponse, dailyForecastResponseSchema } from './forecast/daily';
-import { GroupResponse, groupResponseSchema } from './group';
-import { WeatherResponse, weatherResponseSchema } from './weather';
-import { SupportedLanguage, SupportedUnit } from '../constants/localization';
-import { ForecastResponse, forecastResponseSchema } from './forecast';
+import type { FindResponse } from './find';
+import { findResponseSchema } from './find';
+import type { ForecastResponse } from './forecast';
+import { forecastResponseSchema } from './forecast';
+import type { DailyForecastResponse } from './forecast/daily';
+import { dailyForecastResponseSchema } from './forecast/daily';
+import type { GroupResponse } from './group';
+import { groupResponseSchema } from './group';
+import type { WeatherResponse } from './weather';
+import { weatherResponseSchema } from './weather';
 
 const defaultParams = {
   appid: API_KEY,
@@ -42,9 +48,9 @@ async function getFind(query: string, settings?: Partial<Settings>): Promise<Fin
 
 function useFind(query: string, settings?: Partial<Settings>): UseQueryResult<FindResponse, Error> {
   return useQuery<FindResponse, Error>({
+    enabled: Boolean(query),
     queryFn: () => getFind(query, settings),
     queryKey: ['find', query, settings],
-    enabled: Boolean(query),
   });
 }
 
@@ -124,8 +130,8 @@ async function getDailyForecast(
   const { data } = await instance.get<DailyForecastResponse>('/forecast/daily', {
     params: {
       ...defaultParams,
-      id,
       cnt: 16,
+      id,
       ...(settings?.language && { lang: settings.language }),
       ...(settings?.unit && { units: settings.unit }),
     },
@@ -144,4 +150,4 @@ function useDailyForecast(
   });
 }
 
-export { useFind, useGroup, useWeather, useForecast, useDailyForecast };
+export { useDailyForecast, useFind, useForecast, useGroup, useWeather };

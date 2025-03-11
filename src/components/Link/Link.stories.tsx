@@ -3,11 +3,11 @@ import { MemoryRouter } from 'react-router';
 import Link from '.';
 
 const meta: Meta<typeof Link> = {
-  component: Link,
   args: {
     children: 'Link',
     to: '/',
   },
+  component: Link,
   decorators: [
     (Story) => (
       <MemoryRouter>

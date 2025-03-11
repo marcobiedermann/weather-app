@@ -3,10 +3,10 @@ import { fn } from '@storybook/test';
 import Search from '.';
 
 const meta: Meta<typeof Search> = {
-  component: Search,
   args: {
     onSubmit: fn(),
   },
+  component: Search,
 };
 
 type Story = StoryObj<typeof Search>;

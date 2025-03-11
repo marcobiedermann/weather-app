@@ -22,10 +22,10 @@ const listSchema = z.object({
     humidity: z.number(),
     pressure: z.number(),
     sea_level: z.number(),
+    temp: z.number(),
     temp_kf: z.number(),
     temp_max: z.number(),
     temp_min: z.number(),
-    temp: z.number(),
   }),
   pop: z.number(),
   rain: z

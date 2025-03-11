@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { render as rtlRender, renderHook as rtlRenderHook } from '@testing-library/react';
 
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { I18nextProvider } from 'react-i18next';
 import { Provider } from 'react-redux';
 import store from '../store';

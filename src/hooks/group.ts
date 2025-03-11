@@ -5,9 +5,9 @@ const mainSchema = z.object({
   feels_like: z.number(),
   humidity: z.number(),
   pressure: z.number(),
+  temp: z.number(),
   temp_max: z.number(),
   temp_min: z.number(),
-  temp: z.number(),
 });
 
 const sysSchema = z.object({

@@ -2,10 +2,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Main from '.';
 
 const meta: Meta<typeof Main> = {
-  component: Main,
   args: {
     children: 'Main',
   },
+  component: Main,
 };
 
 type Story = StoryObj<typeof Main>;

@@ -6,10 +6,10 @@ export default defineConfig({
   plugins: [react()],
   test: {
     coverage: {
-      provider: 'v8',
       all: true,
-      include: ['src'],
       exclude: ['**/__mocks__/*', '**/*.d.ts', 'test'],
+      include: ['src'],
+      provider: 'v8',
     },
     css: {
       modules: {

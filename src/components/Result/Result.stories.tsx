@@ -3,18 +3,18 @@ import { fn } from '@storybook/test';
 import Result from '.';
 
 const meta: Meta<typeof Result> = {
-  component: Result,
   args: {
     id: 2950159,
-    name: 'Berlin',
     main: {
       temp: 18.54,
     },
+    name: 'Berlin',
+    onClick: fn(),
     sys: {
       country: 'DE',
     },
-    onClick: fn(),
   },
+  component: Result,
 };
 
 type Story = StoryObj<typeof Result>;
