@@ -46,3 +46,11 @@ GET {{baseUrl}}/air_pollution
 &lang={{lang}}
 &lat={{findCity.response.body.list.0.coord.lat}}
 &lon={{findCity.response.body.list.0.coord.lon}}
+
+###
+# @name getGroup
+GET {{baseUrl}}/group
+?appid={{apiKey}}
+&units={{units}}
+&lang={{lang}}
+&id={{findCity.response.body.list.0.id}}
