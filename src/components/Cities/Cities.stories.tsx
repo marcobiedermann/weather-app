@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { MemoryRouter } from 'react-router-dom';
 import Cities from '.';
 
 const meta: Meta<typeof Cities> = {
@@ -17,6 +18,13 @@ const meta: Meta<typeof Cities> = {
       },
     ],
   },
+  decorators: [
+    (Story) => (
+      <MemoryRouter>
+        <Story />
+      </MemoryRouter>
+    ),
+  ],
 };
 
 type Story = StoryObj<typeof Cities>;

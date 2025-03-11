@@ -3,9 +3,7 @@ import Loader from '.';
 
 const meta: Meta<typeof Loader> = {
   component: Loader,
-  args: {
-    children: 'Loader',
-  },
+  args: {},
 };
 
 type Story = StoryObj<typeof Loader>;

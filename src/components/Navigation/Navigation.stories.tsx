@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { MemoryRouter } from 'react-router-dom';
 import Navigation from '.';
 
 const meta: Meta<typeof Navigation> = {
@@ -11,6 +12,13 @@ const meta: Meta<typeof Navigation> = {
       },
     ],
   },
+  decorators: [
+    (Story) => (
+      <MemoryRouter>
+        <Story />
+      </MemoryRouter>
+    ),
+  ],
 };
 
 type Story = StoryObj<typeof Navigation>;
