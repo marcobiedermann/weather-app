@@ -3,6 +3,8 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import type { SupportedLanguage, SupportedUnit } from '../constants/localization';
 import { API_KEY } from '../constants/open-weather-map';
+import type { AirPollutionResponse } from './air-pollution';
+import { airPollutionResponseSchema } from './air-pollution';
 import type { FindResponse } from './find';
 import { findResponseSchema } from './find';
 import type { ForecastResponse } from './forecast';
@@ -150,4 +152,31 @@ function useDailyForecast(
   });
 }
 
-export { useDailyForecast, useFind, useForecast, useGroup, useWeather };
+async function getAirPollution(
+  coord: { lat: number; lon: number },
+  settings?: Partial<Settings>,
+): Promise<AirPollutionResponse> {
+  const { data } = await instance.get('/air_pollution', {
+    params: {
+      ...defaultParams,
+      lat: coord.lat,
+      lon: coord.lon,
+      ...(settings?.language && { lang: settings.language }),
+      ...(settings?.unit && { units: settings.unit }),
+    },
+  });
+
+  return airPollutionResponseSchema.parse(data);
+}
+
+function useAirPollution(
+  coord: { lat: number; lon: number },
+  settings?: Partial<Settings>,
+): UseQueryResult<AirPollutionResponse, Error> {
+  return useQuery<AirPollutionResponse, Error>({
+    queryFn: () => getAirPollution(coord, settings),
+    queryKey: ['air-pollution', coord, settings],
+  });
+}
+
+export { useAirPollution, useDailyForecast, useFind, useForecast, useGroup, useWeather };
