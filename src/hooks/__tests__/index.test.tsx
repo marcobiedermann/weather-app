@@ -1,6 +1,7 @@
 import { waitFor } from '@testing-library/react';
 import { afterAll, afterEach, beforeAll, describe, expect, it } from 'vitest';
-import { useDailyForecast, useFind, useForecast, useGroup, useWeather } from '..';
+import { useAirPollution, useDailyForecast, useFind, useForecast, useGroup, useWeather } from '..';
+import airPollution from '../../__mocks__/__fixtures__/air-pollution/berlin.json';
 import find from '../../__mocks__/__fixtures__/find/berlin.json';
 import forecast from '../../__mocks__/__fixtures__/forecast/berlin.json';
 import dailyForecast from '../../__mocks__/__fixtures__/forecast/daily/berlin.json';
@@ -17,6 +18,14 @@ afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
 describe('hooks/index', () => {
+  describe('useAirPollution', () => {
+    it('should fetch the air pollution by `location`', async () => {
+      const { result } = renderHook(() => useAirPollution({ lon: 13.4105, lat: 52.5244 }));
+
+      await waitFor(() => expect(result.current.data).toStrictEqual(airPollution));
+    });
+  });
+
   describe('useDailyForecast', () => {
     it('should fetch the daily forecast by `cityId`', async () => {
       const { result } = renderHook(() => useDailyForecast(cityId));

@@ -9,7 +9,7 @@ GET {{baseUrl}}/find
 ?appid={{apiKey}}
 &units={{units}}
 &lang={{lang}}
-&q=London
+&q=Berlin
 
 ###
 # @name getWeather
@@ -17,8 +17,7 @@ GET {{baseUrl}}/weather
 ?appid={{apiKey}}
 &units={{units}}
 &lang={{lang}}
-&lat={{findCity.response.body.list.0.coord.lat}}
-&lon={{findCity.response.body.list.0.coord.lon}}
+&id={{findCity.response.body.list.0.id}}
 
 ###
 # @name getForecast
@@ -26,8 +25,7 @@ GET {{baseUrl}}/forecast
 ?appid={{apiKey}}
 &units={{units}}
 &lang={{lang}}
-&lat={{findCity.response.body.list.0.coord.lat}}
-&lon={{findCity.response.body.list.0.coord.lon}}
+&id={{findCity.response.body.list.0.id}}
 
 ###
 # @name getDailyForecast
@@ -35,8 +33,7 @@ GET {{baseUrl}}/forecast/daily
 ?appid={{apiKey}}
 &units={{units}}
 &lang={{lang}}
-&lat={{findCity.response.body.list.0.coord.lat}}
-&lon={{findCity.response.body.list.0.coord.lon}}
+&id={{findCity.response.body.list.0.id}}
 
 ###
 # @name getAirPollution
