@@ -15,7 +15,7 @@ interface ResultProps {
 }
 
 function Result(props: ResultProps): JSX.Element {
-  const { id, main, name, sys, onClick } = props;
+  const { id, main, name, onClick, sys } = props;
   const { t } = useTranslation();
 
   return (

@@ -25,7 +25,7 @@ interface SettingsProps {
 
 function Settings(props: SettingsProps): JSX.Element {
   const { defaultValues, onSubmit } = props;
-  const { register, handleSubmit } = useForm<FormData>({
+  const { handleSubmit, register } = useForm<FormData>({
     defaultValues,
     resolver: zodResolver(formDataSchema),
   });

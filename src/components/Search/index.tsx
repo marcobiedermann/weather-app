@@ -14,7 +14,7 @@ interface SearchProps {
 
 function Search(props: SearchProps): JSX.Element {
   const { defaultValues, onSubmit } = props;
-  const { register, handleSubmit } = useForm<FormData>({
+  const { handleSubmit, register } = useForm<FormData>({
     defaultValues,
   });
   const { t } = useTranslation();
