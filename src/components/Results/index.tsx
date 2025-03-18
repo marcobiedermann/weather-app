@@ -8,7 +8,7 @@ interface ResultsProps {
 }
 
 function Results(props: ResultsProps): JSX.Element {
-  const { results, onResultClick } = props;
+  const { onResultClick, results } = props;
 
   return (
     <>

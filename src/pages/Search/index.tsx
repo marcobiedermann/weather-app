@@ -14,7 +14,7 @@ function SearchPage(): JSX.Element {
   const settings = useAppSelector(selectSettings);
   const dispatch = useAppDispatch();
   const { query } = Object.fromEntries(searchParams);
-  const { data: find, isError, isPending, error } = useFind(query, settings);
+  const { data: find, error, isError, isPending } = useFind(query, settings);
 
   function onResultClick(id: number) {
     dispatch(addCity(id));
