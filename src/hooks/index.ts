@@ -16,14 +16,13 @@ import { groupResponseSchema } from './group';
 import type { WeatherResponse } from './weather';
 import { weatherResponseSchema } from './weather';
 
-const defaultParams = {
-  appid: API_KEY,
-  lang: 'en',
-  units: 'metric',
-};
-
 const instance = axios.create({
   baseURL: 'https://api.openweathermap.org/data/2.5',
+  params: {
+    appid: API_KEY,
+    lang: 'en',
+    units: 'metric',
+  },
 });
 
 interface Settings {
@@ -38,7 +37,6 @@ interface Error {
 async function getFind(query: string, settings?: Partial<Settings>): Promise<FindResponse> {
   const { data } = await instance.get<FindResponse>('/find', {
     params: {
-      ...defaultParams,
       q: query,
       ...(settings?.language && { lang: settings.language }),
       ...(settings?.unit && { units: settings.unit }),
@@ -59,7 +57,6 @@ function useFind(query: string, settings?: Partial<Settings>): UseQueryResult<Fi
 async function getGroup(ids: number[], settings?: Partial<Settings>): Promise<GroupResponse> {
   const { data } = await instance.get<GroupResponse>('/group', {
     params: {
-      ...defaultParams,
       id: ids.join(','),
       ...(settings?.language && { lang: settings.language }),
       ...(settings?.unit && { units: settings.unit }),
@@ -82,7 +79,6 @@ function useGroup(
 async function getWeather(id: number, settings?: Partial<Settings>): Promise<WeatherResponse> {
   const { data } = await instance.get<WeatherResponse>('/weather', {
     params: {
-      ...defaultParams,
       id,
       ...(settings?.language && { lang: settings.language }),
       ...(settings?.unit && { units: settings.unit }),
@@ -105,7 +101,6 @@ function useWeather(
 async function getForecast(id: number, settings?: Partial<Settings>): Promise<ForecastResponse> {
   const { data } = await instance.get<ForecastResponse>('/forecast', {
     params: {
-      ...defaultParams,
       id,
       ...(settings?.language && { lang: settings.language }),
       ...(settings?.unit && { units: settings.unit }),
@@ -131,7 +126,6 @@ async function getDailyForecast(
 ): Promise<DailyForecastResponse> {
   const { data } = await instance.get<DailyForecastResponse>('/forecast/daily', {
     params: {
-      ...defaultParams,
       cnt: 16,
       id,
       ...(settings?.language && { lang: settings.language }),
@@ -158,9 +152,7 @@ async function getAirPollution(
 ): Promise<AirPollutionResponse> {
   const { data } = await instance.get('/air_pollution', {
     params: {
-      ...defaultParams,
-      lat: coord.lat,
-      lon: coord.lon,
+      ...coord,
       ...(settings?.language && { lang: settings.language }),
       ...(settings?.unit && { units: settings.unit }),
     },
