@@ -41,7 +41,7 @@
     "@storybook/react-vite": "^8.6.4",
     "@storybook/test": "^8.6.4",
     "@testing-library/react": "^16.2.0",
-    "@types/node": "^20.12.7",
+    "@types/node": "^22.13.10",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@types/react-helmet": "^6.1.11",
